@@ -1,0 +1,13 @@
+Who We Are
+============
+
+Our team is composed of students from Seoul National University of Science and Technology, representing various departments and academic years, organized in a structured team hierarchy.
+
+With this systematic organization, we are passionately preparing for both national competitions and the international University Rover Challenge (URC).
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+   Team_Structure
+   Members

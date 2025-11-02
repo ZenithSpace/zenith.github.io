@@ -1,0 +1,33 @@
+Sponsors
+=========
+We sincerely appreciate the generous support and commitment of the following sponsors:
+
+.. raw:: html
+
+   <div style="text-align: center; margin-bottom: 30px;">
+       <a href="https://www.seoultech.ac.kr/index.jsp">
+           <img src="_static/seoultechlong.png" alt="Seoultechlong" width="400px">
+       </a>
+   </div>
+
+.. raw:: html
+
+   <div style="text-align: center; margin-bottom: 50px;">
+       <a href="https://meviy.misumi-ec.com/ko-kr/">
+           <img src="_static/misumi.png" alt="Misumi" width="200px">
+       </a>
+   </div>
+
+.. raw:: html
+
+   <div style="text-align: center; margin-bottom: 30px;">
+       <a href="https://meviy.misumi-ec.com/ko-kr/">
+           <img src="_static/meviy.png" alt="Meviy" width="200px">
+       </a>
+   </div>
+
+
+We extend our heartfelt gratitude to all our sponsors, whose support makes our team’s passion and endeavors possible.
+Thanks to you, we are able to participate in the URC, conduct robotics research, and explore various engineering technologies.
+Your trust and dedication go beyond simple assistance, inspiring and empowering us to take on greater challenges.
+We sincerely thank you for being an essential part of our journey.

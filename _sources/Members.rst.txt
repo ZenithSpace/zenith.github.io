@@ -1,0 +1,136 @@
+Members
+=======
+
+.. raw:: html
+
+   <style>
+       .member-card {
+           display: inline-block;
+           width: 315px;
+           padding: 20px;
+           margin: 15px;
+           border: 1px solid #ccc;
+           border-radius: 10px;
+           text-align: center;
+           transition: transform 0.2s ease, box-shadow 0.2s ease;
+           background-color: #f9f9f9;
+       }
+
+       .member-card:hover {
+           transform: translateY(-5px);
+           box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+       }
+
+       .member-name {
+           font-weight: bold;
+           font-size: 1.2em;
+           margin-bottom: 5px;
+       }
+
+       .member-role {
+           font-style: italic;
+           margin-bottom: 5px;
+       }
+
+       .member-desc {
+           font-size: 0.95em;
+       }
+   </style>
+
+   <div class="member-card">
+       <div class="member-name">Yoongu Kang</div>
+       <div class="member-role">Leader & Founder</div>
+       <div class="member-desc">Team Leader</div>
+   </div>
+
+   <div class="member-card">
+       <div class="member-name">Hangil Seo</div>
+       <div class="member-role">CTO</div>
+       <div class="member-desc">Electrical & Firmware</div>
+   </div>
+
+   <div class="member-card">
+       <div class="member-name">Junghwan Lee</div>
+       <div class="member-role">Hardware Design</div>
+       <div class="member-desc">Design Rover Drive System</div>
+   </div>
+
+   <div class="member-card">
+       <div class="member-name">Jimin Song</div>
+       <div class="member-role">Hardware Design</div>
+       <div class="member-desc">Design Rover Suspension</div>
+   </div>
+
+   <div class="member-card">
+       <div class="member-name">Geuntaek Bae</div>
+       <div class="member-role">Hardware Design</div>
+       <div class="member-desc">Design Rover Body</div>
+   </div>
+
+   <div class="member-card">
+       <div class="member-name">Hohyun Kwak</div>
+       <div class="member-role">Hardware Design</div>
+       <div class="member-desc">Design Manipulator Module</div>
+   </div>
+
+    <div class="member-card">
+       <div class="member-name">Daehoon Kang</div>
+       <div class="member-role">Hardware Design</div>
+       <div class="member-desc">Design Science Module</div>
+   </div>
+
+
+    <div class="member-card">
+       <div class="member-name">Kyeonghyeon Kim</div>
+       <div class="member-role">Software</div>
+       <div class="member-desc">Develop Manipulator Control</div>
+   </div>
+
+   <div class="member-card">
+       <div class="member-name">Mingu Kang</div>
+       <div class="member-role">Software</div>
+       <div class="member-desc">Develop Autonomous Driving</div>
+   </div>
+
+   <div class="member-card">
+       <div class="member-name">Yeongji Choi</div>
+       <div class="member-role">Software</div>
+       <div class="member-desc">Develop Autonomous Driving</div>
+   </div>
+
+   <div class="member-card">
+       <div class="member-name">Suhyun Kim</div>
+       <div class="member-role">Software</div>
+       <div class="member-desc">AI Vision & Commnunication</div>
+   </div>
+
+
+    <div class="member-card">
+       <div class="member-name">Hanryung Shin</div>
+       <div class="member-role">Software</div>
+       <div class="member-desc">Develop Drone System</div>
+   </div>
+
+   <div class="member-card">
+       <div class="member-name">Gyeongho Choi</div>
+       <div class="member-role">Software</div>
+       <div class="member-desc">Develop Science Control System</div>
+   </div>
+
+   <div class="member-card">
+       <div class="member-name">Yongwon Seo</div>
+       <div class="member-role">Software</div>
+       <div class="member-desc">Develop Science Control System</div>
+   </div>
+
+   <div class="member-card">
+       <div class="member-name">Chohyun Yang</div>
+       <div class="member-role">Experiment</div>
+       <div class="member-desc">Planning and Analysis of Experiments</div>
+  
+   </div>
+      <div class="member-card">
+       <div class="member-name">Jinho Seo</div>
+       <div class="member-role">Experiment</div>
+       <div class="member-desc">Planning and Analysis of Experiments</div>
+   </div>

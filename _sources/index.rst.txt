@@ -1,0 +1,107 @@
+.. Webfest documentation code documentation master file, created by
+   sphinx-quickstart on Sun Nov  2 16:08:02 2025.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+Welcome to Zenith Space HQ!
+===========================
+Zenith Space is a non-profit research organization in space engineering, founded by students from Seoul National University of Science and Technology. We are currently preparing to participate in the University Rover Challenge (URC) 2026.
+
+Our team consists of passionate students with a strong interest in space and robotics engineering, representing diverse disciplines such as mechanical, electrical, chemical, and communication engineering.
+
+Through our participation in URC 2026, we aim to achieve outstanding results and make a meaningful contribution to the field of space robotics.
+
+
+Our Goals
+----------
+Zenith Space is a team that aims to improve the future of humanity.
+
+
+Our Achievements
+-----------------
+- 3rd Place (Excellence Award), Defense Robotics Competition (2025)
+- Encouragement Award, SEOULTECH Intelligent Robotics Expo (2025)
+- Educational Volunteer Program – “Build Your Own Mars Exploration Robot” at SsokSsok Camp (2025)
+- 1st Place (President’s Award), SRC-IRC Intelligent Battle Robot Competition (2024)
+- 2nd Place (Silver Award), HANIUM ICT Mentoring Contest (2024)
+- Excellence Award, National Autonomous Robot Competition for University Students (2023)
+
+
+Contents:
+-----------------
+.. toctree::
+   :maxdepth: 2
+
+   Who_We_Are
+   2026_University_Rover_Challenge
+   Past_Projects
+   Sponsors
+
+
+About Us
+-----------------
+.. grid:: 4
+   :gutter: 1
+
+   .. grid-item::
+      :child-align: center
+
+      .. image:: _static/youtube.png
+         :alt: YouTube
+         :target: https://www.youtube.com/@ZenithSpace1014
+         :width: 200px
+
+   .. grid-item::
+      :child-align: center
+
+      .. image:: _static/zenithspace.png
+         :alt: GitHub
+         :target: https://github.com/ZenithSpace
+         :width: 200px
+
+   .. grid-item::
+      :child-align: center
+
+      .. image:: _static/instagram.png
+         :alt: Instagram
+         :target: https://www.instagram.com/zenith_space_/
+         :width: 200px
+
+   .. grid-item::
+      :child-align: center
+
+      .. image:: _static/seoultech.png
+         :alt: SeoulTech
+         :target: https://www.seoultech.ac.kr/index.jsp
+         :width: 200px
+         :scale: 60
+
+
+Sponsors
+---------
+.. grid:: 3
+   :gutter: 1
+
+   .. grid-item::
+      :child-align: center
+
+      .. image:: _static/seoultechlong.png
+         :alt: Seoultechlong
+         :target: https://www.seoultech.ac.kr/index.jsp
+         :width: 200px
+
+   .. grid-item::
+      :child-align: center
+
+      .. image:: _static/misumi.png
+         :alt: Misumi
+         :target: https://kr.misumi-ec.com/?srsltid=AfmBOoobpp_DLHWftZF0UEDulFqLuvvac6EXsoypQ_waji6QRAb4CRJW
+         :width: 200px
+
+   .. grid-item::
+      :child-align: center
+
+      .. image:: _static/meviy.png
+         :alt: Meviy
+         :target: https://meviy.misumi-ec.com/ko-kr/
+         :width: 200px
