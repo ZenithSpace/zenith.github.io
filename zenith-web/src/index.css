@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Pretendard:wght@300;400;500;600;700&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --color-zenith-main: #151725;
+  --color-zenith-sub: #FFBB00;
+  --color-zenith-white: #FFFFFF;
+
+  /* Backward compatibility */
+  --color-cosmos-blue: #151725;
+  --color-mars-orange: #FFBB00;
+  --color-starlight-white: #FFFFFF;
+
+  --font-outfit: Outfit, sans-serif;
+  --font-pretendard: Pretendard, sans-serif;
+}
+
+:root {
+  font-family: 'Pretendard', 'Outfit', sans-serif;
+  background-color: #151725;
+  /* Zenith Main */
+  color: #FFFFFF;
+  /* Zenith White */
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply bg-white/5 backdrop-blur-md border border-white/10;
+  }
+}
