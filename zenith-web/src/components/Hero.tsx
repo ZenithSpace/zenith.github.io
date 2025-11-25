@@ -1,15 +1,16 @@
 
 import { motion } from 'framer-motion';
 import { ArrowRight, Download } from 'lucide-react';
+import heroBg from '../assets/hero_bg.jpg';
 
 const Hero = () => {
     return (
         <section id="hero" className="relative h-screen flex items-center justify-center overflow-hidden">
-            {/* Background Image (Placeholder) */}
+            {/* Background Image */}
             <div className="absolute inset-0 z-0">
                 <div className="absolute inset-0 bg-gradient-to-b from-zenith-main/70 via-zenith-main/50 to-zenith-main z-10" />
                 <img
-                    src="https://images.unsplash.com/photo-1614728853913-1e32005e307a?auto=format&fit=crop&q=80"
+                    src={heroBg}
                     alt="Space Background"
                     className="w-full h-full object-cover"
                 />
