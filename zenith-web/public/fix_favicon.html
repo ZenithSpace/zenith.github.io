@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <img id="source" src="/src/assets/logo_icon.png" style="display:none;" crossorigin="anonymous">
+    <canvas id="canvas"></canvas>
+    <div id="status">loading</div>
+    <textarea id="output"></textarea>
+    <script>
+        window.onload = () => {
+            const img = document.getElementById('source');
+            const canvas = document.getElementById('canvas');
+            const ctx = canvas.getContext('2d');
+
+            // Calculate square size
+            const size = Math.max(img.width, img.height);
+            const padding = size * 0.1; // Add 10% padding
+            const finalSize = size + (padding * 2);
+
+            canvas.width = finalSize;
+            canvas.height = finalSize;
+
+            // Clear with transparency
+            ctx.clearRect(0, 0, finalSize, finalSize);
+
+            // Draw centered
+            const x = (finalSize - img.width) / 2;
+            const y = (finalSize - img.height) / 2;
+
+            ctx.drawImage(img, x, y);
+
+            // Output base64
+            const dataURL = canvas.toDataURL('image/png');
+            document.getElementById('output').value = dataURL; // Keep header for debugging
+            document.getElementById('status').innerText = 'done';
+        };
+    </script>
+</body>
+
+</html>
