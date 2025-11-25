@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
+import logoIcon from '../assets/logo_icon.png';
+
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -33,7 +35,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center gap-3 cursor-pointer">
-            <img src="/src/assets/logo_icon.png" alt="Zenith Space Logo" className="h-14 w-auto" />
+            <img src={logoIcon} alt="Zenith Space Logo" className="h-14 w-auto" />
             <span className="text-2xl font-bold font-['Outfit'] tracking-wider text-white">ZENITH SPACE</span>
           </div>
 
