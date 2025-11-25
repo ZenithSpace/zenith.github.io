@@ -1,16 +1,18 @@
-
 import { motion } from 'framer-motion';
+import { useLanguage } from '../context/LanguageContext';
 
 const Team = () => {
-    // Placeholder data for team members
-    const teamMembers = Array(4).fill({
-        name: 'Team Member',
-        role: 'Researcher',
-        image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80'
-    });
+    const { t } = useLanguage();
+
+    const leads = [
+        { name: 'Kim Min-su', role: t('team.roles.lead'), image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=200&h=200' },
+        { name: 'Lee Ji-won', role: t('team.roles.mechanical'), image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=200&h=200' },
+        { name: 'Park Jun-ho', role: t('team.roles.software'), image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200&h=200' },
+        { name: 'Choi Su-jin', role: t('team.roles.electrical'), image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=200&h=200' },
+    ];
 
     return (
-        <section id="team" className="py-20 bg-zenith-main">
+        <section id="team" className="py-20 bg-zenith-main relative">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -18,30 +20,31 @@ const Team = () => {
                     viewport={{ once: true }}
                     className="text-center mb-16"
                 >
-                    <h2 className="text-zenith-sub font-bold tracking-widest uppercase mb-2">The Crew</h2>
-                    <h3 className="text-4xl font-bold font-['Outfit']">Meet the Team</h3>
+                    <h2 className="text-zenith-sub font-bold tracking-widest uppercase mb-2">{t('team.title')}</h2>
+                    <h3 className="text-4xl font-bold font-['Outfit']">{t('team.subtitle')}</h3>
                 </motion.div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                    {teamMembers.map((member, index) => (
+                    {leads.map((member, index) => (
                         <motion.div
                             key={index}
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ delay: index * 0.1, duration: 0.5 }}
-                            className="group relative overflow-hidden rounded-2xl aspect-[3/4]"
+                            transition={{ delay: index * 0.1 }}
+                            className="group relative"
                         >
-                            <img
-                                src={member.image}
-                                alt={member.name}
-                                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity" />
-
-                            <div className="absolute bottom-0 left-0 w-full p-6 transform translate-y-2 group-hover:translate-y-0 transition-transform">
-                                <h4 className="text-xl font-bold text-white">{member.name}</h4>
-                                <p className="text-zenith-sub font-medium">{member.role}</p>
+                            <div className="relative overflow-hidden rounded-2xl aspect-square mb-4">
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
+                                <img
+                                    src={member.image}
+                                    alt={member.name}
+                                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-110"
+                                />
+                            </div>
+                            <div className="text-center">
+                                <h4 className="text-xl font-bold text-white mb-1">{member.name}</h4>
+                                <p className="text-zenith-sub text-sm uppercase tracking-wider">{member.role}</p>
                             </div>
                         </motion.div>
                     ))}

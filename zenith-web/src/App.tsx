@@ -9,19 +9,23 @@ import Sponsorship from './components/Sponsorship';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
+import { LanguageProvider } from './context/LanguageContext';
+
 function App() {
   return (
-    <div className="min-h-screen bg-zenith-main text-white selection:bg-zenith-sub selection:text-white">
-      <Navbar />
-      <Hero />
-      <About />
-      <Journey />
-      <Rover />
-      <Team />
-      <Sponsorship />
-      <Contact />
-      <Footer />
-    </div>
+    <LanguageProvider>
+      <div className="bg-zenith-main min-h-screen text-white font-sans selection:bg-zenith-sub selection:text-white">
+        <Navbar />
+        <Hero />
+        <About />
+        <Journey />
+        <Rover />
+        <Team />
+        <Sponsorship />
+        <Contact />
+        <Footer />
+      </div>
+    </LanguageProvider>
   );
 }
 

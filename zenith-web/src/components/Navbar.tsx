@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Globe } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-
 import logoIcon from '../assets/logo_icon.png';
+import { useLanguage } from '../context/LanguageContext';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { language, setLanguage, t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,14 +18,18 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: 'Home', href: '#hero' },
-    { name: 'About', href: '#about' },
-    { name: 'Journey', href: '#journey' },
-    { name: 'Rover', href: '#rover' },
-    { name: 'Team', href: '#team' },
-    { name: 'Sponsorship', href: '#sponsorship' },
-    { name: 'Contact', href: '#contact' },
+    { name: t('nav.home'), href: '#hero' },
+    { name: t('nav.about'), href: '#about' },
+    { name: t('nav.journey'), href: '#journey' },
+    { name: t('nav.rover'), href: '#rover' },
+    { name: t('nav.team'), href: '#team' },
+    { name: t('nav.sponsorship'), href: '#sponsorship' },
+    { name: t('nav.contact'), href: '#contact' },
   ];
+
+  const toggleLanguage = () => {
+    setLanguage(language === 'en' ? 'ko' : 'en');
+  };
 
   return (
     <nav
@@ -41,7 +46,7 @@ const Navbar = () => {
 
           {/* Desktop Menu */}
           <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-8">
+            <div className="ml-10 flex items-baseline space-x-8 items-center">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
@@ -51,11 +56,26 @@ const Navbar = () => {
                   {link.name}
                 </a>
               ))}
+
+              {/* Language Toggle */}
+              <button
+                onClick={toggleLanguage}
+                className="flex items-center gap-1 text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 border border-white/20 hover:border-white/50"
+              >
+                <Globe size={16} />
+                <span>{language === 'en' ? 'KO' : 'EN'}</span>
+              </button>
             </div>
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center gap-4">
+            <button
+              onClick={toggleLanguage}
+              className="text-gray-300 hover:text-white p-2"
+            >
+              <span className="font-bold">{language === 'en' ? 'KO' : 'EN'}</span>
+            </button>
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="text-gray-300 hover:text-white p-2"

@@ -1,10 +1,11 @@
-
 import { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, MapPin, Send, Loader2 } from 'lucide-react';
 import emailjs from '@emailjs/browser';
+import { useLanguage } from '../context/LanguageContext';
 
 const Contact = () => {
+    const { t } = useLanguage();
     const formRef = useRef<HTMLFormElement>(null);
     const [isLoading, setIsLoading] = useState(false);
     const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
@@ -45,8 +46,8 @@ const Contact = () => {
                     viewport={{ once: true }}
                     className="text-center mb-16"
                 >
-                    <h2 className="text-zenith-sub font-bold tracking-widest uppercase mb-2">Get in Touch</h2>
-                    <h3 className="text-4xl font-bold font-['Outfit']">Contact Us</h3>
+                    <h2 className="text-zenith-sub font-bold tracking-widest uppercase mb-2">{t('contact.subtitle')}</h2>
+                    <h3 className="text-4xl font-bold font-['Outfit']">{t('contact.title')}</h3>
                 </motion.div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -57,10 +58,9 @@ const Contact = () => {
                         viewport={{ once: true }}
                         className="space-y-8"
                     >
-                        <h4 className="text-2xl font-bold text-white mb-6">Let's Connect</h4>
+                        <h4 className="text-2xl font-bold text-white mb-6">{t('contact.connect')}</h4>
                         <p className="text-gray-400 mb-8">
-                            Have questions about our rover, sponsorship opportunities, or just want to say hi?
-                            Reach out to us!
+                            {t('contact.desc')}
                         </p>
 
                         <div className="flex items-start gap-4">
@@ -68,7 +68,7 @@ const Contact = () => {
                                 <Mail />
                             </div>
                             <div>
-                                <h5 className="text-white font-bold mb-1">Email</h5>
+                                <h5 className="text-white font-bold mb-1">{t('contact.info.email')}</h5>
                                 <p className="text-gray-400">zenith1014@zenith.or.kr</p>
                             </div>
                         </div>
@@ -78,10 +78,9 @@ const Contact = () => {
                                 <MapPin />
                             </div>
                             <div>
-                                <h5 className="text-white font-bold mb-1">Location</h5>
-                                <p className="text-gray-400">
-                                    Seoul National University of Science and Technology<br />
-                                    232 Gongneung-ro, Nowon-gu, Seoul
+                                <h5 className="text-white font-bold mb-1">{t('contact.info.location')}</h5>
+                                <p className="text-gray-400 whitespace-pre-line">
+                                    {t('contact.info.address')}
                                 </p>
                             </div>
                         </div>
@@ -97,17 +96,17 @@ const Contact = () => {
                         <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                                 <div>
-                                    <label className="block text-sm font-medium text-gray-400 mb-2">Name</label>
+                                    <label className="block text-sm font-medium text-gray-400 mb-2">{t('contact.form.name')}</label>
                                     <input
                                         type="text"
                                         name="from_name"
                                         required
                                         className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-zenith-sub transition-colors"
-                                        placeholder="Your Name"
+                                        placeholder={t('contact.form.name')}
                                     />
                                 </div>
                                 <div>
-                                    <label className="block text-sm font-medium text-gray-400 mb-2">Email</label>
+                                    <label className="block text-sm font-medium text-gray-400 mb-2">{t('contact.form.email')}</label>
                                     <input
                                         type="email"
                                         name="from_email"
@@ -118,13 +117,13 @@ const Contact = () => {
                                 </div>
                             </div>
                             <div>
-                                <label className="block text-sm font-medium text-gray-400 mb-2">Message</label>
+                                <label className="block text-sm font-medium text-gray-400 mb-2">{t('contact.form.message')}</label>
                                 <textarea
                                     name="message"
                                     required
                                     rows={4}
                                     className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-zenith-sub transition-colors"
-                                    placeholder="How can we help you?"
+                                    placeholder={t('contact.form.message')}
                                 ></textarea>
                             </div>
                             <button
@@ -135,20 +134,20 @@ const Contact = () => {
                                 {isLoading ? (
                                     <>
                                         <Loader2 className="animate-spin" size={18} />
-                                        Sending...
+                                        {t('contact.form.sending')}
                                     </>
                                 ) : (
                                     <>
-                                        Send Message
+                                        {t('contact.form.send')}
                                         <Send size={18} />
                                     </>
                                 )}
                             </button>
                             {status === 'success' && (
-                                <p className="text-green-400 text-center text-sm">Message sent successfully!</p>
+                                <p className="text-green-400 text-center text-sm">{t('contact.form.success')}</p>
                             )}
                             {status === 'error' && (
-                                <p className="text-red-400 text-center text-sm">Failed to send message. Please try again.</p>
+                                <p className="text-red-400 text-center text-sm">{t('contact.form.error')}</p>
                             )}
                         </form>
                     </motion.div>

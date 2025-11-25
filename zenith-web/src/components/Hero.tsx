@@ -1,9 +1,11 @@
-
 import { motion } from 'framer-motion';
 import { ArrowRight, Download } from 'lucide-react';
 import heroBg from '../assets/hero_bg.jpg';
+import { useLanguage } from '../context/LanguageContext';
 
 const Hero = () => {
+    const { t } = useLanguage();
+
     return (
         <section id="hero" className="relative h-screen flex items-center justify-center overflow-hidden">
             {/* Background Image */}
@@ -16,34 +18,32 @@ const Hero = () => {
                 />
             </div>
 
-            {/* Content */}
             <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
                 >
-                    <h2 className="text-zenith-sub font-bold tracking-widest uppercase mb-4">
-                        SeoulTech Aerospace & Robotics
+                    <h2 className="text-zenith-sub font-bold tracking-[0.2em] uppercase mb-4">
+                        {t('hero.subtitle')}
                     </h2>
-                    <h1 className="text-5xl md:text-7xl font-bold font-['Outfit'] mb-6 leading-tight">
-                        Reaching for the <br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">
-                            Zenith of Space
+                    <h1 className="text-5xl md:text-7xl font-bold mb-6 font-['Outfit'] leading-tight">
+                        {t('hero.title')} <br />
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-zenith-sub to-white">
+                            {t('hero.titleHighlight')}
                         </span>
                     </h1>
-                    <p className="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto mb-10">
-                        We are a non-profit research team dedicated to autonomous systems and planetary exploration.
-                        Preparing for URC 2026.
+                    <p className="text-xl text-gray-300 max-w-2xl mx-auto mb-10 leading-relaxed">
+                        {t('hero.description')}
                     </p>
 
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <button className="px-8 py-4 bg-zenith-sub hover:bg-zenith-sub text-white rounded-full font-bold transition-all flex items-center justify-center gap-2 group">
-                            Support Our Mission
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                        <button className="px-8 py-4 bg-zenith-sub hover:bg-white hover:text-zenith-main text-white rounded-full font-bold transition-all flex items-center justify-center gap-2 group">
+                            {t('hero.supportButton')}
                             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                         </button>
                         <a href="/handbook.pdf" download className="px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-white rounded-full font-bold transition-all flex items-center justify-center gap-2">
-                            Download Handbook
+                            {t('hero.downloadButton')}
                             <Download className="w-5 h-5" />
                         </a>
                     </div>

@@ -1,20 +1,35 @@
-
 import { motion } from 'framer-motion';
+import { Calendar, Flag, Trophy, Rocket } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 const Journey = () => {
+    const { t } = useLanguage();
+
     const milestones = [
         {
-            year: '2025',
-            title: 'Defense Robot Competition',
-            description: 'Awarded the Excellence Prize for our autonomous surveillance robot prototype.',
-            status: 'completed',
+            year: '2024.03',
+            title: 'Team Formation',
+            description: 'Zenith Space was founded by 5 mechanical engineering students.',
+            icon: <Flag size={20} />
         },
         {
-            year: '2026',
-            title: 'University Rover Challenge',
-            description: 'Preparing to compete in the world\'s premier robotics competition in Utah, USA.',
-            status: 'upcoming',
+            year: '2024.08',
+            title: 'First Prototype',
+            description: 'Completed the design and assembly of the first rover prototype "Alpha".',
+            icon: <Trophy size={20} />
         },
+        {
+            year: '2025.05',
+            title: 'KRC Participation',
+            description: 'Scheduled to participate in the Korea Rover Challenge.',
+            icon: <Calendar size={20} />
+        },
+        {
+            year: '2026.05',
+            title: 'URC 2026',
+            description: 'Aiming to compete in the University Rover Challenge in Utah, USA.',
+            icon: <Rocket size={20} />
+        }
     ];
 
     return (
@@ -26,42 +41,34 @@ const Journey = () => {
                     viewport={{ once: true }}
                     className="text-center mb-16"
                 >
-                    <h2 className="text-zenith-sub font-bold tracking-widest uppercase mb-2">Our Journey</h2>
-                    <h3 className="text-4xl font-bold font-['Outfit']">Milestones & Goals</h3>
+                    <h2 className="text-zenith-sub font-bold tracking-widest uppercase mb-2">{t('journey.title')}</h2>
+                    <h3 className="text-4xl font-bold font-['Outfit']">{t('journey.subtitle')}</h3>
                 </motion.div>
 
                 <div className="relative">
-                    {/* Vertical Line */}
-                    <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-white/10 hidden md:block" />
+                    {/* Timeline Line */}
+                    <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-white/10 hidden md:block" />
 
                     <div className="space-y-12">
                         {milestones.map((milestone, index) => (
                             <motion.div
                                 key={index}
-                                initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-                                whileInView={{ opacity: 1, x: 0 }}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
-                                transition={{ duration: 0.6 }}
+                                transition={{ delay: index * 0.1 }}
                                 className={`flex flex-col md:flex-row items-center justify-between ${index % 2 === 0 ? 'md:flex-row-reverse' : ''
                                     }`}
                             >
                                 <div className="w-full md:w-5/12" />
-
-                                {/* Center Dot */}
-                                <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-zenith-sub border-4 border-zenith-main z-10 hidden md:block" />
-
+                                <div className="z-10 w-10 h-10 rounded-full bg-zenith-sub flex items-center justify-center text-white shadow-[0_0_20px_rgba(255,187,0,0.5)] mb-4 md:mb-0">
+                                    {milestone.icon}
+                                </div>
                                 <div className="w-full md:w-5/12">
-                                    <div className="glass-panel p-8 rounded-2xl relative hover:border-zenith-sub/50 transition-colors">
-                                        <div className="text-5xl font-bold text-white/5 absolute top-4 right-4 font-['Outfit']">
-                                            {milestone.year}
-                                        </div>
+                                    <div className="glass-panel p-6 rounded-xl hover:border-zenith-sub/50 transition-colors">
+                                        <div className="text-zenith-sub font-bold mb-2">{milestone.year}</div>
                                         <h4 className="text-xl font-bold text-white mb-2">{milestone.title}</h4>
-                                        <p className="text-gray-400">{milestone.description}</p>
-                                        {milestone.status === 'upcoming' && (
-                                            <span className="inline-block mt-4 px-3 py-1 bg-zenith-sub/20 text-zenith-sub text-xs font-bold rounded-full uppercase tracking-wider">
-                                                Upcoming
-                                            </span>
-                                        )}
+                                        <p className="text-gray-400 text-sm">{milestone.description}</p>
                                     </div>
                                 </div>
                             </motion.div>

@@ -1,61 +1,60 @@
-
 import { motion } from 'framer-motion';
-import { Target, Users, Award } from 'lucide-react';
+import { Target, Rocket, History } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 const About = () => {
-    const stats = [
-        { icon: Target, label: 'Mission', value: 'Mars Exploration' },
-        { icon: Users, label: 'Team Members', value: '30+' },
-        { icon: Award, label: 'Awards', value: 'Excellence' },
+    const { t } = useLanguage();
+
+    const features = [
+        {
+            icon: <Target className="w-8 h-8 text-zenith-sub" />,
+            title: t('about.missionTitle'),
+            description: t('about.missionDesc')
+        },
+        {
+            icon: <Rocket className="w-8 h-8 text-zenith-sub" />,
+            title: t('about.visionTitle'),
+            description: t('about.visionDesc')
+        },
+        {
+            icon: <History className="w-8 h-8 text-zenith-sub" />,
+            title: t('about.historyTitle'),
+            description: t('about.historyDesc')
+        }
     ];
 
     return (
-        <section id="about" className="py-20 bg-zenith-main relative overflow-hidden">
-            {/* Background Elements */}
-            <div className="absolute top-0 left-0 w-full h-full overflow-hidden opacity-20 pointer-events-none">
-                <div className="absolute top-10 left-10 w-96 h-96 bg-zenith-sub rounded-full blur-[128px]" />
-                <div className="absolute bottom-10 right-10 w-96 h-96 bg-blue-900 rounded-full blur-[128px]" />
-            </div>
+        <section id="about" className="py-20 bg-[#0A0B10]">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="text-center mb-16"
+                >
+                    <h2 className="text-zenith-sub font-bold tracking-widest uppercase mb-2">{t('about.title')}</h2>
+                    <h3 className="text-4xl font-bold font-['Outfit']">Who We Are</h3>
+                </motion.div>
 
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    {/* Text Content */}
-                    <motion.div
-                        initial={{ opacity: 0, x: -50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8 }}
-                    >
-                        <h2 className="text-zenith-sub font-bold tracking-widest uppercase mb-2">About Us</h2>
-                        <h3 className="text-4xl font-bold font-['Outfit'] mb-6">Pioneering the Future of <br /> Space Robotics</h3>
-                        <p className="text-gray-300 text-lg mb-6 leading-relaxed">
-                            Zenith Space is a student-led non-profit research organization at Seoul National University of Science and Technology (SeoulTech).
-                            We are a collective of passionate engineers, designers, and scientists dedicated to pushing the boundaries of autonomous planetary exploration.
-                        </p>
-                        <p className="text-gray-300 text-lg mb-8 leading-relaxed">
-                            Our current mission focuses on developing a next-generation Mars rover capable of autonomous navigation, scientific analysis, and precise manipulation tasks for the University Rover Challenge (URC).
-                        </p>
-                    </motion.div>
-
-                    {/* Stats Grid */}
-                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-                        {stats.map((stat, index) => (
-                            <motion.div
-                                key={index}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: index * 0.2, duration: 0.6 }}
-                                className="glass-panel p-6 rounded-2xl text-center hover:bg-white/5 transition-colors"
-                            >
-                                <div className="flex justify-center mb-4">
-                                    <stat.icon className="w-10 h-10 text-zenith-sub" />
-                                </div>
-                                <div className="text-2xl font-bold text-white mb-1">{stat.value}</div>
-                                <div className="text-sm text-gray-400 uppercase tracking-wider">{stat.label}</div>
-                            </motion.div>
-                        ))}
-                    </div>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    {features.map((feature, index) => (
+                        <motion.div
+                            key={index}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: index * 0.2 }}
+                            className="glass-panel p-8 rounded-2xl hover:border-zenith-sub/50 transition-colors"
+                        >
+                            <div className="w-16 h-16 bg-white/5 rounded-xl flex items-center justify-center mb-6">
+                                {feature.icon}
+                            </div>
+                            <h4 className="text-xl font-bold mb-4">{feature.title}</h4>
+                            <p className="text-gray-400 leading-relaxed">
+                                {feature.description}
+                            </p>
+                        </motion.div>
+                    ))}
                 </div>
             </div>
         </section>
