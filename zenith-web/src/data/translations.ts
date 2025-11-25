@@ -23,9 +23,9 @@ export const translations = {
             missionTitle: 'Our Mission',
             missionDesc: 'To design and build a next-generation Mars rover capable of assisting astronauts in deep space exploration missions.',
             visionTitle: 'Our Vision',
-            visionDesc: 'To become a leading platform for future aerospace engineers and roboticists in South Korea.',
+            visionDesc: 'To overcome the limitations of manned exploration, expand the realm of humanity, and share values with future generations.',
             historyTitle: 'Our History',
-            historyDesc: 'Founded in 2024, Zenith Space has rapidly grown from a small study group to a fully-fledged robotics team.',
+            historyDesc: 'Founded in 2024, Zenith Space has rapidly grown from a Capstone design team to a fully-fledged robotics team.',
         },
         journey: {
             title: 'Our Journey',
@@ -34,7 +34,7 @@ export const translations = {
                 founded: {
                     year: '2024.10',
                     title: 'Team Formation',
-                    desc: 'Zenith Space was founded by students passionate about space exploration.',
+                    desc: 'Zenith Space was founded by 5 students passionate about space exploration.',
                 },
                 prototype: {
                     year: '2025.06',
@@ -55,7 +55,7 @@ export const translations = {
         },
         rover: {
             title: 'The Rover',
-            subtitle: 'Engineering Excellence',
+            subtitle: 'Zero_v2 Specification',
             specs: {
                 weight: 'Weight',
                 speed: 'Max Speed',
@@ -132,9 +132,9 @@ export const translations = {
             missionTitle: '우리의 미션',
             missionDesc: '심우주 탐사 임무에서 우주비행사를 보조할 수 있는 차세대 화성 로버를 설계하고 제작하는 것입니다.',
             visionTitle: '우리의 비전',
-            visionDesc: '대한민국 미래 항공우주 엔지니어와 로봇 공학자들을 위한 최고의 플랫폼이 되는 것입니다.',
+            visionDesc: '유인탐사의 한계를 극복하고 인류의 영역을 확장하며 미래세대와 가치를 공유합니다.',
             historyTitle: '우리의 역사',
-            historyDesc: '2024년에 설립된 Zenith Space는 작은 스터디 그룹에서 시작하여 완전한 로봇 팀으로 빠르게 성장했습니다.',
+            historyDesc: '2024년에 설립된 Zenith Space는 캡스톤 디자인 팀에서 시작하여 완전한 로봇 팀으로 빠르게 성장했습니다.',
         },
         journey: {
             title: '우리의 여정',
@@ -143,7 +143,7 @@ export const translations = {
                 founded: {
                     year: '2024.10',
                     title: '팀 설립',
-                    desc: '우주 탐사에 열정을 가진 학생들이 모여 Zenith Space를 설립했습니다.',
+                    desc: '우주 탐사에 열정을 가진 5명의 학생들이 모여 Zenith Space를 설립했습니다.',
                 },
                 prototype: {
                     year: '2025.06',
@@ -164,7 +164,7 @@ export const translations = {
         },
         rover: {
             title: '로버',
-            subtitle: '공학적 우수성',
+            subtitle: 'Zero_v2 Specification',
             specs: {
                 weight: '무게',
                 speed: '최대 속도',
