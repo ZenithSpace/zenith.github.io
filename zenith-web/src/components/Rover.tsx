@@ -1,7 +1,8 @@
 import { motion } from 'framer-motion';
 import { Cpu, Zap, Activity, Scale } from 'lucide-react';
-import roverImage from '../assets/rover_iso.png';
 import { useLanguage } from '../context/LanguageContext';
+
+const roverImage = "https://images.unsplash.com/photo-1541873676-a18131494184?auto=format&fit=crop&q=80&w=1000";
 
 const Rover = () => {
     const { t } = useLanguage();
