@@ -20,7 +20,7 @@ const Contact = () => {
         try {
             await emailjs.sendForm(
                 'service_1w3btma',
-                'template_dnka9w8',
+                'template_z8pkvip',
                 formRef.current,
                 'wDHf9Bol6b5mPGz42'
             );
