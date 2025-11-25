@@ -1,8 +1,38 @@
 
+import { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, MapPin, Send } from 'lucide-react';
+import { Mail, MapPin, Send, Loader2 } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
+    const formRef = useRef<HTMLFormElement>(null);
+    const [isLoading, setIsLoading] = useState(false);
+    const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        if (!formRef.current) return;
+
+        setIsLoading(true);
+        setStatus('idle');
+
+        try {
+            await emailjs.sendForm(
+                'service_1w3btma',
+                'template_dnka9w8',
+                formRef.current,
+                'wDHf9Bol6b5mPGz42'
+            );
+            setStatus('success');
+            formRef.current.reset();
+        } catch (error) {
+            console.error('EmailJS Error:', error);
+            setStatus('error');
+        } finally {
+            setIsLoading(false);
+        }
+    };
+
     return (
         <section id="contact" className="py-20 bg-zenith-main relative overflow-hidden">
             {/* Background Elements */}
@@ -64,25 +94,62 @@ const Contact = () => {
                         viewport={{ once: true }}
                         className="glass-panel p-8 rounded-2xl"
                     >
-                        <form className="space-y-6">
+                        <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                                 <div>
                                     <label className="block text-sm font-medium text-gray-400 mb-2">Name</label>
-                                    <input type="text" className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-zenith-sub transition-colors" placeholder="Your Name" />
+                                    <input
+                                        type="text"
+                                        name="from_name"
+                                        required
+                                        className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-zenith-sub transition-colors"
+                                        placeholder="Your Name"
+                                    />
                                 </div>
                                 <div>
                                     <label className="block text-sm font-medium text-gray-400 mb-2">Email</label>
-                                    <input type="email" className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-zenith-sub transition-colors" placeholder="your@email.com" />
+                                    <input
+                                        type="email"
+                                        name="from_email"
+                                        required
+                                        className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-zenith-sub transition-colors"
+                                        placeholder="your@email.com"
+                                    />
                                 </div>
                             </div>
                             <div>
                                 <label className="block text-sm font-medium text-gray-400 mb-2">Message</label>
-                                <textarea rows={4} className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-zenith-sub transition-colors" placeholder="How can we help you?"></textarea>
+                                <textarea
+                                    name="message"
+                                    required
+                                    rows={4}
+                                    className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-zenith-sub transition-colors"
+                                    placeholder="How can we help you?"
+                                ></textarea>
                             </div>
-                            <button type="submit" className="w-full bg-zenith-sub hover:bg-zenith-sub text-white font-bold py-4 rounded-lg transition-colors flex items-center justify-center gap-2">
-                                Send Message
-                                <Send size={18} />
+                            <button
+                                type="submit"
+                                disabled={isLoading}
+                                className="w-full bg-zenith-sub hover:bg-zenith-sub text-white font-bold py-4 rounded-lg transition-colors flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                            >
+                                {isLoading ? (
+                                    <>
+                                        <Loader2 className="animate-spin" size={18} />
+                                        Sending...
+                                    </>
+                                ) : (
+                                    <>
+                                        Send Message
+                                        <Send size={18} />
+                                    </>
+                                )}
                             </button>
+                            {status === 'success' && (
+                                <p className="text-green-400 text-center text-sm">Message sent successfully!</p>
+                            )}
+                            {status === 'error' && (
+                                <p className="text-red-400 text-center text-sm">Failed to send message. Please try again.</p>
+                            )}
                         </form>
                     </motion.div>
                 </div>
