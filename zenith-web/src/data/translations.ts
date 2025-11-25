@@ -10,8 +10,9 @@ export const translations = {
             contact: 'Contact',
         },
         hero: {
-            subtitle: 'SEOUL TECH ROBOTICS & SPACE ENGINEERING TEAM',
-            title: 'OUR DREAM',
+            subtitle1: 'SEOUL NATIONAL UNIVERSITY OF SCIENCE AND TECHNOLOGY',
+            subtitle2: 'ROBOTICS & AEROSPACE ENGINEERING TEAM',
+            title: 'OUR DREAM,',
             titleHighlight: 'YOUR FUTURE',
             description: 'We are Zenith Space, a team of passionate engineers from SeoulTech dedicated to pushing the boundaries of robotics and space exploration.',
             supportButton: 'Support Our Mission',
@@ -118,8 +119,9 @@ export const translations = {
             contact: '문의',
         },
         hero: {
-            subtitle: 'SEOUL TECH ROBOTICS & SPACE ENGINEERING TEAM',
-            title: 'OUR DREAM',
+            subtitle1: 'SEOUL NATIONAL UNIVERSITY OF SCIENCE AND TECHNOLOGY',
+            subtitle2: 'ROBOTICS & AEROSPACE ENGINEERING TEAM',
+            title: 'OUR DREAM,',
             titleHighlight: 'YOUR FUTURE',
             description: '우리는 서울과학기술대학교의 열정적인 엔지니어들로 구성된 Zenith Space입니다. 로봇 공학과 우주 탐사의 한계를 뛰어넘기 위해 노력하고 있습니다.',
             supportButton: '후원하기',

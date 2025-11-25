@@ -24,8 +24,9 @@ const Hero = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
                 >
-                    <h2 className="text-zenith-sub font-bold tracking-[0.2em] uppercase mb-4">
-                        {t('hero.subtitle')}
+                    <h2 className="text-zenith-sub font-bold tracking-[0.2em] uppercase mb-4 flex flex-col gap-1 sm:gap-2">
+                        <span className="text-sm sm:text-base md:text-lg">{t('hero.subtitle1')}</span>
+                        <span className="text-sm sm:text-base md:text-lg">{t('hero.subtitle2')}</span>
                     </h2>
                     <h1 className="text-5xl md:text-7xl font-bold mb-6 font-['Outfit'] leading-tight">
                         {t('hero.title')} <br />
