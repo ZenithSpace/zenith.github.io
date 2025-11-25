@@ -1,5 +1,5 @@
 
-import { Mail, Instagram, Github, Download } from 'lucide-react';
+import { Mail, Instagram, Youtube, Download } from 'lucide-react';
 
 const Footer = () => {
     return (
@@ -14,13 +14,13 @@ const Footer = () => {
                             Join us in our mission to explore the unknown.
                         </p>
                         <div className="flex gap-4">
-                            <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-zenith-sub hover:text-white transition-colors text-gray-400">
+                            <a href="https://www.instagram.com/zenith_space_/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-zenith-sub hover:text-white transition-colors text-gray-400">
                                 <Instagram size={20} />
                             </a>
-                            <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-zenith-sub hover:text-white transition-colors text-gray-400">
-                                <Github size={20} />
+                            <a href="https://www.youtube.com/@ZenithSpace1014" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-zenith-sub hover:text-white transition-colors text-gray-400">
+                                <Youtube size={20} />
                             </a>
-                            <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-zenith-sub hover:text-white transition-colors text-gray-400">
+                            <a href="mailto:zenith1014@zenith.or.kr" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-zenith-sub hover:text-white transition-colors text-gray-400">
                                 <Mail size={20} />
                             </a>
                         </div>
