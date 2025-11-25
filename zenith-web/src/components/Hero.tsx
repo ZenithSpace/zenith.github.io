@@ -42,10 +42,10 @@ const Hero = () => {
                             Support Our Mission
                             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                         </button>
-                        <button className="px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-white rounded-full font-bold transition-all flex items-center justify-center gap-2">
+                        <a href="/handbook.pdf" download className="px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-white rounded-full font-bold transition-all flex items-center justify-center gap-2">
                             Download Handbook
                             <Download className="w-5 h-5" />
-                        </button>
+                        </a>
                     </div>
                 </motion.div>
             </div>

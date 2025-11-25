@@ -43,10 +43,10 @@ const Footer = () => {
                         <p className="text-gray-400 mb-6">
                             Interested in supporting our mission? Download our sponsorship handbook.
                         </p>
-                        <button className="w-full px-6 py-3 bg-zenith-sub hover:bg-zenith-sub text-white rounded-lg font-bold transition-colors flex items-center justify-center gap-2">
+                        <a href="/handbook.pdf" download className="w-full px-6 py-3 bg-zenith-sub hover:bg-zenith-sub text-white rounded-lg font-bold transition-colors flex items-center justify-center gap-2">
                             <Download size={18} />
                             Download PDF
-                        </button>
+                        </a>
                     </div>
                 </div>
 
