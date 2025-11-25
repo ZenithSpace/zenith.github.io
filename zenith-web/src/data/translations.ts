@@ -45,6 +45,11 @@ export const translations = {
                     title: 'Defense Robot Competition',
                     desc: 'Won the Excellence Award (3rd Place) at the Defense Robot Competition.',
                 },
+                urc: {
+                    year: '2026.05',
+                    title: 'URC 2026',
+                    desc: 'Preparing to compete in the University Rover Challenge in Utah, USA.',
+                },
             },
         },
         rover: {
@@ -147,6 +152,11 @@ export const translations = {
                     year: '2025.09',
                     title: '국방로봇경진대회',
                     desc: '국방로봇경진대회에서 우수상(3위)을 수상했습니다.',
+                },
+                urc: {
+                    year: '2026.05',
+                    title: 'URC 2026',
+                    desc: '미국 유타주에서 열리는 University Rover Challenge 참가를 준비하고 있습니다.',
                 },
             },
         },

@@ -23,6 +23,12 @@ const Journey = () => {
             title: t('journey.milestones.award.title'),
             description: t('journey.milestones.award.desc'),
             icon: <Trophy size={20} />
+        },
+        {
+            year: t('journey.milestones.urc.year'),
+            title: t('journey.milestones.urc.title'),
+            description: t('journey.milestones.urc.desc'),
+            icon: <Rocket size={20} />
         }
     ];
 
