@@ -10,9 +10,9 @@ export const translations = {
             contact: 'Contact',
         },
         hero: {
-            subtitle: 'UNIVERSITY ROVER CHALLENGE 2026',
-            title: 'EXPLORING THE',
-            titleHighlight: 'UNKNOWN',
+            subtitle: 'SEOUL TECH ROBOTICS & SPACE ENGINEERING TEAM',
+            title: 'OUR DREAM',
+            titleHighlight: 'YOUR FUTURE',
             description: 'We are Zenith Space, a team of passionate engineers from SeoulTech dedicated to pushing the boundaries of robotics and space exploration.',
             supportButton: 'Support Our Mission',
             downloadButton: 'Download Handbook',
@@ -29,6 +29,23 @@ export const translations = {
         journey: {
             title: 'Our Journey',
             subtitle: 'The Road to URC 2026',
+            milestones: {
+                founded: {
+                    year: '2024.10',
+                    title: 'Team Formation',
+                    desc: 'Zenith Space was founded by students passionate about space exploration.',
+                },
+                prototype: {
+                    year: '2025.06',
+                    title: 'First Prototype Zero_v1',
+                    desc: 'Completed the design and assembly of the first rover prototype "Zero_v1".',
+                },
+                award: {
+                    year: '2025.09',
+                    title: 'Defense Robot Competition',
+                    desc: 'Won the Excellence Award (3rd Place) at the Defense Robot Competition.',
+                },
+            },
         },
         rover: {
             title: 'The Rover',
@@ -43,13 +60,8 @@ export const translations = {
         team: {
             title: 'Our Team',
             subtitle: 'Meet the Crew',
-            roles: {
-                lead: 'Team Lead',
-                mechanical: 'Mechanical Lead',
-                software: 'Software Lead',
-                electrical: 'Electrical Lead',
-                science: 'Science Lead',
-            },
+            comingSoon: 'Coming Soon',
+            preparing: 'Preparing...',
         },
         sponsorship: {
             title: 'Sponsorship',
@@ -101,9 +113,9 @@ export const translations = {
             contact: '문의',
         },
         hero: {
-            subtitle: 'UNIVERSITY ROVER CHALLENGE 2026',
-            title: '미지의 세계를',
-            titleHighlight: '탐험하다',
+            subtitle: 'SEOUL TECH ROBOTICS & SPACE ENGINEERING TEAM',
+            title: 'OUR DREAM',
+            titleHighlight: 'YOUR FUTURE',
             description: '우리는 서울과학기술대학교의 열정적인 엔지니어들로 구성된 Zenith Space입니다. 로봇 공학과 우주 탐사의 한계를 뛰어넘기 위해 노력하고 있습니다.',
             supportButton: '후원하기',
             downloadButton: '핸드북 다운로드',
@@ -120,6 +132,23 @@ export const translations = {
         journey: {
             title: '우리의 여정',
             subtitle: 'URC 2026을 향한 길',
+            milestones: {
+                founded: {
+                    year: '2024.10',
+                    title: '팀 설립',
+                    desc: '우주 탐사에 열정을 가진 학생들이 모여 Zenith Space를 설립했습니다.',
+                },
+                prototype: {
+                    year: '2025.06',
+                    title: '첫 프로토타입 Zero_v1',
+                    desc: '첫 번째 로버 프로토타입 "Zero_v1"의 설계 및 조립을 완료했습니다.',
+                },
+                award: {
+                    year: '2025.09',
+                    title: '국방로봇경진대회',
+                    desc: '국방로봇경진대회에서 우수상(3위)을 수상했습니다.',
+                },
+            },
         },
         rover: {
             title: '로버',
@@ -134,13 +163,8 @@ export const translations = {
         team: {
             title: '팀원 소개',
             subtitle: '크루를 만나보세요',
-            roles: {
-                lead: '팀장',
-                mechanical: '기계 팀장',
-                software: '소프트웨어 팀장',
-                electrical: '전장 팀장',
-                science: '과학 팀장',
-            },
+            comingSoon: '준비 중',
+            preparing: '준비 중...',
         },
         sponsorship: {
             title: '후원',

@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Calendar, Flag, Trophy, Rocket } from 'lucide-react';
+import { Flag, Trophy, Rocket } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 const Journey = () => {
@@ -7,28 +7,22 @@ const Journey = () => {
 
     const milestones = [
         {
-            year: '2024.03',
-            title: 'Team Formation',
-            description: 'Zenith Space was founded by 5 mechanical engineering students.',
+            year: t('journey.milestones.founded.year'),
+            title: t('journey.milestones.founded.title'),
+            description: t('journey.milestones.founded.desc'),
             icon: <Flag size={20} />
         },
         {
-            year: '2024.08',
-            title: 'First Prototype',
-            description: 'Completed the design and assembly of the first rover prototype "Alpha".',
-            icon: <Trophy size={20} />
-        },
-        {
-            year: '2025.05',
-            title: 'KRC Participation',
-            description: 'Scheduled to participate in the Korea Rover Challenge.',
-            icon: <Calendar size={20} />
-        },
-        {
-            year: '2026.05',
-            title: 'URC 2026',
-            description: 'Aiming to compete in the University Rover Challenge in Utah, USA.',
+            year: t('journey.milestones.prototype.year'),
+            title: t('journey.milestones.prototype.title'),
+            description: t('journey.milestones.prototype.desc'),
             icon: <Rocket size={20} />
+        },
+        {
+            year: t('journey.milestones.award.year'),
+            title: t('journey.milestones.award.title'),
+            description: t('journey.milestones.award.desc'),
+            icon: <Trophy size={20} />
         }
     ];
 

@@ -4,12 +4,11 @@ import { useLanguage } from '../context/LanguageContext';
 const Team = () => {
     const { t } = useLanguage();
 
-    const leads = [
-        { name: 'Kim Min-su', role: t('team.roles.lead'), image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=200&h=200' },
-        { name: 'Lee Ji-won', role: t('team.roles.mechanical'), image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=200&h=200' },
-        { name: 'Park Jun-ho', role: t('team.roles.software'), image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200&h=200' },
-        { name: 'Choi Su-jin', role: t('team.roles.electrical'), image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=200&h=200' },
-    ];
+    const leads = Array(4).fill({
+        name: t('team.comingSoon'),
+        role: t('team.preparing'),
+        image: 'https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?auto=format&fit=crop&q=80&w=200&h=200'
+    });
 
     return (
         <section id="team" className="py-20 bg-zenith-main relative">

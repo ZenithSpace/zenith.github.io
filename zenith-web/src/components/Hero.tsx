@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Download } from 'lucide-react';
-import heroBg from '../assets/hero_bg.jpg';
+import heroBg from '../assets/Zero_v2.jpg';
 import { useLanguage } from '../context/LanguageContext';
 
 const Hero = () => {
