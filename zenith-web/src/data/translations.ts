@@ -123,7 +123,7 @@ export const translations = {
             subtitle2: 'ROBOTICS & AEROSPACE ENGINEERING TEAM',
             title: 'OUR DREAM,',
             titleHighlight: 'YOUR FUTURE',
-            description: '서울과학기술대학교의 열정적인 엔지니어들로 구성된 팀입니다. 로봇 공학과 우주 탐사의 한계를 뛰어넘기 위해 노력하고 있습니다.',
+            description: '우리는 서울과학기술대학교의 열정적인 엔지니어들로 구성된 팀입니다.\n로봇 공학과 우주 탐사의 한계를 뛰어넘기 위해 노력하고 있습니다.',
             supportButton: '후원하기',
             downloadButton: '핸드북 다운로드',
         },

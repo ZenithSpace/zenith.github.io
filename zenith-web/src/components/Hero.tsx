@@ -34,7 +34,7 @@ const Hero = () => {
                             {t('hero.titleHighlight')}
                         </span>
                     </h1>
-                    <p className="text-xl text-gray-300 max-w-2xl mx-auto mb-10 leading-relaxed">
+                    <p className="text-xl text-gray-300 max-w-2xl mx-auto mb-10 leading-relaxed whitespace-pre-line">
                         {t('hero.description')}
                     </p>
 
