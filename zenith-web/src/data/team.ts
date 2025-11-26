@@ -9,83 +9,99 @@ export const getTeamMembers = () => {
     const leads = [
         {
             name: "Yoongu Kang",
-            role: "Team Lead/CEO",
+            team: "Team Principal",
+            role: "CEO",
             image: "/assets/team/yoongu_kang.jpg"
         },
         {
             name: "Hangil Seo",
-            role: "F/W Team Lead/CTO",
+            team: "F/W Team Lead",
+            role: "CTO",
             image: "https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?auto=format&fit=crop&q=80&w=300&h=300"
         },
         {
             name: "Junghwan Lee",
-            role: "H/W Team/CFO",
+            team: "H/W Team",
+            role: "CFO",
             image: "https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?auto=format&fit=crop&q=80&w=300&h=300"
         },
         {
             name: "Jimin Song",
-            role: "H/W Team/Drivetrain Design",
+            team: "H/W Team",
+            role: "Drivetrain Design",
             image: "https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?auto=format&fit=crop&q=80&w=300&h=300"
         },
         {
             name: "Geuntaek Bae",
-            role: "H/W Team/Drivetrain Design",
+            team: "H/W Team",
+            role: "Drivetrain Design",
             image: "https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?auto=format&fit=crop&q=80&w=300&h=300"
         },
         {
             name: "Hohyun Kwak",
-            role: "H/W Team/Manipulator Design",
+            team: "H/W Team",
+            role: "Manipulator Design",
             image: "https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?auto=format&fit=crop&q=80&w=300&h=300"
         },
         {
             name: "Kyeonghyeon Kim",
-            role: "F/W Team/Manipulator Control",
+            team: "F/W Team",
+            role: "Manipulator Control",
             image: "https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?auto=format&fit=crop&q=80&w=300&h=300"
         },
         {
             name: "Mingu Kang",
-            role: "S/W Team/Global Path Planning",
+            team: "S/W Team",
+            role: "Global Path Planning",
             image: "https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?auto=format&fit=crop&q=80&w=300&h=300"
         },
         {
             name: "Yeongji Choi",
-            role: "S/W Team/Local Path Planning",
+            team: "S/W Team",
+            role: "Local Path Planning",
             image: "https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?auto=format&fit=crop&q=80&w=300&h=300"
         },
         {
             name: "Suhyun Kim",
-            role: "S/W Team/Image Processing/Communication",
+            team: "S/W Team",
+            role: "Image Processing/Communication",
             image: "https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?auto=format&fit=crop&q=80&w=300&h=300"
         },
         {
             name: "Gyeongho Choi",
-            role: "F/W Team/Power System Design",
+            team: "F/W Team",
+            role: "Power System Design",
             image: "https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?auto=format&fit=crop&q=80&w=300&h=300"
         },
         {
             name: "Daehoon Kang",
-            role: "H/W Team/Science Lab Design",
+            team: "H/W Team",
+            role: "Science Lab Design",
             image: "https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?auto=format&fit=crop&q=80&w=300&h=300"
         },
         {
             name: "Yongwon Seo",
-            role: "S/W Team/Science Team",
+            team: "S/W Team",
+            role: "Science Team",
             image: "https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?auto=format&fit=crop&q=80&w=300&h=300"
         },
         {
             name: "Chohyeon Yang",
-            role: "Science Team",
+            team: "Science Team",
+            role: "Researcher",
             image: "https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?auto=format&fit=crop&q=80&w=300&h=300"
         },
         {
             name: "Jinho Seo",
-            role: "Science Team",
+            team: "Science Team",
+            role: "Researcher",
             image: "https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?auto=format&fit=crop&q=80&w=300&h=300"
         },
         {
             name: "Be our Crew?",
-            role: "Join Zenith Space!",
-            image: "/assets/logo_icon.png" // Using logo for the 'Join Us' card if available, or placeholder
+            team: "Join Zenith Space!",
+            role: "Apply Now",
+            image: "/assets/logo_icon.png"
         }
     ];
 

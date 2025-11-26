@@ -205,7 +205,8 @@ const Team = () => {
                                 />
                             </div>
                             <h4 className="text-xl font-bold text-white mb-1 relative z-10">{member.name}</h4>
-                            <p className="text-zenith-sub text-sm relative z-10">{member.role}</p>
+                            <p className="text-zenith-sub font-medium text-sm relative z-10">{member.team}</p>
+                            <p className="text-gray-400 text-xs relative z-10">{member.role}</p>
                         </motion.div>
                     ))}
                 </motion.div>
