@@ -54,7 +54,7 @@ export const translations = {
             },
         },
         rover: {
-            title: 'The Rover',
+            title: 'Our Rover',
             subtitle: 'Zero_v2 Specification',
             specs: {
                 weight: 'Weight',
@@ -68,6 +68,14 @@ export const translations = {
             subtitle: 'Meet the Crew',
             comingSoon: 'Coming Soon',
             preparing: 'Preparing...',
+        },
+        gallery: {
+            title: 'Gallery',
+            subtitle: 'Moments of Zenith',
+        },
+        partners: {
+            title: 'Partners',
+            subtitle: 'Our Sponsors',
         },
         sponsorship: {
             title: 'Sponsorship',
@@ -184,7 +192,7 @@ export const translations = {
             },
         },
         rover: {
-            title: '로버',
+            title: 'Our Rover',
             subtitle: 'Zero_v2 Specification',
             specs: {
                 weight: '무게',
@@ -198,6 +206,14 @@ export const translations = {
             subtitle: '크루를 만나보세요',
             comingSoon: '준비 중',
             preparing: '준비 중...',
+        },
+        gallery: {
+            title: '갤러리',
+            subtitle: '제니스의 순간들',
+        },
+        partners: {
+            title: '파트너',
+            subtitle: '함께하는 분들',
         },
         sponsorship: {
             title: '후원',

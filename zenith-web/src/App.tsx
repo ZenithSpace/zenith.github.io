@@ -5,6 +5,8 @@ import About from './components/About';
 import Journey from './components/Journey';
 import Rover from './components/Rover';
 import Team from './components/Team';
+import Gallery from './components/Gallery';
+import Partners from './components/Partners';
 import Sponsorship from './components/Sponsorship';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -21,6 +23,8 @@ function App() {
         <Journey />
         <Rover />
         <Team />
+        <Gallery />
+        <Partners />
         <Sponsorship />
         <Contact />
         <Footer />

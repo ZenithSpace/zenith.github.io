@@ -17,6 +17,17 @@ const Rover = () => {
     return (
         <section id="rover" className="py-20 bg-[#050608] relative overflow-hidden">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                {/* Title Section - Centered at Top */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="text-center mb-16"
+                >
+                    <h2 className="text-zenith-sub font-bold tracking-widest uppercase mb-2">{t('rover.title')}</h2>
+                    <h3 className="text-4xl font-bold font-['Outfit']">{t('rover.subtitle')}</h3>
+                </motion.div>
+
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     {/* Rover Image */}
                     <motion.div
@@ -49,9 +60,6 @@ const Rover = () => {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                     >
-                        <h2 className="text-zenith-sub font-bold tracking-widest uppercase mb-2">{t('rover.title')}</h2>
-                        <h3 className="text-4xl font-bold font-['Outfit'] mb-8">{t('rover.subtitle')}</h3>
-
                         <div className="grid grid-cols-2 gap-6">
                             {specs.map((spec, index) => (
                                 <div key={index} className="glass-panel p-6 rounded-xl border border-white/10 hover:border-zenith-sub/50 transition-colors group">
