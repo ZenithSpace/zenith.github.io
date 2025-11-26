@@ -10,25 +10,29 @@ const Journey = () => {
             year: t('journey.milestones.founded.year'),
             title: t('journey.milestones.founded.title'),
             description: t('journey.milestones.founded.desc'),
-            icon: <Flag size={20} />
+            icon: <Flag size={20} />,
+            image: "/assets/journey/2024_founding.jpg"
         },
         {
             year: t('journey.milestones.prototype.year'),
             title: t('journey.milestones.prototype.title'),
             description: t('journey.milestones.prototype.desc'),
-            icon: <Rocket size={20} />
+            icon: <Rocket size={20} />,
+            image: "/assets/journey/2024_mvp.jpg"
         },
         {
             year: t('journey.milestones.award.year'),
             title: t('journey.milestones.award.title'),
             description: t('journey.milestones.award.desc'),
-            icon: <Trophy size={20} />
+            icon: <Trophy size={20} />,
+            image: "/assets/journey/2025_award.jpg"
         },
         {
             year: t('journey.milestones.urc.year'),
             title: t('journey.milestones.urc.title'),
             description: t('journey.milestones.urc.desc'),
-            icon: <Rocket size={20} />
+            icon: <Rocket size={20} />,
+            image: "/assets/journey/2026_urc.jpg"
         }
     ];
 
@@ -57,7 +61,7 @@ const Journey = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: index * 0.1 }}
-                                className={`flex flex-col md:flex-row items-center justify-between ${index % 2 === 0 ? 'md:flex-row-reverse' : ''
+                                className={`flex flex-col md:flex-row items-center justify-between group ${index % 2 === 0 ? 'md:flex-row-reverse' : ''
                                     }`}
                             >
                                 <div className="w-full md:w-5/12" />
@@ -66,6 +70,14 @@ const Journey = () => {
                                 </div>
                                 <div className="w-full md:w-5/12">
                                     <div className="glass-panel p-6 rounded-xl hover:border-zenith-sub/50 transition-colors">
+                                        <div className="w-full h-48 mb-4 rounded-lg overflow-hidden">
+                                            <img
+                                                src={milestone.image}
+                                                alt={milestone.title}
+                                                className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                                                loading="lazy"
+                                            />
+                                        </div>
                                         <div className="text-zenith-sub font-bold mb-2">{milestone.year}</div>
                                         <h4 className="text-xl font-bold text-white mb-2">{milestone.title}</h4>
                                         <p className="text-gray-400 text-sm">{milestone.description}</p>
