@@ -20,9 +20,8 @@ const Partners = () => {
 
     const [ref] = useMeasure();
     const xTranslation = useMotionValue(0);
-    const [mustFinish, setMustFinish] = useState(false);
-    const [rerender, setRerender] = useState(false);
     const [isHovered, setIsHovered] = useState(false);
+    const [isManuallyScrolling, setIsManuallyScrolling] = useState(false);
 
     // Card width (w-64 approx or auto) + gap
     // Let's assume fixed width for smoother calculation or measure it
@@ -32,45 +31,48 @@ const Partners = () => {
 
     useEffect(() => {
         let controls;
-        const finalPosition = -TOTAL_WIDTH;
 
-        if (isHovered) {
-            xTranslation.stop();
-            return;
-        }
+        const startLoop = (from) => {
+            const distance = Math.abs(-TOTAL_WIDTH - from);
+            const speed = 50; // Adjust speed
+            const duration = distance / speed;
 
-        if (mustFinish) {
-            controls = animate(xTranslation, [xTranslation.get(), finalPosition], {
+            controls = animate(xTranslation, [from, -TOTAL_WIDTH], {
                 ease: "linear",
-                duration: Math.abs(finalPosition - xTranslation.get()) / 50, // Speed
+                duration: duration,
                 onComplete: () => {
-                    setMustFinish(false);
-                    setRerender(!rerender);
-                },
+                    startLoop(0);
+                }
             });
+        };
+
+        if (!isHovered && !isManuallyScrolling) {
+            const current = xTranslation.get();
+            let wrapped = current % TOTAL_WIDTH;
+            if (wrapped > 0) wrapped -= TOTAL_WIDTH;
+
+            startLoop(wrapped);
         } else {
-            controls = animate(xTranslation, [xTranslation.get(), finalPosition], {
-                ease: "linear",
-                duration: Math.abs(finalPosition - xTranslation.get()) / 50, // Speed
-                repeat: Infinity,
-                repeatType: "loop",
-                repeatDelay: 0,
-            });
+            controls?.stop();
         }
 
         return () => controls?.stop();
-    }, [xTranslation, TOTAL_WIDTH, mustFinish, rerender, isHovered]);
+    }, [isHovered, isManuallyScrolling, TOTAL_WIDTH, xTranslation]);
 
     const handleManualScroll = (direction: 'left' | 'right') => {
+        setIsManuallyScrolling(true);
+
         const current = xTranslation.get();
         let target = current + (direction === 'left' ? CARD_WIDTH : -CARD_WIDTH);
 
         if (target > 0) {
+            const snap = -TOTAL_WIDTH + CARD_WIDTH;
             xTranslation.set(-TOTAL_WIDTH);
-            target = -TOTAL_WIDTH + CARD_WIDTH;
+            target = snap;
         } else if (target < -TOTAL_WIDTH * 2) {
+            const snap = -TOTAL_WIDTH - CARD_WIDTH;
             xTranslation.set(-TOTAL_WIDTH);
-            target = -TOTAL_WIDTH - CARD_WIDTH;
+            target = snap;
         }
 
         animate(xTranslation, target, {
@@ -78,7 +80,7 @@ const Partners = () => {
             stiffness: 300,
             damping: 30,
             onComplete: () => {
-                setMustFinish(true);
+                setIsManuallyScrolling(false);
             }
         });
     };
@@ -122,10 +124,7 @@ const Partners = () => {
                     ref={ref}
                     style={{ x: xTranslation, width: "max-content" }}
                     onHoverStart={() => setIsHovered(true)}
-                    onHoverEnd={() => {
-                        setIsHovered(false);
-                        setMustFinish(true);
-                    }}
+                    onHoverEnd={() => setIsHovered(false)}
                 >
                     {partners.map((partner, index) => (
                         <motion.a

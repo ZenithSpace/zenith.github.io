@@ -19,9 +19,8 @@ const Team = () => {
 
     const [ref] = useMeasure();
     const xTranslation = useMotionValue(0);
-    const [mustFinish, setMustFinish] = useState(false);
-    const [rerender, setRerender] = useState(false);
     const [isHovered, setIsHovered] = useState(false);
+    const [isManuallyScrolling, setIsManuallyScrolling] = useState(false);
 
     // Calculate the width of one set of items
     // We assume all items are same width (w-64 = 16rem = 256px) + gap (gap-8 = 2rem = 32px)
@@ -31,58 +30,73 @@ const Team = () => {
 
     useEffect(() => {
         let controls;
-        const finalPosition = -TOTAL_WIDTH;
 
-        if (isHovered) {
-            xTranslation.stop();
-            return;
-        }
+        const startLoop = (from) => {
+            // Ensure we are moving towards -TOTAL_WIDTH
+            // If from is already past -TOTAL_WIDTH (e.g. due to manual scroll overshoot), 
+            // we should wrap it first, but the recursive call handles the 0 reset.
+            // Here we just want to go from 'from' to '-TOTAL_WIDTH'.
 
-        if (mustFinish) {
-            controls = animate(xTranslation, [xTranslation.get(), finalPosition], {
+            // Calculate distance remaining to the end of the loop
+            const distance = Math.abs(-TOTAL_WIDTH - from);
+            // Maintain constant speed (pixels per second)
+            const speed = 50; // Adjust this value to change speed (higher = faster)
+            const duration = distance / speed;
+
+            controls = animate(xTranslation, [from, -TOTAL_WIDTH], {
                 ease: "linear",
-                duration: Math.abs(finalPosition - xTranslation.get()) / 50, // Speed
+                duration: duration,
                 onComplete: () => {
-                    setMustFinish(false);
-                    setRerender(!rerender);
-                },
+                    // Loop finished, reset to 0 and start again
+                    startLoop(0);
+                }
             });
+        };
+
+        if (!isHovered && !isManuallyScrolling) {
+            const current = xTranslation.get();
+            // Normalize current position to be within the loop range [0, -TOTAL_WIDTH]
+            // This prevents the "reverse" spin issue
+            let wrapped = current % TOTAL_WIDTH;
+            if (wrapped > 0) wrapped -= TOTAL_WIDTH; // Should generally be negative
+
+            startLoop(wrapped);
         } else {
-            controls = animate(xTranslation, [xTranslation.get(), finalPosition], {
-                ease: "linear",
-                duration: Math.abs(finalPosition - xTranslation.get()) / 50, // Speed
-                repeat: Infinity,
-                repeatType: "loop",
-                repeatDelay: 0,
-            });
+            controls?.stop();
         }
 
         return () => controls?.stop();
-    }, [xTranslation, TOTAL_WIDTH, mustFinish, rerender, isHovered]);
+    }, [isHovered, isManuallyScrolling, TOTAL_WIDTH, xTranslation]);
 
     const handleManualScroll = (direction: 'left' | 'right') => {
+        setIsManuallyScrolling(true);
+
         const current = xTranslation.get();
         let target = current + (direction === 'left' ? CARD_WIDTH : -CARD_WIDTH);
 
-        // Boundary checks for manual scrolling to keep it smooth
-        // If we move too far left (positive), snap back to end
+        // We don't strictly need boundary checks for the animation target itself 
+        // because the useEffect will wrap it correctly when it resumes.
+        // However, to prevent scrolling into empty space if user clicks fast:
+
+        // If we are too far right (positive), snap to equivalent negative position
         if (target > 0) {
+            const snap = -TOTAL_WIDTH + CARD_WIDTH;
             xTranslation.set(-TOTAL_WIDTH);
-            target = -TOTAL_WIDTH + CARD_WIDTH;
+            target = snap;
         }
-        // If we move too far right (negative), snap back to start
+        // If we are too far left (beyond 2 sets), snap back
         else if (target < -TOTAL_WIDTH * 2) {
+            const snap = -TOTAL_WIDTH - CARD_WIDTH;
             xTranslation.set(-TOTAL_WIDTH);
-            target = -TOTAL_WIDTH - CARD_WIDTH;
+            target = snap;
         }
 
-        // Animate to the new position quickly
         animate(xTranslation, target, {
             type: "spring",
             stiffness: 300,
             damping: 30,
             onComplete: () => {
-                setMustFinish(true); // Resume auto-scroll naturally
+                setIsManuallyScrolling(false);
             }
         });
     };
@@ -127,10 +141,7 @@ const Team = () => {
                     ref={ref}
                     style={{ x: xTranslation, width: "max-content" }}
                     onHoverStart={() => setIsHovered(true)}
-                    onHoverEnd={() => {
-                        setIsHovered(false);
-                        setMustFinish(true); // Ensure we finish current loop before restarting infinite
-                    }}
+                    onHoverEnd={() => setIsHovered(false)}
                 >
                     {carouselItems.map((member, index) => (
                         <div
