@@ -181,7 +181,7 @@ const Team = () => {
                 <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-zenith-main to-transparent z-10 pointer-events-none" />
 
                 <motion.div
-                    className="flex gap-8 px-8"
+                    className="flex gap-8 px-8 py-20"
                     ref={ref}
                     style={{ x: xTranslation, width: "max-content" }}
                     onHoverStart={() => setIsHovered(true)}
@@ -201,7 +201,7 @@ const Team = () => {
                                 <img
                                     src={member.image}
                                     alt={member.name}
-                                    className="w-full h-full object-cover"
+                                    className="w-full h-full object-cover object-top"
                                 />
                             </div>
                             <h4 className="text-xl font-bold text-white mb-1 relative z-10">{member.name}</h4>

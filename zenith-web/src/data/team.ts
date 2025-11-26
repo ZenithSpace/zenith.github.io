@@ -6,12 +6,14 @@
 // For simplicity and consistency with the current request, let's export a function that takes the translation function 't'.
 
 export const getTeamMembers = (t: (key: string) => string) => {
-    // Placeholder data
-    const leads = Array(8).fill({
-        name: t('team.comingSoon'),
-        role: t('team.preparing'),
-        image: '/assets/team/yoongu_kang.jpg'
-    });
+    const leads = [
+        {
+            name: "Yoongu Kang",
+            role: "Team Lead/CEO",
+            image: "/assets/team/yoongu_kang.jpg"
+        },
+        // Add more team members here
+    ];
 
     return leads;
 };
