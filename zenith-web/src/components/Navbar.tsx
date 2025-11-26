@@ -23,6 +23,8 @@ const Navbar = () => {
     { name: t('nav.journey'), href: '#journey' },
     { name: t('nav.rover'), href: '#rover' },
     { name: t('nav.team'), href: '#team' },
+    { name: t('nav.gallery'), href: '#gallery' },
+    { name: t('nav.partners'), href: '#partners' },
     { name: t('nav.sponsorship'), href: '#sponsorship' },
     { name: t('nav.contact'), href: '#contact' },
   ];
@@ -44,9 +46,9 @@ const Navbar = () => {
             <span className="text-2xl font-bold font-['Outfit'] tracking-wider text-white">ZENITH SPACE</span>
           </div>
 
-          {/* Desktop Menu */}
-          <div className="hidden lg:block">
-            <div className="ml-10 flex items-baseline space-x-8 items-center">
+          {/* Desktop Menu - Changed lg to xl for earlier hamburger switch */}
+          <div className="hidden xl:block">
+            <div className="ml-10 flex items-baseline space-x-6 items-center">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
@@ -68,8 +70,8 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* Mobile Menu Button */}
-          <div className="lg:hidden flex items-center gap-4">
+          {/* Mobile Menu Button - Changed lg to xl */}
+          <div className="xl:hidden flex items-center gap-4">
             <button
               onClick={toggleLanguage}
               className="text-gray-300 hover:text-white p-2"
@@ -86,14 +88,14 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu Dropdown */}
+      {/* Mobile Menu Dropdown - Changed lg to xl */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-zenith-main border-b border-white/10 overflow-hidden"
+            className="xl:hidden bg-zenith-main border-b border-white/10 overflow-hidden"
           >
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
               {navLinks.map((link) => (

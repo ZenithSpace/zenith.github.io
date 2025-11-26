@@ -5,20 +5,24 @@ import { useLanguage } from '../context/LanguageContext';
 
 const Gallery = () => {
     const { t } = useLanguage();
+
+    const images = [
+        '/assets/gallery/IMG_4114.JPG',
+        '/assets/gallery/KakaoTalk_20250914_092643335.jpg',
+        '/assets/gallery/KakaoTalk_20251126_160118164.jpg',
+        '/assets/gallery/KakaoTalk_20251126_160118164_01.jpg',
+        '/assets/gallery/KakaoTalk_20251126_160118164_02.jpg',
+        '/assets/gallery/KakaoTalk_20251126_160118164_03.jpg',
+        '/assets/gallery/모자이크.png'
+    ];
+
     const [currentIndex, setCurrentIndex] = useState(0);
     const [direction, setDirection] = useState(0);
-
-    // Placeholder images - user will replace these
-    const images = [
-        'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1200&h=600',
-        'https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&q=80&w=1200&h=600',
-        'https://images.unsplash.com/photo-1541185933-710f50746747?auto=format&fit=crop&q=80&w=1200&h=600',
-    ];
 
     useEffect(() => {
         const timer = setInterval(() => {
             nextSlide();
-        }, 5000); // Auto-slide every 5 seconds
+        }, 5000);
 
         return () => clearInterval(timer);
     }, [currentIndex]);
@@ -51,19 +55,21 @@ const Gallery = () => {
     };
 
     return (
-        <section id="gallery" className="py-20 bg-[#0A0B10] relative overflow-hidden">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section id="gallery" className="py-20 bg-zenith-main relative overflow-hidden">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="text-center mb-12"
+                    className="text-center"
                 >
                     <h2 className="text-zenith-sub font-bold tracking-widest uppercase mb-2">{t('gallery.title')}</h2>
                     <h3 className="text-4xl font-bold font-['Outfit']">{t('gallery.subtitle')}</h3>
                 </motion.div>
+            </div>
 
-                <div className="relative w-full aspect-[16/9] md:aspect-[21/9] rounded-2xl overflow-hidden border border-white/10 group">
+            <div className="relative max-w-5xl mx-auto px-4 h-[400px] md:h-[600px]">
+                <div className="relative w-full h-full overflow-hidden rounded-2xl border border-white/10 bg-black/50">
                     <AnimatePresence initial={false} custom={direction}>
                         <motion.img
                             key={currentIndex}
@@ -78,19 +84,20 @@ const Gallery = () => {
                                 opacity: { duration: 0.2 }
                             }}
                             className="absolute w-full h-full object-cover"
+                            alt={`Gallery image ${currentIndex + 1}`}
                         />
                     </AnimatePresence>
 
                     {/* Navigation Buttons */}
                     <button
+                        className="absolute left-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/50 text-white hover:bg-zenith-sub hover:text-black transition-colors z-10"
                         onClick={prevSlide}
-                        className="absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/50 text-white hover:bg-zenith-sub transition-colors backdrop-blur-sm opacity-0 group-hover:opacity-100 z-10"
                     >
                         <ChevronLeft size={24} />
                     </button>
                     <button
+                        className="absolute right-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/50 text-white hover:bg-zenith-sub hover:text-black transition-colors z-10"
                         onClick={nextSlide}
-                        className="absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/50 text-white hover:bg-zenith-sub transition-colors backdrop-blur-sm opacity-0 group-hover:opacity-100 z-10"
                     >
                         <ChevronRight size={24} />
                     </button>
@@ -104,7 +111,7 @@ const Gallery = () => {
                                     setDirection(index > currentIndex ? 1 : -1);
                                     setCurrentIndex(index);
                                 }}
-                                className={`w-2 h-2 rounded-full transition-all duration-300 ${index === currentIndex ? 'bg-zenith-sub w-6' : 'bg-white/50 hover:bg-white'
+                                className={`w-2 h-2 rounded-full transition-all ${index === currentIndex ? 'bg-zenith-sub w-6' : 'bg-white/50 hover:bg-white'
                                     }`}
                             />
                         ))}
