@@ -101,7 +101,7 @@ export const getTeamMembers = () => {
             name: "Be Our Crew!",
             team: "Join Zenith Space!",
             role: "Join the Mission!",
-            image: "/assets/logo_icon.png?v=2"
+            image: "/assets/logo_icon.png"
         }
     ];
 
