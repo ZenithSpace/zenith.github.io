@@ -4,11 +4,14 @@
 
 export const getTeamMembers = (t: (key: string) => string) => {
     // Placeholder data
-    const leads = Array(8).fill({
-        name: t('team.comingSoon'),
-        role: t('team.preparing'),
-        image: 'https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?auto=format&fit=crop&q=80&w=300&h=300'
-    });
+    const leads = [
+        {
+            name: "강윤구",
+            role: "Team Lead/CEO",
+            image: "/assets/team/강윤구.jpg"
+        },
+        // Add more team members here
+    ];
 
     return leads;
 };
