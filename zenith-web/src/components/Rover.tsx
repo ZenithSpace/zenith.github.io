@@ -23,14 +23,24 @@ const Rover = () => {
                         initial={{ opacity: 0, x: -50 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        className="relative"
+                        className="relative group"
                     >
+                        {/* Glow Effect */}
                         <div className="absolute inset-0 bg-zenith-sub/20 blur-[100px] rounded-full" />
-                        <img
-                            src={roverImage}
-                            alt="Mars Rover Prototype"
-                            className="relative z-10 w-full h-auto drop-shadow-2xl hover:scale-105 transition-transform duration-500"
-                        />
+
+                        {/* Decorative Rings/Corners */}
+                        <div className="absolute -top-4 -left-4 w-24 h-24 border-t-2 border-l-2 border-zenith-sub rounded-tl-3xl opacity-60 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500" />
+                        <div className="absolute -bottom-4 -right-4 w-24 h-24 border-b-2 border-r-2 border-zenith-sub rounded-br-3xl opacity-60 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500" />
+
+                        {/* Image Container */}
+                        <div className="relative rounded-2xl overflow-hidden border border-white/10">
+                            <div className="absolute inset-0 bg-zenith-sub/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20" />
+                            <img
+                                src={roverImage}
+                                alt="Mars Rover Prototype"
+                                className="relative z-10 w-full h-auto transform group-hover:scale-105 transition-transform duration-700"
+                            />
+                        </div>
                     </motion.div>
 
                     {/* Specs */}
