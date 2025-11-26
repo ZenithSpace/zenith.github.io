@@ -41,7 +41,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center gap-3 cursor-pointer">
-            <img src="/assets/logo_icon.png" alt="Zenith Space Logo" className="h-14 w-auto" />
+            <img src="/assets/logo_icon.webp" alt="Zenith Space Logo" className="h-14 w-auto" />
             <span className="text-2xl font-bold font-['Outfit'] tracking-wider text-white">ZENITH SPACE</span>
           </div>
 

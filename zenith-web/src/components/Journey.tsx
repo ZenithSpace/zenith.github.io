@@ -11,28 +11,28 @@ const Journey = () => {
             title: t('journey.milestones.founded.title'),
             description: t('journey.milestones.founded.desc'),
             icon: <Flag size={20} />,
-            image: "/assets/journey/2024_founding.jpg"
+            image: "/assets/journey/2024_founding.webp"
         },
         {
             year: t('journey.milestones.prototype.year'),
             title: t('journey.milestones.prototype.title'),
             description: t('journey.milestones.prototype.desc'),
             icon: <Rocket size={20} />,
-            image: "/assets/journey/2024_mvp.jpg"
+            image: "/assets/journey/2024_mvp.webp"
         },
         {
             year: t('journey.milestones.award.year'),
             title: t('journey.milestones.award.title'),
             description: t('journey.milestones.award.desc'),
             icon: <Trophy size={20} />,
-            image: "/assets/journey/2025_award.jpg"
+            image: "/assets/journey/2025_award.webp"
         },
         {
             year: t('journey.milestones.urc.year'),
             title: t('journey.milestones.urc.title'),
             description: t('journey.milestones.urc.desc'),
             icon: <Rocket size={20} />,
-            image: "/assets/journey/2026_urc.jpg"
+            image: "/assets/journey/2026_urc.webp"
         }
     ];
 

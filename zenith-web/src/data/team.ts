@@ -11,7 +11,7 @@ export const getTeamMembers = () => {
             name: "Yoongu Kang",
             team: "Team Principal",
             role: "CEO",
-            image: "/assets/team/yoongu_kang.jpg"
+            image: "/assets/team/yoongu_kang.webp"
         },
         {
             name: "Hangil Seo",
@@ -107,7 +107,7 @@ export const getTeamMembers = () => {
             name: "Be Our Crew!",
             team: "Join Zenith Space!",
             role: "Join the Mission!",
-            image: "/assets/logo_icon.png"
+            image: "/assets/logo_icon.webp"
         }
     ];
 

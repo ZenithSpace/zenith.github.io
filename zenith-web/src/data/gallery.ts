@@ -1,8 +1,8 @@
 export const galleryImages: string[] = [
-    '/assets/gallery/1.jpg',
-    '/assets/gallery/2.png',
-    '/assets/gallery/3.jpg',
-    '/assets/gallery/4.jpg',
-    '/assets/gallery/5.jpg',
-    '/assets/gallery/6.jpg'
+    '/assets/gallery/1.webp',
+    '/assets/gallery/2.webp',
+    '/assets/gallery/3.webp',
+    '/assets/gallery/4.webp',
+    '/assets/gallery/5.webp',
+    '/assets/gallery/6.webp'
 ];
