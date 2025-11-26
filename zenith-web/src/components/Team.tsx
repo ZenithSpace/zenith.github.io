@@ -6,7 +6,7 @@ import useMeasure from 'react-use-measure';
 
 const Team = () => {
     const { t } = useLanguage();
-
+    
     // Placeholder data
     const leads = Array(8).fill({
         name: t('team.comingSoon'),
@@ -23,106 +23,149 @@ const Team = () => {
     const [isManuallyScrolling, setIsManuallyScrolling] = useState(false);
 
     // Calculate the width of one set of items
-}, [isHovered, isManuallyScrolling, TOTAL_WIDTH, xTranslation]);
+    // We assume all items are same width (w-64 = 16rem = 256px) + gap (gap-8 = 2rem = 32px)
+    // Total item width = 288px
+    const CARD_WIDTH = 288;
+    const TOTAL_WIDTH = leads.length * CARD_WIDTH;
 
-const handleManualScroll = (direction: 'left' | 'right') => {
-    setIsManuallyScrolling(true);
+    useEffect(() => {
+        let controls: any;
 
-    const current = xTranslation.get();
-    let target = current + (direction === 'left' ? CARD_WIDTH : -CARD_WIDTH);
+        const startLoop = (from: number) => {
+            // Ensure we are moving towards -TOTAL_WIDTH
+            // If from is already past -TOTAL_WIDTH (e.g. due to manual scroll overshoot), 
+            // we should wrap it first, but the recursive call handles the 0 reset.
+            // Here we just want to go from 'from' to '-TOTAL_WIDTH'.
+            
+            // Calculate distance remaining to the end of the loop
+            const distance = Math.abs(-TOTAL_WIDTH - from);
+            // Maintain constant speed (pixels per second)
+            const speed = 50; // Adjust this value to change speed (higher = faster)
+            const duration = distance / speed;
 
-    // We don't strictly need boundary checks for the animation target itself 
-    // because the useEffect will wrap it correctly when it resumes.
-    // However, to prevent scrolling into empty space if user clicks fast:
+            controls = animate(xTranslation, [from, -TOTAL_WIDTH], {
+                ease: "linear",
+                duration: duration,
+                onComplete: () => {
+                    // Loop finished, reset to 0 and start again
+                    startLoop(0);
+                }
+            });
+        };
 
-    // If we are too far right (positive), snap to equivalent negative position
-    if (target > 0) {
-        const snap = -TOTAL_WIDTH + CARD_WIDTH;
-        xTranslation.set(-TOTAL_WIDTH);
-        target = snap;
-    }
-    // If we are too far left (beyond 2 sets), snap back
-    else if (target < -TOTAL_WIDTH * 2) {
-        const snap = -TOTAL_WIDTH - CARD_WIDTH;
-        xTranslation.set(-TOTAL_WIDTH);
-        target = snap;
-    }
-
-    animate(xTranslation, target, {
-        type: "spring",
-        stiffness: 300,
-        damping: 30,
-        onComplete: () => {
-            setIsManuallyScrolling(false);
+        if (!isHovered && !isManuallyScrolling) {
+            const current = xTranslation.get();
+            // Normalize current position to be within the loop range [0, -TOTAL_WIDTH]
+            // This prevents the "reverse" spin issue
+            let wrapped = current % TOTAL_WIDTH;
+            if (wrapped > 0) wrapped -= TOTAL_WIDTH; // Should generally be negative
+            
+            startLoop(wrapped);
+        } else {
+            controls?.stop();
         }
-    });
-};
 
-return (
-    <section id="team" className="py-20 bg-zenith-main relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
-            <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="text-center relative"
-            >
-                <h2 className="text-zenith-sub font-bold tracking-widest uppercase mb-2">{t('team.title')}</h2>
-                <h3 className="text-4xl font-bold font-['Outfit']">{t('team.subtitle')}</h3>
+        return () => controls?.stop();
+    }, [isHovered, isManuallyScrolling, TOTAL_WIDTH, xTranslation]);
 
-                {/* Navigation Buttons */}
-                <div className="absolute top-1/2 -translate-y-1/2 right-0 hidden md:flex gap-2">
-                    <button
-                        onClick={() => handleManualScroll('left')}
-                        className="p-2 rounded-full bg-white/5 hover:bg-zenith-sub hover:text-white transition-colors border border-white/10 z-20"
-                    >
-                        <ChevronLeft size={24} />
-                    </button>
-                    <button
-                        onClick={() => handleManualScroll('right')}
-                        className="p-2 rounded-full bg-white/5 hover:bg-zenith-sub hover:text-white transition-colors border border-white/10 z-20"
-                    >
-                        <ChevronRight size={24} />
-                    </button>
-                </div>
-            </motion.div>
-        </div>
+    const handleManualScroll = (direction: 'left' | 'right') => {
+        setIsManuallyScrolling(true);
+        
+        const current = xTranslation.get();
+        let target = current + (direction === 'left' ? CARD_WIDTH : -CARD_WIDTH);
 
-        {/* Carousel Container */}
-        <div className="relative w-full overflow-hidden">
-            <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-zenith-main to-transparent z-10 pointer-events-none" />
-            <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-zenith-main to-transparent z-10 pointer-events-none" />
+        // We don't strictly need boundary checks for the animation target itself 
+        // because the useEffect will wrap it correctly when it resumes.
+        // However, to prevent scrolling into empty space if user clicks fast:
+        
+        // If we are too far right (positive), snap to equivalent negative position
+        if (target > 0) {
+             const snap = -TOTAL_WIDTH + CARD_WIDTH;
+             xTranslation.set(-TOTAL_WIDTH);
+             target = snap;
+        }
+        // If we are too far left (beyond 2 sets), snap back
+        else if (target < -TOTAL_WIDTH * 2) {
+             const snap = -TOTAL_WIDTH - CARD_WIDTH;
+             xTranslation.set(-TOTAL_WIDTH);
+             target = snap;
+        }
 
-            <motion.div
-                className="flex gap-8 px-8"
-                ref={ref}
-                style={{ x: xTranslation, width: "max-content" }}
-                onHoverStart={() => setIsHovered(true)}
-                onHoverEnd={() => setIsHovered(false)}
-            >
-                {carouselItems.map((member, index) => (
-                    <div
-                        key={index}
-                        className="w-64 flex-shrink-0 group relative"
-                    >
-                        <div className="relative overflow-hidden rounded-2xl aspect-square mb-4 border border-white/10">
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
-                            <img
-                                src={member.image}
-                                alt={member.name}
-                                className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-110"
-                            />
-                        </div>
-                        <div className="text-center">
-                            <h4 className="text-xl font-bold text-white mb-1">{member.name}</h4>
-                            <p className="text-zenith-sub text-sm uppercase tracking-wider">{member.role}</p>
-                        </div>
+        animate(xTranslation, target, {
+            type: "spring",
+            stiffness: 300,
+            damping: 30,
+            onComplete: () => {
+                setIsManuallyScrolling(false);
+            }
+        });
+    };
+
+    return (
+        <section id="team" className="py-20 bg-zenith-main relative overflow-hidden">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="text-center relative"
+                >
+                    <h2 className="text-zenith-sub font-bold tracking-widest uppercase mb-2">{t('team.title')}</h2>
+                    <h3 className="text-4xl font-bold font-['Outfit']">{t('team.subtitle')}</h3>
+
+                    {/* Navigation Buttons */}
+                    <div className="absolute top-1/2 -translate-y-1/2 right-0 hidden md:flex gap-2">
+                        <button
+                            onClick={() => handleManualScroll('left')}
+                            className="p-2 rounded-full bg-white/5 hover:bg-zenith-sub hover:text-white transition-colors border border-white/10 z-20"
+                        >
+                            <ChevronLeft size={24} />
+                        </button>
+                        <button
+                            onClick={() => handleManualScroll('right')}
+                            className="p-2 rounded-full bg-white/5 hover:bg-zenith-sub hover:text-white transition-colors border border-white/10 z-20"
+                        >
+                            <ChevronRight size={24} />
+                        </button>
                     </div>
-                ))}
-            </motion.div>
-        </div>
-    </section>
-);
+                </motion.div>
+            </div>
+
+            {/* Carousel Container */}
+            <div className="relative w-full overflow-hidden">
+                <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-zenith-main to-transparent z-10 pointer-events-none" />
+                <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-zenith-main to-transparent z-10 pointer-events-none" />
+
+                <motion.div
+                    className="flex gap-8 px-8"
+                    ref={ref}
+                    style={{ x: xTranslation, width: "max-content" }}
+                    onHoverStart={() => setIsHovered(true)}
+                    onHoverEnd={() => setIsHovered(false)}
+                >
+                    {carouselItems.map((member, index) => (
+                        <div
+                            key={index}
+                            className="w-64 flex-shrink-0 group relative"
+                        >
+                            <div className="relative overflow-hidden rounded-2xl aspect-square mb-4 border border-white/10">
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
+                                <img
+                                    src={member.image}
+                                    alt={member.name}
+                                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-110"
+                                />
+                            </div>
+                            <div className="text-center">
+                                <h4 className="text-xl font-bold text-white mb-1">{member.name}</h4>
+                                <p className="text-zenith-sub text-sm uppercase tracking-wider">{member.role}</p>
+                            </div>
+                        </div>
+                    ))}
+                </motion.div>
+            </div>
+        </section>
+    );
 };
 
 export default Team;
