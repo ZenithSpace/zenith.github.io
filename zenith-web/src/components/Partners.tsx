@@ -130,7 +130,7 @@ const Partners = () => {
                             href={partner.link}
                             target={partner.link.startsWith('http') ? "_blank" : "_self"}
                             rel={partner.link.startsWith('http') ? "noopener noreferrer" : ""}
-                            className="group relative flex items-center justify-center p-6 bg-white rounded-xl border border-white/10 w-64 flex-shrink-0 z-10 h-32"
+                            className="group relative flex items-center justify-center p-6 bg-white/80 backdrop-blur-md rounded-xl border border-white/20 w-64 flex-shrink-0 z-10 h-32 transition-all duration-300 hover:bg-white/90"
                         >
                             {/* Inner Tint removed */}
 
