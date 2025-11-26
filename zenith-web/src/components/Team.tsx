@@ -101,8 +101,54 @@ const Team = () => {
         });
     };
 
+    // Sparkle Halo Component (Inline for simplicity)
+    const SparkleHalo = () => {
+        return (
+            <div className="absolute -inset-2 -z-10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+                {/* 1. The Subtle Halo (Outer Glow) - Gold */}
+                <div
+                    className="absolute inset-0 rounded-2xl blur-xl opacity-30 transition-all duration-500"
+                    style={{ backgroundColor: '#FFBB00' }}
+                />
+
+                {/* 2. Twinkling Particles */}
+                {[...Array(10)].map((_, i) => {
+                    const side = Math.floor(Math.random() * 4);
+                    let top = '0%', left = '0%';
+
+                    switch (side) {
+                        case 0: top = Math.random() * 10 - 5 + '%'; left = Math.random() * 100 + '%'; break;
+                        case 1: top = Math.random() * 100 + '%'; left = Math.random() * 10 + 95 + '%'; break;
+                        case 2: top = Math.random() * 10 + 95 + '%'; left = Math.random() * 100 + '%'; break;
+                        case 3: top = Math.random() * 100 + '%'; left = Math.random() * 10 - 5 + '%'; break;
+                    }
+
+                    return (
+                        <motion.div
+                            key={i}
+                            className="absolute w-1 h-1 rounded-full bg-zenith-sub shadow-[0_0_5px_#FFBB00]"
+                            style={{ top, left }}
+                            animate={{
+                                opacity: [0, 1, 0],
+                                scale: [0, 1.5, 0],
+                                x: [0, (Math.random() - 0.5) * 20],
+                                y: [0, (Math.random() - 0.5) * 20],
+                            }}
+                            transition={{
+                                duration: 1.5 + Math.random() * 2,
+                                repeat: Infinity,
+                                delay: Math.random() * 2,
+                                ease: "easeInOut"
+                            }}
+                        />
+                    );
+                })}
+            </div>
+        );
+    };
+
     return (
-        <section id="team" className="py-20 bg-zenith-main relative overflow-hidden">
+        <section id="team" className="py-20 bg-zenith-main border-b border-white/5 relative overflow-hidden">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -144,23 +190,25 @@ const Team = () => {
                     onHoverEnd={() => setIsHovered(false)}
                 >
                     {carouselItems.map((member, index) => (
-                        <div
+                        <motion.div
                             key={index}
-                            className="w-64 flex-shrink-0 group relative z-10"
+                            className="group relative flex flex-col items-center justify-center p-6 bg-white/10 rounded-xl border border-white/10 hover:border-zenith-sub/50 transition-all duration-300 w-64 flex-shrink-0 z-10 backdrop-blur-sm"
                         >
-                            <div className="relative overflow-hidden rounded-2xl aspect-square mb-4 border border-white/10">
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
+                            <SparkleHalo />
+
+                            {/* Inner Tint */}
+                            <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-300 pointer-events-none bg-zenith-sub rounded-xl" />
+
+                            <div className="w-32 h-32 rounded-full overflow-hidden mb-4 border-2 border-white/20 group-hover:border-zenith-sub transition-colors duration-300 relative z-10">
                                 <img
                                     src={member.image}
                                     alt={member.name}
-                                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-110"
+                                    className="w-full h-full object-cover"
                                 />
                             </div>
-                            <div className="text-center">
-                                <h4 className="text-xl font-bold text-white mb-1">{member.name}</h4>
-                                <p className="text-zenith-sub text-sm uppercase tracking-wider">{member.role}</p>
-                            </div>
-                        </div>
+                            <h4 className="text-xl font-bold text-white mb-1 relative z-10">{member.name}</h4>
+                            <p className="text-zenith-sub text-sm relative z-10">{member.role}</p>
+                        </motion.div>
                     ))}
                 </motion.div>
             </div>

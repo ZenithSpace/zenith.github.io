@@ -78,7 +78,7 @@ export const translations = {
         partners: {
             title: 'Partners',
             subtitle: 'Our Sponsors',
-            placeholder: 'Be our next partner',
+            placeholder: 'Be our next partner!',
         },
         sponsorship: {
             title: 'Sponsorship',
@@ -157,18 +157,18 @@ export const translations = {
             subtitle2: 'ROBOTICS & AEROSPACE ENGINEERING TEAM',
             title: 'OUR DREAM,',
             titleHighlight: 'YOUR FUTURE',
-            description: '우리는 서울과학기술대학교의 열정적인 엔지니어들로 구성된 팀입니다.\n로봇 공학과 우주 탐사의 한계를 뛰어넘기 위해 노력하고 있습니다.',
+            description: '서울과학기술대학교의 열정적인 엔지니어들이 모여,\n로봇 공학과 우주 탐사의 새로운 지평을 엽니다.',
             supportButton: '후원하기',
             downloadButton: '핸드북 다운로드',
         },
         about: {
             title: '팀 소개',
             missionTitle: '우리의 미션',
-            missionDesc: '심우주 탐사 임무에서 우주비행사를 보조할 수 있는 차세대 화성 로버를 설계하고 제작하는 것입니다.',
+            missionDesc: '심우주 탐사에서 우주비행사를 돕는 차세대 화성 로버를 설계하고 제작합니다.',
             visionTitle: '우리의 비전',
-            visionDesc: '유인탐사의 한계를 극복하고 인류의 영역을 확장하며 미래세대와 가치를 공유합니다.',
+            visionDesc: '유인 탐사의 한계를 넘어 인류의 영역을 확장하며, 미래 세대와 그 가치를 나눕니다.',
             historyTitle: '우리의 역사',
-            historyDesc: '2024년에 설립된 Zenith Space는 캡스톤 디자인 팀에서 시작하여 완전한 로봇 팀으로 빠르게 성장했습니다.',
+            historyDesc: '2024년 캡스톤 디자인 팀으로 시작한 Zenith Space는, 이제 완전한 로봇 팀으로 빠르게 성장했습니다.',
         },
         journey: {
             title: '우리의 여정',
@@ -177,22 +177,22 @@ export const translations = {
                 founded: {
                     year: '2024.10',
                     title: '팀 설립',
-                    desc: '우주 탐사에 열정을 가진 5명의 학생들이 모여 Zenith Space를 설립했습니다.',
+                    desc: '우주 탐사를 향한 열정으로 뭉친 5명의 학생들이 Zenith Space를 시작했습니다.',
                 },
                 prototype: {
                     year: '2025.06',
                     title: '첫 프로토타입 Zero_v1',
-                    desc: '첫 번째 로버 프로토타입 "Zero_v1"의 설계 및 조립을 완료했습니다.',
+                    desc: '첫 번째 로버 \'Zero_v1\'의 설계와 조립을 성공적으로 마쳤습니다.',
                 },
                 award: {
                     year: '2025.09',
                     title: '국방로봇경진대회',
-                    desc: '국방로봇경진대회에서 우수상(3위)을 수상했습니다.',
+                    desc: '국방로봇경진대회 우수상(3위) 수상으로 기술력을 입증했습니다.',
                 },
                 urc: {
                     year: '2026.05',
                     title: 'URC 2026',
-                    desc: '미국 유타주에서 열리는 University Rover Challenge 참가를 준비하고 있습니다.',
+                    desc: '미국 유타주에서 열리는 URC 2026 참가를 목표로 전력을 다하고 있습니다.',
                 },
             },
         },
@@ -208,7 +208,7 @@ export const translations = {
         },
         team: {
             title: '팀원 소개',
-            subtitle: '크루를 만나보세요',
+            subtitle: 'Zenith의 크루들',
             comingSoon: '준비 중',
             preparing: '준비 중...',
         },
@@ -218,12 +218,12 @@ export const translations = {
         },
         partners: {
             title: '파트너',
-            subtitle: '함께하는 분들',
-            placeholder: '다음 파트너가 되어주세요',
+            subtitle: '든든한 파트너',
+            placeholder: '다음 파트너가 되어주세요!',
         },
         sponsorship: {
             title: '후원',
-            subtitle: '파트너가 되어주세요',
+            subtitle: 'Zenith와 함께하세요',
             tiers: {
                 affiliate: {
                     name: 'Affiliate',
@@ -254,7 +254,7 @@ export const translations = {
         },
         contact: {
             title: '문의하기',
-            subtitle: '연락주세요',
+            subtitle: '편하게 문의주세요',
             connect: '연결하기',
             desc: '로버나 후원 기회에 대해 궁금한 점이 있으신가요? 언제든지 연락주세요!',
             form: {
