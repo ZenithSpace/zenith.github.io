@@ -18,7 +18,7 @@ const Partners = () => {
     // Duplicate list for infinite scroll effect (repeat enough to fill screen)
     const partners = [...partnersData, ...partnersData, ...partnersData, ...partnersData];
 
-    const [ref, { width }] = useMeasure();
+    const [ref] = useMeasure();
     const xTranslation = useMotionValue(0);
     const [mustFinish, setMustFinish] = useState(false);
     const [rerender, setRerender] = useState(false);
