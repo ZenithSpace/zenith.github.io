@@ -32,7 +32,7 @@ const Journey = () => {
             title: t('journey.milestones.urc.title'),
             description: t('journey.milestones.urc.desc'),
             icon: <Rocket size={20} />,
-            image: "/assets/journey/2026_urc.webp?v=fixed"
+            image: "/assets/journey/2026_urc.jpg"
         }
     ];
 
