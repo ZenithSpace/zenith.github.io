@@ -102,10 +102,10 @@ const Team = () => {
     // Sparkle Halo Component (Inline for simplicity)
     const SparkleHalo = () => {
         return (
-            <div className="absolute -inset-2 -z-10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+            <div className="absolute inset-0 -z-10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
                 {/* 1. The Subtle Halo (Outer Glow) - Gold */}
                 <div
-                    className="absolute inset-0 rounded-2xl blur-xl opacity-30 transition-all duration-500"
+                    className="absolute inset-0 rounded-2xl blur-lg opacity-30 transition-all duration-500"
                     style={{ backgroundColor: '#FFBB00' }}
                 />
 
@@ -181,7 +181,7 @@ const Team = () => {
                 <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-zenith-main to-transparent z-10 pointer-events-none" />
 
                 <motion.div
-                    className="flex gap-8 px-8"
+                    className="flex gap-8 px-8 py-20 items-center"
                     ref={ref}
                     style={{ x: xTranslation, width: "max-content" }}
                     onHoverStart={() => setIsHovered(true)}
