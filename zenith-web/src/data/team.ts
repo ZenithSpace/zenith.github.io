@@ -8,7 +8,7 @@ export const getTeamMembers = () => {
         {
             name: "Yoongu Kang",
             role: "Team Lead/CEO",
-            image: "/assets/team/강윤구.jpg"
+            image: "/assets/team/강윤구.jpg?v=2"
         },
         // Add more team members here
     ];
