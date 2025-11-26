@@ -162,7 +162,7 @@ const Partners = () => {
                 <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-zenith-main to-transparent z-10 pointer-events-none" />
 
                 <motion.div
-                    className="flex gap-8 px-8 py-10"
+                    className="flex gap-8 px-8 py-20 items-center"
                     ref={ref}
                     style={{ x: xTranslation, width: "max-content" }}
                     onHoverStart={() => setIsHovered(true)}
