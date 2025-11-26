@@ -84,10 +84,10 @@ const Partners = () => {
     // Sparkle Halo Component (White/Silver Version)
     const SparkleHalo = () => {
         return (
-            <div className="absolute -inset-2 -z-10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+            <div className="absolute inset-0 -z-10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
                 {/* 1. The Subtle Halo (Outer Glow) - White (Visible against dark section bg) */}
                 <div
-                    className="absolute inset-0 rounded-2xl blur-xl opacity-30 transition-all duration-500"
+                    className="absolute inset-0 rounded-2xl blur-lg opacity-30 transition-all duration-500"
                     style={{ backgroundColor: '#FFFFFF' }}
                 />
 
