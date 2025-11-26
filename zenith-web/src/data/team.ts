@@ -15,93 +15,93 @@ export const getTeamMembers = () => {
         },
         {
             name: "Hangil Seo",
-            team: "F/W Team Lead",
+            team: "Firmware Team Lead",
             role: "CTO",
             image: "https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?auto=format&fit=crop&q=80&w=300&h=300"
         },
         {
             name: "Junghwan Lee",
-            team: "H/W Team",
+            team: "Hardware Team",
             role: "CFO",
             image: "https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?auto=format&fit=crop&q=80&w=300&h=300"
         },
         {
             name: "Jimin Song",
-            team: "H/W Team",
+            team: "Hardware Team",
             role: "Drivetrain Design",
             image: "https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?auto=format&fit=crop&q=80&w=300&h=300"
         },
         {
             name: "Geuntaek Bae",
-            team: "H/W Team",
+            team: "Hardware Team",
             role: "Drivetrain Design",
             image: "https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?auto=format&fit=crop&q=80&w=300&h=300"
         },
         {
             name: "Hohyun Kwak",
-            team: "H/W Team",
+            team: "Hardware Team",
             role: "Manipulator Design",
             image: "https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?auto=format&fit=crop&q=80&w=300&h=300"
         },
         {
             name: "Kyeonghyeon Kim",
-            team: "F/W Team",
+            team: "Firmware Team",
             role: "Manipulator Control",
             image: "https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?auto=format&fit=crop&q=80&w=300&h=300"
         },
         {
             name: "Mingu Kang",
-            team: "S/W Team",
+            team: "Software Team",
             role: "Global Path Planning",
             image: "https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?auto=format&fit=crop&q=80&w=300&h=300"
         },
         {
             name: "Yeongji Choi",
-            team: "S/W Team",
+            team: "Software Team",
             role: "Local Path Planning",
             image: "https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?auto=format&fit=crop&q=80&w=300&h=300"
         },
         {
             name: "Suhyun Kim",
-            team: "S/W Team",
+            team: "Software Team",
             role: "Image Processing/Communication",
             image: "https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?auto=format&fit=crop&q=80&w=300&h=300"
         },
         {
             name: "Gyeongho Choi",
-            team: "F/W Team",
+            team: "Firmware Team",
             role: "Power System Design",
             image: "https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?auto=format&fit=crop&q=80&w=300&h=300"
         },
         {
             name: "Daehoon Kang",
-            team: "H/W Team",
+            team: "Hardware Team",
             role: "Science Lab Design",
             image: "https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?auto=format&fit=crop&q=80&w=300&h=300"
         },
         {
             name: "Yongwon Seo",
-            team: "S/W Team",
-            role: "Science Team",
+            team: "Software Team",
+            role: "Science Lab Control",
             image: "https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?auto=format&fit=crop&q=80&w=300&h=300"
         },
         {
             name: "Chohyeon Yang",
             team: "Science Team",
-            role: "Researcher",
+            role: "Science Experiment Design",
             image: "https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?auto=format&fit=crop&q=80&w=300&h=300"
         },
         {
             name: "Jinho Seo",
             team: "Science Team",
-            role: "Researcher",
+            role: "Science Experiment Design",
             image: "https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?auto=format&fit=crop&q=80&w=300&h=300"
         },
         {
             name: "Be Our Crew!",
             team: "Join Zenith Space!",
             role: "Join the Mission!",
-            image: "/assets/logo_icon.png"
+            image: "/assets/logo_icon.png?v=2"
         }
     ];
 
