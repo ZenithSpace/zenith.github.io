@@ -36,12 +36,12 @@ export const translations = {
                 founded: {
                     year: '2024.10',
                     title: 'Team Formation',
-                    desc: 'Zenith Space was founded by 5 students passionate about space exploration.',
+                    desc: 'Zenith Space was founded by 5 students passionate about robotics.',
                 },
                 prototype: {
                     year: '2025.06',
-                    title: 'First Prototype Zero_v1',
-                    desc: 'Completed the design and assembly of the first rover prototype "Zero_v1".',
+                    title: 'First Rover Zero_v1',
+                    desc: 'Completed the design and assembly of the first rover "Zero_v1".',
                 },
                 award: {
                     year: '2025.09',
@@ -50,7 +50,7 @@ export const translations = {
                 },
                 urc: {
                     year: '2026.05',
-                    title: 'URC 2026',
+                    title: 'University Rover Challenge 2026',
                     desc: 'Preparing to compete in the University Rover Challenge in Utah, USA.',
                 },
             },
@@ -177,11 +177,11 @@ export const translations = {
                 founded: {
                     year: '2024.10',
                     title: '팀 설립',
-                    desc: '우주 탐사를 향한 열정으로 뭉친 5명의 학생들이 Zenith Space를 시작했습니다.',
+                    desc: '로봇 공학에 열정적인 5명의 학생들이 Zenith Space를 시작했습니다.',
                 },
                 prototype: {
                     year: '2025.06',
-                    title: '첫 프로토타입 Zero_v1',
+                    title: '첫 번째 로버 Zero_v1',
                     desc: '첫 번째 로버 \'Zero_v1\'의 설계와 조립을 성공적으로 마쳤습니다.',
                 },
                 award: {
@@ -191,7 +191,7 @@ export const translations = {
                 },
                 urc: {
                     year: '2026.05',
-                    title: 'URC 2026',
+                    title: 'University Rover Challenge 2026',
                     desc: '미국 유타주에서 열리는 URC 2026 참가를 목표로 전력을 다하고 있습니다.',
                 },
             },
