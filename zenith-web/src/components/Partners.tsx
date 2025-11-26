@@ -184,6 +184,7 @@ const Partners = () => {
                                     src={partner.logo}
                                     alt={partner.name}
                                     className="max-h-full max-w-full w-auto h-auto object-contain relative z-10"
+                                    loading="lazy"
                                 />
                             ) : (
                                 <span className="text-black font-bold text-lg text-center relative z-10">

@@ -202,6 +202,7 @@ const Team = () => {
                                     src={member.image}
                                     alt={member.name}
                                     className="w-full h-full object-cover object-top"
+                                    loading="lazy"
                                 />
                             </div>
                             <h4 className="text-xl font-bold text-white mb-1 relative z-10">{member.name}</h4>

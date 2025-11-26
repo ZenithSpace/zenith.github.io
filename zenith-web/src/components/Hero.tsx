@@ -15,6 +15,7 @@ const Hero = () => {
                     src={heroBg}
                     alt="Space Background"
                     className="w-full h-full object-cover"
+                    fetchPriority="high"
                 />
             </div>
 
