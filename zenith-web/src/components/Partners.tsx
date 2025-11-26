@@ -132,7 +132,7 @@ const Partners = () => {
                             href={partner.link}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="group relative flex items-center justify-center p-6 bg-white/5 rounded-xl border border-white/10 hover:border-zenith-sub/50 transition-all duration-300 hover:bg-white/10 w-64 flex-shrink-0"
+                            className="group relative flex items-center justify-center p-6 bg-white/5 rounded-xl border border-white/10 hover:border-zenith-sub/50 transition-all duration-300 hover:bg-white/10 w-64 flex-shrink-0 z-10"
                         >
                             <img
                                 src={partner.logo}

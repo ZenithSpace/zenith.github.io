@@ -6,7 +6,7 @@ import useMeasure from 'react-use-measure';
 
 const Team = () => {
     const { t } = useLanguage();
-    
+
     // Placeholder data
     const leads = Array(8).fill({
         name: t('team.comingSoon'),
@@ -36,7 +36,7 @@ const Team = () => {
             // If from is already past -TOTAL_WIDTH (e.g. due to manual scroll overshoot), 
             // we should wrap it first, but the recursive call handles the 0 reset.
             // Here we just want to go from 'from' to '-TOTAL_WIDTH'.
-            
+
             // Calculate distance remaining to the end of the loop
             const distance = Math.abs(-TOTAL_WIDTH - from);
             // Maintain constant speed (pixels per second)
@@ -59,7 +59,7 @@ const Team = () => {
             // This prevents the "reverse" spin issue
             let wrapped = current % TOTAL_WIDTH;
             if (wrapped > 0) wrapped -= TOTAL_WIDTH; // Should generally be negative
-            
+
             startLoop(wrapped);
         } else {
             controls?.stop();
@@ -70,25 +70,25 @@ const Team = () => {
 
     const handleManualScroll = (direction: 'left' | 'right') => {
         setIsManuallyScrolling(true);
-        
+
         const current = xTranslation.get();
         let target = current + (direction === 'left' ? CARD_WIDTH : -CARD_WIDTH);
 
         // We don't strictly need boundary checks for the animation target itself 
         // because the useEffect will wrap it correctly when it resumes.
         // However, to prevent scrolling into empty space if user clicks fast:
-        
+
         // If we are too far right (positive), snap to equivalent negative position
         if (target > 0) {
-             const snap = -TOTAL_WIDTH + CARD_WIDTH;
-             xTranslation.set(-TOTAL_WIDTH);
-             target = snap;
+            const snap = -TOTAL_WIDTH + CARD_WIDTH;
+            xTranslation.set(-TOTAL_WIDTH);
+            target = snap;
         }
         // If we are too far left (beyond 2 sets), snap back
         else if (target < -TOTAL_WIDTH * 2) {
-             const snap = -TOTAL_WIDTH - CARD_WIDTH;
-             xTranslation.set(-TOTAL_WIDTH);
-             target = snap;
+            const snap = -TOTAL_WIDTH - CARD_WIDTH;
+            xTranslation.set(-TOTAL_WIDTH);
+            target = snap;
         }
 
         animate(xTranslation, target, {
@@ -146,7 +146,7 @@ const Team = () => {
                     {carouselItems.map((member, index) => (
                         <div
                             key={index}
-                            className="w-64 flex-shrink-0 group relative"
+                            className="w-64 flex-shrink-0 group relative z-10"
                         >
                             <div className="relative overflow-hidden rounded-2xl aspect-square mb-4 border border-white/10">
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
