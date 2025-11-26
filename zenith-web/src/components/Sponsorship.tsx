@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Check } from 'lucide-react';
+import { Check, Star } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 const Sponsorship = () => {
@@ -34,7 +34,7 @@ const Sponsorship = () => {
 
     const diamondTier = {
         key: 'diamond',
-        // Aurora Gradient for Diamond to make it distinct from Platinum
+        // Aurora Gradient for Diamond
         color: 'text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-purple-400',
         hex: '#A78BFA', // Purple-ish tint for the glow
         border: 'border-blue-500/30 group-hover:border-cyan-400'
@@ -100,13 +100,12 @@ const Sponsorship = () => {
                 <SparkleHalo color={tierConfig.hex} />
 
                 {/* Card Content */}
-                {/* Added bg-[#0A0B10] on hover to block the halo from showing through the center */}
                 <div className={`glass-panel p-8 rounded-2xl border transition-all duration-300 h-full relative z-10 overflow-hidden 
                     ${isDiamond ? 'bg-gradient-to-br from-slate-900/50 via-[#0A0B10]/80 to-[#0A0B10]/80' : 'bg-[#0A0B10]/40'} 
                     group-hover:bg-[#0A0B10] 
                     ${tierConfig.border} backdrop-blur-xl`}
                 >
-                    {/* Tinted Background on Hover - Inside the card for readability */}
+                    {/* Tinted Background on Hover - Inside the card */}
                     <div
                         className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-300 pointer-events-none"
                         style={{ backgroundColor: tierConfig.hex }}
@@ -120,12 +119,23 @@ const Sponsorship = () => {
                             {t(`sponsorship.tiers.${tierConfig.key}.price`)}
                         </div>
                         <ul className={`space-y-4 ${isDiamond ? 'grid grid-cols-1 md:grid-cols-2 gap-4 space-y-0' : ''}`}>
-                            {features.map((feature, i) => (
-                                <li key={i} className="flex items-start gap-3 text-sm text-gray-300">
-                                    <Check className={`w-5 h-5 flex-shrink-0 ${tierConfig.key === 'diamond' ? 'text-cyan-400' : tierConfig.color}`} />
-                                    <span>{feature}</span>
-                                </li>
-                            ))}
+                            {features.map((feature, i) => {
+                                // Highlight the last item of Diamond tier (Custom Benefit)
+                                const isCustomBenefit = isDiamond && i === features.length - 1;
+
+                                return (
+                                    <li key={i} className="flex items-start gap-3 text-sm text-gray-300">
+                                        {isCustomBenefit ? (
+                                            <Star className="w-5 h-5 flex-shrink-0 text-cyan-300 fill-cyan-300/20" />
+                                        ) : (
+                                            <Check className={`w-5 h-5 flex-shrink-0 ${tierConfig.key === 'diamond' ? 'text-cyan-400' : tierConfig.color}`} />
+                                        )}
+                                        <span className={isCustomBenefit ? 'text-transparent bg-clip-text bg-gradient-to-r from-cyan-200 to-purple-200 font-semibold' : ''}>
+                                            {feature}
+                                        </span>
+                                    </li>
+                                );
+                            })}
                         </ul>
                     </div>
                 </div>
