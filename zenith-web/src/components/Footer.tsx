@@ -56,7 +56,7 @@ const Footer = () => {
                         © 2024 {t('footer.rights')}
                     </p>
                     <p className="text-gray-500 text-sm flex items-center gap-2">
-                        Designed by Zenith Space
+                        Designed by Yoongu Kang
                     </p>
                 </div>
             </div>
