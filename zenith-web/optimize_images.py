@@ -1,5 +1,5 @@
 import os
-from PIL import Image
+from PIL import Image, ImageOps
 
 def optimize_images(directory):
     print(f"Scanning {directory}...")
@@ -9,6 +9,9 @@ def optimize_images(directory):
                 file_path = os.path.join(root, file)
                 try:
                     with Image.open(file_path) as img:
+                        # Fix orientation based on EXIF
+                        img = ImageOps.exif_transpose(img)
+                        
                         # Calculate new size (max 1920px width/height)
                         max_size = 1920
                         ratio = min(max_size / img.width, max_size / img.height)
