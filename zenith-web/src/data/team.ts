@@ -6,7 +6,7 @@ export const getTeamMembers = () => {
     // Placeholder data
     const leads = [
         {
-            name: "Yoongu Kang",
+            name: "강윤구 | Yoongu Kang",
             role: "Team Lead/CEO",
             image: "/assets/team/강윤구.jpg?v=2"
         },
