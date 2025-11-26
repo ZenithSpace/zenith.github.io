@@ -81,17 +81,17 @@ const Partners = () => {
         });
     };
 
-    // Sparkle Halo Component (White Version)
+    // Sparkle Halo Component (White/Silver Version)
     const SparkleHalo = () => {
         return (
             <div className="absolute -inset-2 -z-10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
-                {/* 1. The Subtle Halo (Outer Glow) - White */}
+                {/* 1. The Subtle Halo (Outer Glow) - White (Visible against dark section bg) */}
                 <div
-                    className="absolute inset-0 rounded-2xl blur-xl opacity-30 transition-all duration-500"
+                    className="absolute inset-0 rounded-2xl blur-xl opacity-50 transition-all duration-500"
                     style={{ backgroundColor: '#FFFFFF' }}
                 />
 
-                {/* 2. Twinkling Particles */}
+                {/* 2. Twinkling Particles - Silver (Visible on white card) */}
                 {[...Array(10)].map((_, i) => {
                     const side = Math.floor(Math.random() * 4);
                     let top = '0%', left = '0%';
@@ -106,7 +106,7 @@ const Partners = () => {
                     return (
                         <motion.div
                             key={i}
-                            className="absolute w-1 h-1 rounded-full bg-white shadow-[0_0_5px_#FFFFFF]"
+                            className="absolute w-1 h-1 rounded-full bg-slate-400 shadow-[0_0_2px_#94a3b8]"
                             style={{ top, left }}
                             animate={{
                                 opacity: [0, 1, 0],
