@@ -81,51 +81,7 @@ const Partners = () => {
         });
     };
 
-    // Sparkle Halo Component (Inline for simplicity)
-    const SparkleHalo = () => {
-        return (
-            <div className="absolute -inset-2 -z-10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
-                {/* 1. The Subtle Halo (Outer Glow) - Gold */}
-                <div
-                    className="absolute inset-0 rounded-2xl blur-xl opacity-30 transition-all duration-500"
-                    style={{ backgroundColor: '#FFBB00' }}
-                />
-
-                {/* 2. Twinkling Particles */}
-                {[...Array(10)].map((_, i) => {
-                    const side = Math.floor(Math.random() * 4);
-                    let top = '0%', left = '0%';
-
-                    switch (side) {
-                        case 0: top = Math.random() * 10 - 5 + '%'; left = Math.random() * 100 + '%'; break;
-                        case 1: top = Math.random() * 100 + '%'; left = Math.random() * 10 + 95 + '%'; break;
-                        case 2: top = Math.random() * 10 + 95 + '%'; left = Math.random() * 100 + '%'; break;
-                        case 3: top = Math.random() * 100 + '%'; left = Math.random() * 10 - 5 + '%'; break;
-                    }
-
-                    return (
-                        <motion.div
-                            key={i}
-                            className="absolute w-1 h-1 rounded-full bg-zenith-sub shadow-[0_0_5px_#FFBB00]"
-                            style={{ top, left }}
-                            animate={{
-                                opacity: [0, 1, 0],
-                                scale: [0, 1.5, 0],
-                                x: [0, (Math.random() - 0.5) * 20],
-                                y: [0, (Math.random() - 0.5) * 20],
-                            }}
-                            transition={{
-                                duration: 1.5 + Math.random() * 2,
-                                repeat: Infinity,
-                                delay: Math.random() * 2,
-                                ease: "easeInOut"
-                            }}
-                        />
-                    );
-                })}
-            </div>
-        );
-    };
+    // SparkleHalo component removed as per user request
 
     return (
         <section id="partners" className="py-20 bg-zenith-main border-b border-white/5 relative overflow-hidden">
@@ -174,12 +130,9 @@ const Partners = () => {
                             href={partner.link}
                             target={partner.link.startsWith('http') ? "_blank" : "_self"}
                             rel={partner.link.startsWith('http') ? "noopener noreferrer" : ""}
-                            className="group relative flex items-center justify-center p-6 bg-white/10 rounded-xl border border-white/10 hover:border-zenith-sub/50 transition-all duration-300 w-64 flex-shrink-0 z-10 h-32 backdrop-blur-sm"
+                            className="group relative flex items-center justify-center p-6 bg-white rounded-xl border border-white/10 w-64 flex-shrink-0 z-10 h-32"
                         >
-                            <SparkleHalo />
-
-                            {/* Inner Tint */}
-                            <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-300 pointer-events-none bg-zenith-sub rounded-xl" />
+                            {/* Inner Tint removed */}
 
                             {partner.logo ? (
                                 <img
@@ -188,7 +141,7 @@ const Partners = () => {
                                     className="max-h-full max-w-full w-auto h-auto object-contain relative z-10"
                                 />
                             ) : (
-                                <span className="text-white font-bold text-lg text-center transition-colors duration-300 relative z-10 group-hover:text-zenith-sub">
+                                <span className="text-black font-bold text-lg text-center relative z-10">
                                     {t('partners.placeholder')}
                                 </span>
                             )}
