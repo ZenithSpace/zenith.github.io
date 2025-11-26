@@ -98,6 +98,12 @@ export const getTeamMembers = () => {
             image: "https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?auto=format&fit=crop&q=80&w=300&h=300"
         },
         {
+            name: "Hanryung Shin",
+            team: "Software Team",
+            role: "Drone Master",
+            image: "https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?auto=format&fit=crop&q=80&w=300&h=300"
+        },
+        {
             name: "Be Our Crew!",
             team: "Join Zenith Space!",
             role: "Join the Mission!",
