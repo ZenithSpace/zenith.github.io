@@ -21,6 +21,7 @@ const Team = () => {
     const xTranslation = useMotionValue(0);
     const [mustFinish, setMustFinish] = useState(false);
     const [rerender, setRerender] = useState(false);
+    const [isHovered, setIsHovered] = useState(false);
 
     // Calculate the width of one set of items
     // We assume all items are same width (w-64 = 16rem = 256px) + gap (gap-8 = 2rem = 32px)
@@ -31,6 +32,11 @@ const Team = () => {
     useEffect(() => {
         let controls;
         const finalPosition = -TOTAL_WIDTH;
+
+        if (isHovered) {
+            xTranslation.stop();
+            return;
+        }
 
         if (mustFinish) {
             controls = animate(xTranslation, [xTranslation.get(), finalPosition], {
@@ -52,7 +58,7 @@ const Team = () => {
         }
 
         return () => controls?.stop();
-    }, [xTranslation, TOTAL_WIDTH, mustFinish, rerender]);
+    }, [xTranslation, TOTAL_WIDTH, mustFinish, rerender, isHovered]);
 
     const handleManualScroll = (direction: 'left' | 'right') => {
         const current = xTranslation.get();
@@ -120,12 +126,10 @@ const Team = () => {
                     className="flex gap-8 px-8"
                     ref={ref}
                     style={{ x: xTranslation, width: "max-content" }}
-                    onHoverStart={() => {
-                        setMustFinish(true);
-                        xTranslation.stop(); // Pause on hover
-                    }}
+                    onHoverStart={() => setIsHovered(true)}
                     onHoverEnd={() => {
-                        setMustFinish(true); // Resume
+                        setIsHovered(false);
+                        setMustFinish(true); // Ensure we finish current loop before restarting infinite
                     }}
                 >
                     {carouselItems.map((member, index) => (
