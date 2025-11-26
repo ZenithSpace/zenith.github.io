@@ -7,13 +7,12 @@ const Gallery = () => {
     const { t } = useLanguage();
 
     const images = [
-        '/assets/gallery/IMG_4114.JPG',
-        '/assets/gallery/KakaoTalk_20250914_092643335.jpg',
-        '/assets/gallery/KakaoTalk_20251126_160118164.jpg',
-        '/assets/gallery/KakaoTalk_20251126_160118164_01.jpg',
-        '/assets/gallery/KakaoTalk_20251126_160118164_02.jpg',
-        '/assets/gallery/KakaoTalk_20251126_160118164_03.jpg',
-        '/assets/gallery/모자이크.png'
+        '/assets/gallery/1.jpg',
+        '/assets/gallery/2.png',
+        '/assets/gallery/3.jpg',
+        '/assets/gallery/4.jpg',
+        '/assets/gallery/5.jpg',
+        '/assets/gallery/6.jpg'
     ];
 
     const [currentIndex, setCurrentIndex] = useState(0);
