@@ -34,24 +34,24 @@ const Sponsorship = () => {
 
     const diamondTier = {
         key: 'diamond',
-        color: 'text-transparent bg-clip-text bg-gradient-to-r from-cyan-200 via-white to-cyan-200',
-        hex: '#67E8F9', // Cyan 300
-        border: 'border-cyan-500/30 group-hover:border-cyan-300' // Always visible border for Diamond
+        // Aurora Gradient for Diamond to make it distinct from Platinum
+        color: 'text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-purple-400',
+        hex: '#A78BFA', // Purple-ish tint for the glow
+        border: 'border-blue-500/30 group-hover:border-cyan-400'
     };
 
     const SparkleHalo = ({ color }: { color: string }) => {
         return (
             <div className="absolute -inset-2 -z-10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
-                {/* 1. The Subtle Halo (Outer Glow) - Soft and blurred */}
+                {/* 1. The Subtle Halo (Outer Glow) */}
                 <div
-                    className="absolute inset-0 rounded-2xl blur-2xl opacity-20 transition-all duration-500"
+                    className="absolute inset-0 rounded-2xl blur-xl opacity-30 transition-all duration-500"
                     style={{ backgroundColor: color }}
                 />
 
                 {/* 2. Twinkling Particles (Randomized Positions & Drift) */}
                 {[...Array(20)].map((_, i) => {
-                    // Randomize start position along the edges
-                    const side = Math.floor(Math.random() * 4); // 0:top, 1:right, 2:bottom, 3:left
+                    const side = Math.floor(Math.random() * 4);
                     let top = '0%', left = '0%';
 
                     switch (side) {
@@ -69,13 +69,13 @@ const Sponsorship = () => {
                             animate={{
                                 opacity: [0, 1, 0],
                                 scale: [0, 1.5, 0],
-                                x: [0, (Math.random() - 0.5) * 30], // Random drift X
-                                y: [0, (Math.random() - 0.5) * 30], // Random drift Y
+                                x: [0, (Math.random() - 0.5) * 30],
+                                y: [0, (Math.random() - 0.5) * 30],
                             }}
                             transition={{
-                                duration: 1.5 + Math.random() * 2, // Random duration
+                                duration: 1.5 + Math.random() * 2,
                                 repeat: Infinity,
-                                delay: Math.random() * 2, // Random delay
+                                delay: Math.random() * 2,
                                 ease: "easeInOut"
                             }}
                         />
@@ -96,15 +96,17 @@ const Sponsorship = () => {
                 viewport={{ once: true }}
                 className={`relative group z-0 ${isDiamond ? 'w-full max-w-4xl mx-auto mt-12' : 'h-full'}`}
             >
-                {/* Sparkle Halo Effect */}
+                {/* Sparkle Halo Effect - Behind the card */}
                 <SparkleHalo color={tierConfig.hex} />
 
                 {/* Card Content */}
+                {/* Added bg-[#0A0B10] on hover to block the halo from showing through the center */}
                 <div className={`glass-panel p-8 rounded-2xl border transition-all duration-300 h-full relative z-10 overflow-hidden 
-                    ${isDiamond ? 'bg-gradient-to-br from-cyan-950/30 via-[#0A0B10]/80 to-[#0A0B10]/80' : 'bg-[#0A0B10]/80 border-white/10'} 
+                    ${isDiamond ? 'bg-gradient-to-br from-slate-900/50 via-[#0A0B10]/80 to-[#0A0B10]/80' : 'bg-[#0A0B10]/40'} 
+                    group-hover:bg-[#0A0B10] 
                     ${tierConfig.border} backdrop-blur-xl`}
                 >
-                    {/* Tinted Background on Hover */}
+                    {/* Tinted Background on Hover - Inside the card for readability */}
                     <div
                         className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-300 pointer-events-none"
                         style={{ backgroundColor: tierConfig.hex }}
@@ -120,7 +122,7 @@ const Sponsorship = () => {
                         <ul className={`space-y-4 ${isDiamond ? 'grid grid-cols-1 md:grid-cols-2 gap-4 space-y-0' : ''}`}>
                             {features.map((feature, i) => (
                                 <li key={i} className="flex items-start gap-3 text-sm text-gray-300">
-                                    <Check className={`w-5 h-5 flex-shrink-0 ${tierConfig.key === 'diamond' ? 'text-cyan-300' : tierConfig.color}`} />
+                                    <Check className={`w-5 h-5 flex-shrink-0 ${tierConfig.key === 'diamond' ? 'text-cyan-400' : tierConfig.color}`} />
                                     <span>{feature}</span>
                                 </li>
                             ))}
