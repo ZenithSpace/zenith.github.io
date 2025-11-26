@@ -73,10 +73,31 @@ export const translations = {
             title: 'Sponsorship',
             subtitle: 'Partner With Us',
             tiers: {
-                platinum: 'Platinum',
-                gold: 'Gold',
-                silver: 'Silver',
-                bronze: 'Bronze',
+                affiliate: {
+                    name: 'Affiliate',
+                    price: 'Under ₩1,000,000',
+                    features: ['Logo on Website, SNS, SAR Video']
+                },
+                silver: {
+                    name: 'Silver',
+                    price: '₩1,000,000+',
+                    features: ['Logo on Website, SNS, SAR Video', 'Logo on Team Apparels', 'Small Logo on Robot']
+                },
+                gold: {
+                    name: 'Gold',
+                    price: '₩5,000,000+',
+                    features: ['Logo on Website, SNS, SAR Video', 'Logo on Team Apparels', 'Medium Logo on Robot', 'Access to Team Resume']
+                },
+                platinum: {
+                    name: 'Platinum',
+                    price: '₩10,000,000+',
+                    features: ['Logo on Website, SNS, SAR Video', 'Logo on Team Apparels', 'Large Logo on Robot', 'Access to Team Resume', 'Private Tech Demo at Sponsor HQ']
+                },
+                diamond: {
+                    name: 'Diamond',
+                    price: '₩30,000,000+',
+                    features: ['Logo on Website, SNS, SAR Video', 'Logo on Team Apparels', 'X-Large Logo on Robot', 'Access to Team Resume', 'Private Tech Demo at Sponsor HQ', 'Custom Benefit']
+                }
             },
         },
         contact: {
@@ -182,10 +203,31 @@ export const translations = {
             title: '후원',
             subtitle: '파트너가 되어주세요',
             tiers: {
-                platinum: '플래티넘',
-                gold: '골드',
-                silver: '실버',
-                bronze: '브론즈',
+                affiliate: {
+                    name: 'Affiliate',
+                    price: '100만원 미만',
+                    features: ['웹사이트, SNS, SAR 영상 로고 노출']
+                },
+                silver: {
+                    name: 'Silver',
+                    price: '100만원+',
+                    features: ['웹사이트, SNS, SAR 영상 로고 노출', '팀 단체복 로고 부착', '로버 로고 부착 (Small)']
+                },
+                gold: {
+                    name: 'Gold',
+                    price: '500만원+',
+                    features: ['웹사이트, SNS, SAR 영상 로고 노출', '팀 단체복 로고 부착', '로버 로고 부착 (Medium)', '팀원 이력서 열람 권한']
+                },
+                platinum: {
+                    name: 'Platinum',
+                    price: '1000만원+',
+                    features: ['웹사이트, SNS, SAR 영상 로고 노출', '팀 단체복 로고 부착', '로버 로고 부착 (Large)', '팀원 이력서 열람 권한', '후원사 본사 방문 기술 시연']
+                },
+                diamond: {
+                    name: 'Diamond',
+                    price: '3000만원+',
+                    features: ['웹사이트, SNS, SAR 영상 로고 노출', '팀 단체복 로고 부착', '로버 로고 부착 (X-Large)', '팀원 이력서 열람 권한', '후원사 본사 방문 기술 시연', '맞춤형 혜택 제공']
+                }
             },
         },
         contact: {

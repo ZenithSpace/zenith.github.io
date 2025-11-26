@@ -5,28 +5,73 @@ import { useLanguage } from '../context/LanguageContext';
 const Sponsorship = () => {
     const { t } = useLanguage();
 
-    const tiers = [
+    const affiliateTier = {
+        key: 'affiliate',
+        color: 'from-gray-400 to-gray-600',
+        glow: 'group-hover:shadow-[0_0_30px_rgba(156,163,175,0.4)]',
+        border: 'group-hover:border-gray-400'
+    };
+
+    const mainTiers = [
         {
-            name: t('sponsorship.tiers.bronze'),
-            price: '₩1,000,000+',
-            features: ['Logo on Website', 'Social Media Shoutout', 'Thank You Letter']
+            key: 'silver',
+            color: 'text-[#C0C0C0]',
+            glow: 'group-hover:shadow-[0_0_30px_rgba(192,192,192,0.4)]',
+            border: 'group-hover:border-[#C0C0C0]'
         },
         {
-            name: t('sponsorship.tiers.silver'),
-            price: '₩3,000,000+',
-            features: ['Everything in Bronze', 'Small Logo on Rover', 'Team T-shirt']
+            key: 'gold',
+            color: 'text-[#FFD700]',
+            glow: 'group-hover:shadow-[0_0_30px_rgba(255,215,0,0.4)]',
+            border: 'group-hover:border-[#FFD700]'
         },
         {
-            name: t('sponsorship.tiers.gold'),
-            price: '₩5,000,000+',
-            features: ['Everything in Silver', 'Large Logo on Rover', 'Logo on Team Uniform', 'Invitation to Demo Day']
+            key: 'platinum',
+            color: 'text-[#E5E4E2]',
+            glow: 'group-hover:shadow-[0_0_30px_rgba(229,228,226,0.4)]',
+            border: 'group-hover:border-[#E5E4E2]'
         },
         {
-            name: t('sponsorship.tiers.platinum'),
-            price: '₩10,000,000+',
-            features: ['Everything in Gold', 'Main Sponsor Branding', 'Exclusive Workshop', 'Recruiting Booth Access']
+            key: 'diamond',
+            color: 'text-[#B9F2FF]',
+            glow: 'group-hover:shadow-[0_0_30px_rgba(185,242,255,0.4)]',
+            border: 'group-hover:border-[#B9F2FF]'
         }
     ];
+
+    const renderTierCard = (tierConfig: any, isAffiliate = false) => {
+        const features = t(`sponsorship.tiers.${tierConfig.key}.features`) as unknown as string[];
+
+        return (
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className={`glass-panel p-8 rounded-2xl border border-white/10 transition-all duration-500 group relative overflow-hidden ${isAffiliate ? 'w-full max-w-3xl mx-auto mb-12' : 'h-full'
+                    } ${tierConfig.border} ${tierConfig.glow}`}
+            >
+                {/* Particle/Glow Background Effect */}
+                <div className={`absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500 bg-gradient-to-br ${isAffiliate ? 'from-gray-500 to-white' : 'from-white to-white'}`} />
+
+                <div className="relative z-10">
+                    <h4 className={`text-2xl font-bold mb-2 ${tierConfig.color || 'text-white'}`}>
+                        {t(`sponsorship.tiers.${tierConfig.key}.name`)}
+                    </h4>
+                    <div className="text-xl font-bold text-gray-400 mb-6">
+                        {t(`sponsorship.tiers.${tierConfig.key}.price`)}
+                    </div>
+                    <ul className="space-y-4">
+                        {features.map((feature, i) => (
+                            <li key={i} className="flex items-start gap-3 text-sm text-gray-300">
+                                <Check className={`w-5 h-5 flex-shrink-0 ${tierConfig.color || 'text-gray-400'}`} />
+                                <span>{feature}</span>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            </motion.div>
+        );
+    };
 
     return (
         <section id="sponsorship" className="py-20 bg-[#0A0B10]">
@@ -41,28 +86,15 @@ const Sponsorship = () => {
                     <h3 className="text-4xl font-bold font-['Outfit']">{t('sponsorship.subtitle')}</h3>
                 </motion.div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    {tiers.map((tier, index) => (
-                        <motion.div
-                            key={index}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: index * 0.1 }}
-                            className={`glass-panel p-8 rounded-2xl border transition-all duration-300 ${index === 3 ? 'border-zenith-sub shadow-[0_0_30px_rgba(255,187,0,0.2)]' : 'border-white/10 hover:border-white/30'
-                                }`}
-                        >
-                            <h4 className={`text-2xl font-bold mb-2 ${index === 3 ? 'text-zenith-sub' : 'text-white'}`}>{tier.name}</h4>
-                            <div className="text-xl font-bold text-gray-400 mb-6">{tier.price}</div>
-                            <ul className="space-y-4">
-                                {tier.features.map((feature, i) => (
-                                    <li key={i} className="flex items-start gap-3 text-sm text-gray-300">
-                                        <Check className="w-5 h-5 text-zenith-sub flex-shrink-0" />
-                                        <span>{feature}</span>
-                                    </li>
-                                ))}
-                            </ul>
-                        </motion.div>
+                {/* Affiliate Tier */}
+                {renderTierCard(affiliateTier, true)}
+
+                {/* Main Tiers Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    {mainTiers.map((tier) => (
+                        <div key={tier.key}>
+                            {renderTierCard(tier)}
+                        </div>
                     ))}
                 </div>
             </div>
