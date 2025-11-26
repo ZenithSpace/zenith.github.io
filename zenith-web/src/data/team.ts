@@ -5,7 +5,7 @@
 // Alternatively, we can store keys and translate in the component.
 // For simplicity and consistency with the current request, let's export a function that takes the translation function 't'.
 
-export const getTeamMembers = (t: (key: string) => string) => {
+export const getTeamMembers = () => {
     const leads = [
         {
             name: "Yoongu Kang",
