@@ -4,15 +4,13 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import useMeasure from 'react-use-measure';
 
+import { getTeamMembers } from '../data/team';
+
 const Team = () => {
     const { t } = useLanguage();
 
     // Placeholder data
-    const leads = Array(8).fill({
-        name: t('team.comingSoon'),
-        role: t('team.preparing'),
-        image: 'https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?auto=format&fit=crop&q=80&w=300&h=300'
-    });
+    const leads = getTeamMembers(t);
 
     // Duplicate list for infinite scroll effect (triple it to be safe for wide screens)
     const carouselItems = [...leads, ...leads, ...leads];

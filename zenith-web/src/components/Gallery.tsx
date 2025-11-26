@@ -3,17 +3,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
+import { galleryImages as images } from '../data/gallery';
+
 const Gallery = () => {
     const { t } = useLanguage();
-
-    const images = [
-        '/assets/gallery/1.jpg',
-        '/assets/gallery/2.png',
-        '/assets/gallery/3.jpg',
-        '/assets/gallery/4.jpg',
-        '/assets/gallery/5.jpg',
-        '/assets/gallery/6.jpg'
-    ];
 
     const [currentIndex, setCurrentIndex] = useState(0);
     const [direction, setDirection] = useState(0);

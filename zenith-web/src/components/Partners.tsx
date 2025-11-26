@@ -4,16 +4,12 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import useMeasure from 'react-use-measure';
 
+import { partnersData } from '../data/partners';
+
 const Partners = () => {
     const { t } = useLanguage();
 
     // Partners data
-    const partnersData = [
-        { name: 'SeoulTech', logo: '/assets/partners/1.png', link: 'https://www.seoultech.ac.kr/' },
-        { name: 'Misumi', logo: '/assets/partners/2.png', link: 'https://kr.misumi-ec.com/' },
-        { name: 'Meviy', logo: '/assets/partners/3.png', link: 'https://meviy.misumi-ec.com/ko-kr/' },
-        { name: 'Next Partner', logo: null, link: '#contact' }, // Placeholder
-    ];
 
     // Duplicate list for infinite scroll effect (repeat enough to fill screen)
     const partners = [...partnersData, ...partnersData, ...partnersData, ...partnersData];
