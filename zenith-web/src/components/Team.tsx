@@ -172,7 +172,11 @@ const Team = () => {
                                 <img
                                     src={member.image}
                                     alt={member.nameEn}
-                                    className="w-full h-full object-cover object-top"
+                                    className="w-full h-full object-cover"
+                                    style={{
+                                        objectPosition: member.imagePosition || 'top',
+                                        transform: `scale(${member.imageScale || 1})`
+                                    }}
                                     loading="lazy"
                                 />
                             </div>
