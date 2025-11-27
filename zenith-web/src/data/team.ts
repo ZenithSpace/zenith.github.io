@@ -8,103 +8,120 @@
 export const getTeamMembers = () => {
     const leads = [
         {
-            name: "Yoongu Kang",
+            nameEn: "Yoongu Kang",
+            nameKo: "강윤구",
             team: "Team Principal",
             role: "CEO",
             image: "/assets/team/yoongu_kang.webp"
         },
         {
-            name: "Hangil Seo",
+            nameEn: "Hangil Seo",
+            nameKo: "서한길",
             team: "Firmware Team Lead",
             role: "CTO",
             image: "https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?auto=format&fit=crop&q=80&w=300&h=300"
         },
         {
-            name: "Junghwan Lee",
+            nameEn: "Junghwan Lee",
+            nameKo: "이정환",
             team: "Hardware Team",
             role: "CFO",
             image: "https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?auto=format&fit=crop&q=80&w=300&h=300"
         },
         {
-            name: "Jimin Song",
+            nameEn: "Jimin Song",
+            nameKo: "송지민",
             team: "Hardware Team",
             role: "Drivetrain Design",
             image: "https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?auto=format&fit=crop&q=80&w=300&h=300"
         },
         {
-            name: "Geuntaek Bae",
+            nameEn: "Geuntaek Bae",
+            nameKo: "배근택",
             team: "Hardware Team",
             role: "Drivetrain Design",
             image: "https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?auto=format&fit=crop&q=80&w=300&h=300"
         },
         {
-            name: "Hohyun Kwak",
+            nameEn: "Hohyun Kwak",
+            nameKo: "곽호현",
             team: "Hardware Team",
             role: "Manipulator Design",
             image: "https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?auto=format&fit=crop&q=80&w=300&h=300"
         },
         {
-            name: "Kyeonghyeon Kim",
+            nameEn: "Kyeonghyeon Kim",
+            nameKo: "김경현",
             team: "Firmware Team",
             role: "Manipulator Control",
             image: "https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?auto=format&fit=crop&q=80&w=300&h=300"
         },
         {
-            name: "Mingu Kang",
+            nameEn: "Mingu Kang",
+            nameKo: "강민구",
             team: "Software Team",
             role: "Global Path Planning",
             image: "https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?auto=format&fit=crop&q=80&w=300&h=300"
         },
         {
-            name: "Yeongji Choi",
+            nameEn: "Yeongji Choi",
+            nameKo: "최영지",
             team: "Software Team",
             role: "Local Path Planning",
             image: "https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?auto=format&fit=crop&q=80&w=300&h=300"
         },
         {
-            name: "Suhyun Kim",
+            nameEn: "Suhyun Kim",
+            nameKo: "김수현",
             team: "Software Team",
             role: "Image Processing/Communication",
             image: "https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?auto=format&fit=crop&q=80&w=300&h=300"
         },
         {
-            name: "Gyeongho Choi",
+            nameEn: "Gyeongho Choi",
+            nameKo: "최경호",
             team: "Firmware Team",
             role: "Power System Design",
             image: "https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?auto=format&fit=crop&q=80&w=300&h=300"
         },
         {
-            name: "Daehoon Kang",
+            nameEn: "Daehoon Kang",
+            nameKo: "강대훈",
             team: "Hardware Team",
             role: "Science Lab Design",
             image: "https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?auto=format&fit=crop&q=80&w=300&h=300"
         },
         {
-            name: "Yongwon Seo",
+            nameEn: "Yongwon Seo",
+            nameKo: "서용원",
             team: "Software Team",
             role: "Science Lab Control",
             image: "https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?auto=format&fit=crop&q=80&w=300&h=300"
         },
         {
-            name: "Chohyeon Yang",
+            nameEn: "Chohyeon Yang",
+            nameKo: "양초현",
             team: "Science Team",
             role: "Science Experiment Design",
             image: "https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?auto=format&fit=crop&q=80&w=300&h=300"
         },
         {
-            name: "Jinho Seo",
+            nameEn: "Jinho Seo",
+            nameKo: "서진호",
             team: "Science Team",
             role: "Science Experiment Design",
             image: "https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?auto=format&fit=crop&q=80&w=300&h=300"
         },
         {
-            name: "Hanryung Shin",
+            nameEn: "Hanryung Shin",
+            nameKo: "신한륭",
             team: "Software Team",
             role: "Drone Master",
             image: "https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?auto=format&fit=crop&q=80&w=300&h=300"
         },
         {
-            name: "Be Our Crew!",
+            nameEn: "Be Our Crew!",
+            nameKo: "함께해요!",
             team: "Join Zenith Space!",
             role: "Join the Mission!",
             image: "/assets/logo_icon.webp"

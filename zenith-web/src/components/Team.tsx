@@ -6,7 +6,7 @@ import useMeasure from 'react-use-measure';
 import { getTeamMembers } from '../data/team';
 
 const Team = () => {
-    const { t } = useLanguage();
+    const { t, language } = useLanguage();
 
     // Placeholder data
     const leads = getTeamMembers();
@@ -176,7 +176,9 @@ const Team = () => {
                                     loading="lazy"
                                 />
                             </div>
-                            <h4 className="text-xl font-bold text-white mb-1 relative z-10">{member.name}</h4>
+                            <h4 className="text-xl font-bold text-white mb-1 relative z-10">
+                                {language === 'ko' ? member.nameKo : member.nameEn}
+                            </h4>
                             <p className="text-zenith-sub font-medium text-sm relative z-10 mb-0.5">{member.team}</p>
                             <p className="text-gray-400 text-xs relative z-10">{member.role}</p>
                         </div>
