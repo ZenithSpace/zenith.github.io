@@ -56,7 +56,7 @@ export const translations = {
             },
         },
         rover: {
-            title: 'Our Rover',
+            title: 'Our Rovers',
             subtitle: 'Meet Our Rovers',
             tabs: {
                 v1: 'Zero V1',
@@ -68,7 +68,7 @@ export const translations = {
                 specs: {
                     weight: 'Weight',
                     speed: 'Max Speed',
-                    arm: 'Arm Payload',
+                    arm: 'Manipulator Payload',
                     battery: 'Battery Life',
                 },
                 values: {
@@ -84,7 +84,7 @@ export const translations = {
                 specs: {
                     weight: 'Weight',
                     speed: 'Max Speed',
-                    arm: 'Arm Payload',
+                    arm: 'Manipulator Payload',
                     battery: 'Battery Life',
                 },
                 values: {
@@ -227,7 +227,7 @@ export const translations = {
             },
         },
         rover: {
-            title: 'Our Rover',
+            title: 'Our Rovers',
             subtitle: 'Meet Our Rovers',
             tabs: {
                 v1: 'Zero V1',
@@ -239,7 +239,7 @@ export const translations = {
                 specs: {
                     weight: '무게',
                     speed: '최대 속도',
-                    arm: '팔 가반하중',
+                    arm: '매니퓰레이터 가반하중',
                     battery: '배터리 수명',
                 },
                 values: {
@@ -255,7 +255,7 @@ export const translations = {
                 specs: {
                     weight: '무게',
                     speed: '최대 속도',
-                    arm: '팔 가반하중',
+                    arm: '매니퓰레이터 가반하중',
                     battery: '배터리 수명',
                 },
                 values: {
