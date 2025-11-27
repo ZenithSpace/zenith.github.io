@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Weight, Gauge, Dumbbell, Battery } from 'lucide-react';
+import { Weight, Gauge, Dumbbell, BatteryCharging } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 import roverV1 from '../assets/Zero_v1.webp';
@@ -57,7 +57,7 @@ const Rover = () => {
                 { icon: <Weight />, label: t('rover.v1.specs.weight'), value: t('rover.v1.values.weight') },
                 { icon: <Gauge />, label: t('rover.v1.specs.speed'), value: t('rover.v1.values.speed') },
                 { icon: <Dumbbell />, label: t('rover.v1.specs.arm'), value: t('rover.v1.values.arm') },
-                { icon: <Battery />, label: t('rover.v1.specs.battery'), value: t('rover.v1.values.battery') },
+                { icon: <BatteryCharging />, label: t('rover.v1.specs.battery'), value: t('rover.v1.values.battery') },
             ]
         },
         v2: {
@@ -66,7 +66,7 @@ const Rover = () => {
                 { icon: <Weight />, label: t('rover.v2.specs.weight'), value: t('rover.v2.values.weight') },
                 { icon: <Gauge />, label: t('rover.v2.specs.speed'), value: t('rover.v2.values.speed') },
                 { icon: <Dumbbell />, label: t('rover.v2.specs.arm'), value: t('rover.v2.values.arm') },
-                { icon: <Battery />, label: t('rover.v2.specs.battery'), value: t('rover.v2.values.battery') },
+                { icon: <BatteryCharging />, label: t('rover.v2.specs.battery'), value: t('rover.v2.values.battery') },
             ]
         }
     };
