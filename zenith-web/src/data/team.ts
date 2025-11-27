@@ -109,7 +109,7 @@ export const getTeamMembers = () => {
             nameKo: "서용원",
             team: "Software Team",
             role: "Science Lab Control",
-            image: "/assets/team/yongwon_seo.webp"
+            image: "/assets/team/yongwon_seo.jpg"
         },
         {
             nameEn: "Chohyeon Yang",
