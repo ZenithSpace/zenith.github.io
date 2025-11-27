@@ -7,6 +7,11 @@ const About = () => {
 
     const features = [
         {
+            icon: <History className="w-8 h-8 text-zenith-sub" />,
+            title: t('about.historyTitle'),
+            description: t('about.historyDesc')
+        },
+        {
             icon: <Target className="w-8 h-8 text-zenith-sub" />,
             title: t('about.missionTitle'),
             description: t('about.missionDesc')
@@ -15,11 +20,6 @@ const About = () => {
             icon: <Rocket className="w-8 h-8 text-zenith-sub" />,
             title: t('about.visionTitle'),
             description: t('about.visionDesc')
-        },
-        {
-            icon: <History className="w-8 h-8 text-zenith-sub" />,
-            title: t('about.historyTitle'),
-            description: t('about.historyDesc')
         }
     ];
 

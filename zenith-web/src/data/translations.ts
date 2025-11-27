@@ -27,7 +27,7 @@ export const translations = {
             visionTitle: 'Our Vision',
             visionDesc: 'To overcome the limitations of manned exploration, expand the realm of humanity, and share values with future generations.',
             historyTitle: 'Our History',
-            historyDesc: 'Founded in 2024, Zenith Space has rapidly grown from a Capstone design team to a fully-fledged robotics team.',
+            historyDesc: 'Founded in 2024, Zenith Space has rapidly grown from a Capstone design team to a non-profit organization with 16 members.',
         },
         journey: {
             title: 'Our Journey',
@@ -168,7 +168,7 @@ export const translations = {
             visionTitle: '우리의 비전',
             visionDesc: '유인 탐사의 한계를 넘어 인류의 영역을 확장하며, 미래 세대와 그 가치를 나눕니다.',
             historyTitle: '우리의 역사',
-            historyDesc: '2024년 캡스톤 디자인 팀으로 시작한 Zenith Space는, 이제 완전한 로봇 팀으로 빠르게 성장했습니다.',
+            historyDesc: '2024년 캡스톤 디자인 팀으로 시작한 Zenith Space는, 현재 16명의 팀원이 함께하는 비영리 단체로 성장했습니다.',
         },
         journey: {
             title: '우리의 여정',
