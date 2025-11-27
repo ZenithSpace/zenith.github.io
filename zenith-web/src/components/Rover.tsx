@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Cpu, Zap, Activity, Scale } from 'lucide-react';
+import { Scale, Gauge, Weight, Battery } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 import roverImage from '../assets/Zero_v2.jpg';
@@ -9,9 +9,9 @@ const Rover = () => {
 
     const specs = [
         { icon: <Scale />, label: t('rover.specs.weight'), value: '50kg' },
-        { icon: <Zap />, label: t('rover.specs.speed'), value: '2m/s' },
-        { icon: <Activity />, label: t('rover.specs.arm'), value: '5kg' },
-        { icon: <Cpu />, label: t('rover.specs.battery'), value: '4hrs' },
+        { icon: <Gauge />, label: t('rover.specs.speed'), value: '100m/s' },
+        { icon: <Weight />, label: t('rover.specs.arm'), value: '5kg' },
+        { icon: <Battery />, label: t('rover.specs.battery'), value: '6hrs' },
     ];
 
     return (
