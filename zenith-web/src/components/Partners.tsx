@@ -15,10 +15,10 @@ const Partners = () => {
     // Sparkle Halo Component (Optimized - Glow Only)
     const SparkleHalo = () => {
         return (
-            <div className="absolute inset-0 -z-10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+            <div className="absolute -inset-1 -z-10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
                 {/* 1. The Subtle Halo (Outer Glow) - Gold (Subcolor) */}
                 <div
-                    className="absolute inset-0 rounded-2xl blur-xl opacity-30 transition-all duration-500"
+                    className="absolute inset-0 rounded-xl blur-xl opacity-40 transition-all duration-500"
                     style={{ backgroundColor: '#FFBB00' }}
                 />
             </div>
@@ -51,22 +51,28 @@ const Partners = () => {
                                 href={partner.link}
                                 target={partner.link.startsWith('http') ? "_blank" : "_self"}
                                 rel={partner.link.startsWith('http') ? "noopener noreferrer" : ""}
-                                className="group relative flex items-center justify-center p-6 bg-white rounded-xl border border-white/10 transition-colors duration-300 w-64 flex-shrink-0 z-10 h-32"
+                                className="group relative flex items-center justify-center w-64 h-32 flex-shrink-0 z-10"
                             >
                                 <SparkleHalo />
 
-                                {partner.logo ? (
-                                    <img
-                                        src={partner.logo}
-                                        alt={partner.name}
-                                        className="max-h-full max-w-full w-auto h-auto object-contain relative z-10"
-                                        loading="lazy"
-                                    />
-                                ) : (
-                                    <span className="text-black font-bold text-lg text-center relative z-10">
-                                        {t('partners.placeholder')}
-                                    </span>
-                                )}
+                                {/* Card Background */}
+                                <div className="absolute inset-0 bg-white rounded-xl border border-white/10 transition-colors duration-300 z-0" />
+
+                                {/* Card Content */}
+                                <div className="relative z-10 flex items-center justify-center w-full h-full p-6">
+                                    {partner.logo ? (
+                                        <img
+                                            src={partner.logo}
+                                            alt={partner.name}
+                                            className="max-h-full max-w-full w-auto h-auto object-contain"
+                                            loading="lazy"
+                                        />
+                                    ) : (
+                                        <span className="text-black font-bold text-lg text-center">
+                                            {t('partners.placeholder')}
+                                        </span>
+                                    )}
+                                </div>
                             </a>
                         ))}
                     </div>
