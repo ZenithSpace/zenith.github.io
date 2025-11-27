@@ -14,7 +14,7 @@ const Team = () => {
     // Duplicate list for infinite scroll effect (triple it to be safe for wide screens)
     const carouselItems = [...leads, ...leads, ...leads];
 
-    const [ref, { width }] = useMeasure();
+    const [ref] = useMeasure();
     const xTranslation = useMotionValue(0);
     const [isHovered, setIsHovered] = useState(false);
     const [isManuallyScrolling, setIsManuallyScrolling] = useState(false);

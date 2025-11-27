@@ -11,7 +11,7 @@ const Partners = () => {
     // Duplicate list for infinite scroll effect (triple it to be safe)
     const partners = [...partnersData, ...partnersData, ...partnersData];
 
-    const [ref, { width }] = useMeasure();
+    const [ref] = useMeasure();
     const xTranslation = useMotionValue(0);
     const [isHovered, setIsHovered] = useState(false);
     const [isManuallyScrolling, setIsManuallyScrolling] = useState(false);
