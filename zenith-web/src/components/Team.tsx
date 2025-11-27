@@ -8,9 +8,6 @@ const Team = () => {
     // Placeholder data
     const leads = getTeamMembers();
 
-    // Placeholder data
-    const leads = getTeamMembers();
-
     // Duplicate list for infinite scroll effect (Double it for 50% scroll)
     const carouselItems = [...leads, ...leads];
 
@@ -24,8 +21,8 @@ const Team = () => {
                     style={{ backgroundColor: '#FFBB00' }}
                 />
 
-                {/* 2. Twinkling Particles - Reduced count for performance */}
-                {[...Array(3)].map((_, i) => (
+                {/* 2. Twinkling Particles - Balanced count */}
+                {[...Array(7)].map((_, i) => (
                     <motion.div
                         key={i}
                         className="absolute w-1 h-1 rounded-full bg-zenith-sub shadow-[0_0_5px_#FFBB00]"

@@ -22,8 +22,8 @@ const Partners = () => {
                     style={{ backgroundColor: '#FFFFFF' }}
                 />
 
-                {/* 2. Twinkling Particles - Reduced count */}
-                {[...Array(3)].map((_, i) => (
+                {/* 2. Twinkling Particles - Balanced count */}
+                {[...Array(7)].map((_, i) => (
                     <motion.div
                         key={i}
                         className="absolute w-1 h-1 rounded-full bg-slate-400 shadow-[0_0_2px_#94a3b8]"
