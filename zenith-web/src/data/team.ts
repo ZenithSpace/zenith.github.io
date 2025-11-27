@@ -84,7 +84,7 @@ export const getTeamMembers = () => {
             team: "Firmware Team",
             role: "Power System Design",
             image: "/assets/team/gyeongho_choi.png",
-            imagePosition: "center"
+            imagePosition: "center 35%"
         },
         {
             nameEn: "Daehoon Kang",
