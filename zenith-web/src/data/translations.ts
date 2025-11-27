@@ -57,48 +57,6 @@ export const translations = {
         },
         rover: {
             title: 'Our Rovers',
-            subtitle: 'Meet Our Rovers',
-            tabs: {
-                v1: 'Zero V1',
-                v2: 'Zero V2',
-            },
-            v1: {
-                name: 'Zero V1',
-                description: 'Our first rover that proved our potential. It laid the foundation for Zenith Space by winning the Excellence Award at the Defense Robot Competition.',
-                specs: {
-                    weight: 'Weight',
-                    speed: 'Max Speed',
-                    arm: 'Manipulator Payload',
-                    battery: 'Battery Life',
-                },
-                values: {
-                    weight: '55kg',
-                    speed: '10m/s',
-                    arm: '2kg',
-                    battery: '6hrs',
-                }
-            },
-            v2: {
-                name: 'Zero V2',
-                description: 'The flagship rover designed for the University Rover Challenge 2026. Engineered for extreme terrain and complex scientific tasks.',
-                specs: {
-                    weight: 'Weight',
-                    speed: 'Max Speed',
-                    arm: 'Manipulator Payload',
-                    battery: 'Battery Life',
-                },
-                values: {
-                    weight: '50kg',
-                    speed: '15m/s',
-                    arm: '5kg',
-                    battery: '8hrs',
-                }
-            },
-        },
-        team: {
-            title: 'Our Team',
-            subtitle: 'Meet the Crew',
-            comingSoon: 'Coming Soon',
             preparing: 'Preparing...',
         },
         gallery: {
@@ -228,47 +186,6 @@ export const translations = {
         },
         rover: {
             title: 'Our Rovers',
-            subtitle: 'Meet Our Rovers',
-            tabs: {
-                v1: 'Zero V1',
-                v2: 'Zero V2',
-            },
-            v1: {
-                name: 'Zero V1',
-                description: '우리의 잠재력을 증명한 첫 번째 로버입니다. 국방로봇경진대회에서 우수상을 수상하며 Zenith Space의 기틀을 마련했습니다.',
-                specs: {
-                    weight: '무게',
-                    speed: '최대 속도',
-                    arm: '매니퓰레이터 가반하중',
-                    battery: '배터리 수명',
-                },
-                values: {
-                    weight: '55kg',
-                    speed: '10m/s',
-                    arm: '2kg',
-                    battery: '6시간',
-                }
-            },
-            v2: {
-                name: 'Zero V2',
-                description: 'URC 2026 출전을 위해 설계된 플래그십 로버입니다. 극한의 지형 극복과 복잡한 과학 임무 수행을 위해 설계되었습니다.',
-                specs: {
-                    weight: '무게',
-                    speed: '최대 속도',
-                    arm: '매니퓰레이터 가반하중',
-                    battery: '배터리 수명',
-                },
-                values: {
-                    weight: '50kg',
-                    speed: '15m/s',
-                    arm: '5kg',
-                    battery: '8시간',
-                }
-            },
-        },
-        team: {
-            title: '팀원 소개',
-            subtitle: 'Zenith의 크루들',
             comingSoon: '준비 중',
             preparing: '준비 중...',
         },
