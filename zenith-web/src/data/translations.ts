@@ -46,7 +46,7 @@ export const translations = {
                 award: {
                     year: '2025.09',
                     title: 'Defense Robot Competition',
-                    desc: 'Won the Excellence Award (3rd Place) at the Defense Robot Competition with our custom rover \'Zero_v1\'.',
+                    desc: 'Won the Excellence Award (3rd Place) at the Defense Robot Competition with our first rover \'Zero_v1\'.',
                 },
                 urc: {
                     year: '2026.05',
@@ -187,7 +187,7 @@ export const translations = {
                 award: {
                     year: '2025.09',
                     title: '국방로봇경진대회',
-                    desc: '자체 개발한 로버 \'Zero_v1\'으로 국방로봇경진대회 우수상(3위)을 수상했습니다.',
+                    desc: '우리의 첫 번째 로버 \'Zero_v1\'과 함께 국방로봇경진대회 우수상(3위)을 수상했습니다.',
                 },
                 urc: {
                     year: '2026.05',
