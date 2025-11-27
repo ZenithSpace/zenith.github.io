@@ -111,13 +111,12 @@ const Rover = () => {
                         className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
                     >
                         {/* Rover Image */}
-                        <div className="relative group">
+                        <div className="relative group max-w-lg mx-auto w-full">
                             {/* Sparkle Halo Effect */}
                             <SparkleHalo color="#FFB800" />
 
                             {/* Image Container */}
                             <div className="relative rounded-2xl overflow-hidden border border-white/10 aspect-square">
-                                <div className="absolute inset-0 bg-zenith-sub/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20" />
                                 <img
                                     src={rovers[activeTab].image}
                                     alt={t(`rover.${activeTab}.name`)}
