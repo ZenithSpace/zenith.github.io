@@ -152,7 +152,7 @@ const Team = () => {
                 <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-zenith-main to-transparent z-10 pointer-events-none" />
 
                 <motion.div
-                    className="flex gap-8 px-8 py-10"
+                    className="flex gap-8 px-8 py-20"
                     ref={ref}
                     style={{ x: xTranslation, width: "max-content" }}
                     onHoverStart={() => setIsHovered(true)}
@@ -171,7 +171,7 @@ const Team = () => {
                             <div className="w-32 h-32 rounded-full overflow-hidden mb-4 border-2 border-white/20 group-hover:border-zenith-sub transition-colors duration-300 relative z-10">
                                 <img
                                     src={member.image}
-                                    alt={member.name}
+                                    alt={member.nameEn}
                                     className="w-full h-full object-cover object-top"
                                     loading="lazy"
                                 />
