@@ -1,4 +1,3 @@
-```javascript
 import { useState, useEffect } from 'react';
 import { motion, useMotionValue, animate } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
@@ -98,8 +97,8 @@ const Team = () => {
                         key={i}
                         className="absolute w-1 h-1 rounded-full bg-zenith-sub shadow-[0_0_5px_#FFBB00]"
                         style={{
-                            top: `${ Math.random() * 100 }% `,
-                            left: `${ Math.random() * 100 }% `
+                            top: `${Math.random() * 100}%`,
+                            left: `${Math.random() * 100}%`
                         }}
                         animate={{
                             opacity: [0, 1, 0],
