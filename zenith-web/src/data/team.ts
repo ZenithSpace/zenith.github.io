@@ -55,7 +55,7 @@ export const getTeamMembers = () => {
             nameKo: "김경현",
             team: "Firmware Team",
             role: "Manipulator Control",
-            image: "https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?auto=format&fit=crop&q=80&w=300&h=300"
+            image: "/assets/team/kyeonghyeon_kim.png"
         },
         {
             nameEn: "Mingu Kang",
