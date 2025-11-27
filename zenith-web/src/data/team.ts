@@ -71,7 +71,7 @@ export const getTeamMembers = () => {
         {
             nameEn: "Mingu Kang",
             nameKo: "강민구",
-            team: "Software Team",
+            team: "Firmware Team",
             role: "Global Path Planning",
             image: "/assets/team/mingu_kang.webp"
         },
