@@ -80,7 +80,7 @@ const Journey = () => {
                                         </div>
                                         <div className="text-zenith-sub font-bold mb-2">{milestone.year}</div>
                                         <h4 className="text-xl font-bold text-white mb-2">{milestone.title}</h4>
-                                        <p className="text-gray-400 text-sm">{milestone.description}</p>
+                                        <p className="text-gray-400 text-sm break-keep">{milestone.description}</p>
                                     </div>
                                 </div>
                             </motion.div>

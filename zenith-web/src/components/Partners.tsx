@@ -133,7 +133,7 @@ const Partners = () => {
                                     loading="lazy"
                                 />
                             ) : (
-                                <span className="text-black font-bold text-lg text-center">
+                                <span className="text-black font-bold text-sm text-center whitespace-nowrap">
                                     {t('partners.placeholder')}
                                 </span>
                             )}
