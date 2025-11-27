@@ -46,7 +46,7 @@ export const translations = {
                 award: {
                     year: '2025.09',
                     title: 'Defense Robot Competition',
-                    desc: 'Won the Excellence Award (3rd Place) at the Defense Robot Competition.',
+                    desc: 'Won the Excellence Award (3rd Place) at the Defense Robot Competition with our custom rover \'Zero_v1\'.',
                 },
                 urc: {
                     year: '2026.05',
