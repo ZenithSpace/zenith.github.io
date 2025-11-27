@@ -16,17 +16,17 @@ const Partners = () => {
     const SparkleHalo = () => {
         return (
             <div className="absolute inset-0 -z-10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
-                {/* 1. The Subtle Halo (Outer Glow) - White */}
+                {/* 1. The Subtle Halo (Outer Glow) - Gold */}
                 <div
-                    className="absolute inset-0 rounded-2xl blur-lg opacity-30 transition-all duration-500"
-                    style={{ backgroundColor: '#FFFFFF' }}
+                    className="absolute inset-0 rounded-2xl blur-xl opacity-40 transition-all duration-500"
+                    style={{ backgroundColor: '#FFBB00' }}
                 />
 
-                {/* 2. Twinkling Particles - Balanced count */}
+                {/* 2. Twinkling Particles - Gold (Matches Team section) */}
                 {[...Array(7)].map((_, i) => (
                     <motion.div
                         key={i}
-                        className="absolute w-1 h-1 rounded-full bg-slate-400 shadow-[0_0_2px_#94a3b8]"
+                        className="absolute w-1 h-1 rounded-full bg-zenith-sub shadow-[0_0_2px_#FFBB00]"
                         style={{
                             top: `${Math.random() * 100}%`,
                             left: `${Math.random() * 100}%`
@@ -73,7 +73,7 @@ const Partners = () => {
                                 href={partner.link}
                                 target={partner.link.startsWith('http') ? "_blank" : "_self"}
                                 rel={partner.link.startsWith('http') ? "noopener noreferrer" : ""}
-                                className="group relative flex items-center justify-center p-6 bg-white rounded-xl border border-white/10 w-64 flex-shrink-0 z-10 h-32"
+                                className="group relative flex items-center justify-center p-6 bg-white rounded-xl border border-white/10 hover:border-zenith-sub transition-colors duration-300 w-64 flex-shrink-0 z-10 h-32"
                             >
                                 <SparkleHalo />
 
