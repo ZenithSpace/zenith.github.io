@@ -34,7 +34,8 @@ export const getTeamMembers = () => {
             nameKo: "송지민",
             team: "Hardware Team",
             role: "Drivetrain Design",
-            image: "/assets/team/jimin_song.png"
+            image: "/assets/team/jimin_song.png",
+            imagePosition: "center 20%"
         },
         {
             nameEn: "Geuntaek Bae",
@@ -84,8 +85,8 @@ export const getTeamMembers = () => {
             team: "Firmware Team",
             role: "Power System Design",
             image: "/assets/team/gyeongho_choi.png",
-            imagePosition: "center 80%",
-            imageScale: 0.9
+            imagePosition: "center 70%",
+            imageScale: 0.95
         },
         {
             nameEn: "Daehoon Kang",
