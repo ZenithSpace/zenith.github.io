@@ -26,12 +26,12 @@ const SparkleHalo = ({ color }: { color: string }) => {
                     <motion.div
                         key={i}
                         className="absolute w-1 h-1 rounded-full bg-white shadow-[0_0_5px_white]"
-                        style={{ top: '50%', left: '50%' }}
+                        style={{ top, left }}
                         animate={{
                             opacity: [0, 1, 0],
                             scale: [0, 1.5, 0],
-                            x: [0, (Math.random() - 0.5) * 100],
-                            y: [0, (Math.random() - 0.5) * 100],
+                            x: [0, (Math.random() - 0.5) * 20], // Reduced movement since they are already distributed
+                            y: [0, (Math.random() - 0.5) * 20],
                         }}
                         transition={{
                             duration: 2 + Math.random() * 2,
@@ -91,8 +91,8 @@ const Rover = () => {
                                 key={tab}
                                 onClick={() => setActiveTab(tab)}
                                 className={`px-6 py-2 rounded-full font-bold transition-all duration-300 border ${activeTab === tab
-                                        ? 'bg-zenith-sub text-white border-zenith-sub shadow-[0_0_15px_rgba(255,187,0,0.4)]'
-                                        : 'bg-transparent text-gray-400 border-white/20 hover:border-white/50 hover:text-white'
+                                    ? 'bg-zenith-sub text-white border-zenith-sub shadow-[0_0_15px_rgba(255,187,0,0.4)]'
+                                    : 'bg-transparent text-gray-400 border-white/20 hover:border-white/50 hover:text-white'
                                     }`}
                             >
                                 {t(`rover.tabs.${tab}`)}
