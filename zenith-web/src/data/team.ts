@@ -29,7 +29,7 @@ export const getTeamMembers = () => {
             nameKo: "서한길",
             team: "Firmware Team Lead",
             role: "CTO",
-            image: "/assets/team/hangil_seo.jpg"
+            image: "/assets/team/hangil_seo_final.webp"
         },
         {
             nameEn: "Junghwan Lee",
