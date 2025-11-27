@@ -111,7 +111,7 @@ const Rover = () => {
                         className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
                     >
                         {/* Rover Image */}
-                        <div className="relative group max-w-lg mx-auto w-full">
+                        <div className="relative group max-w-md mx-auto w-full">
                             {/* Sparkle Halo Effect */}
                             <SparkleHalo color="#FFB800" />
 
