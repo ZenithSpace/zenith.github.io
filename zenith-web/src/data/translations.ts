@@ -95,6 +95,12 @@ export const translations = {
                 }
             },
         },
+        team: {
+            title: 'Our Team',
+            subtitle: 'Meet the Crew',
+            comingSoon: 'Coming Soon',
+            preparing: 'Preparing...',
+        },
         gallery: {
             title: 'Gallery',
             subtitle: 'Moments of Zenith',
@@ -259,6 +265,12 @@ export const translations = {
                     battery: "8시간"
                 }
             },
+        },
+        team: {
+            title: '팀원 소개',
+            subtitle: 'Zenith의 크루들',
+            comingSoon: '준비 중',
+            preparing: '준비 중...',
         },
         gallery: {
             title: '갤러리',
