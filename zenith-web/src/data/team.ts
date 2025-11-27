@@ -47,7 +47,7 @@ export const getTeamMembers = () => {
             nameKo: "곽호현",
             team: "Hardware Team",
             role: "Manipulator Design",
-            image: "https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?auto=format&fit=crop&q=80&w=300&h=300"
+            image: "/assets/team/hohyun_kwak.png"
         },
         {
             nameEn: "Kyeonghyeon Kim",
