@@ -34,7 +34,7 @@ const Partners = () => {
                                 href={partner.link}
                                 target={partner.link.startsWith('http') ? "_blank" : "_self"}
                                 rel={partner.link.startsWith('http') ? "noopener noreferrer" : ""}
-                                className="group relative flex items-center justify-center p-6 bg-white rounded-xl border border-white/10 w-64 h-32 flex-shrink-0 transition-all duration-300 hover:scale-105 hover:-translate-y-1 hover:border-zenith-sub hover:shadow-[0_10px_30px_-10px_rgba(255,187,0,0.3)] z-10"
+                                className="group relative flex items-center justify-center p-6 bg-white rounded-xl border border-white/10 w-64 h-32 flex-shrink-0 transition-all duration-300 hover:scale-105 hover:-translate-y-1 hover:border-white hover:shadow-[0_10px_30px_-10px_rgba(255,255,255,0.3)] z-10"
                             >
                                 {partner.logo ? (
                                     <img
