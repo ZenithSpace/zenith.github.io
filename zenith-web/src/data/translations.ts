@@ -177,7 +177,7 @@ export const translations = {
                 founded: {
                     year: '2024.10',
                     title: '팀 설립',
-                    desc: '로봇 공학에 열정적인 5명의 학생들이 Zenith Space를 시작했습니다.',
+                    desc: '로봇 공학에 열정적인 5명의 학생들이 Zenith Space를 설립했습니다.',
                 },
                 prototype: {
                     year: '2025.06',
@@ -187,7 +187,7 @@ export const translations = {
                 award: {
                     year: '2025.09',
                     title: '국방로봇경진대회',
-                    desc: '국방로봇경진대회 우수상(3위) 수상으로 기술력을 입증했습니다.',
+                    desc: '자체 개발한 로버 \'Zero_v1\'으로 국방로봇경진대회 우수상(3위)을 수상했습니다.',
                 },
                 urc: {
                     year: '2026.05',
@@ -219,7 +219,7 @@ export const translations = {
         partners: {
             title: '파트너',
             subtitle: '든든한 파트너',
-            placeholder: '다음 파트너가 되어주세요!',
+            placeholder: '다음 파트너가\n되어주세요!',
         },
         sponsorship: {
             title: '후원',
