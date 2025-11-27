@@ -53,7 +53,7 @@ const Journey = () => {
                     {/* Timeline Line */}
                     <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-white/10 hidden md:block" />
 
-                    <div className="space-y-12">
+                    <div className="space-y-8">
                         {milestones.map((milestone, index) => (
                             <motion.div
                                 key={index}
@@ -61,9 +61,13 @@ const Journey = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: index * 0.1 }}
-                                className={`flex flex-col md:flex-row items-center justify-between group ${index % 2 === 0 ? 'md:flex-row-reverse' : ''
+                                className={`flex flex-col md:flex-row items-center justify-between group relative ${index % 2 === 0 ? 'md:flex-row-reverse' : ''
                                     }`}
                             >
+                                {/* Connector Line */}
+                                <div className={`absolute top-1/2 h-px bg-white/20 hidden md:block w-[8.33%] -z-10 ${index % 2 === 0 ? 'left-[41.66%]' : 'left-[50%]'
+                                    }`} />
+
                                 <div className="w-full md:w-5/12" />
                                 <div className="z-10 w-10 h-10 rounded-full bg-zenith-sub flex items-center justify-center text-white shadow-[0_0_20px_rgba(255,187,0,0.5)] mb-4 md:mb-0">
                                     {milestone.icon}
