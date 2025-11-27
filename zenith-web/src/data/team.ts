@@ -61,7 +61,7 @@ export const getTeamMembers = () => {
             nameKo: "강민구",
             team: "Software Team",
             role: "Global Path Planning",
-            image: "https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?auto=format&fit=crop&q=80&w=300&h=300"
+            image: "/assets/team/mingu_kang.png"
         },
         {
             nameEn: "Yeongji Choi",
