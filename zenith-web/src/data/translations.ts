@@ -57,7 +57,43 @@ export const translations = {
         },
         rover: {
             title: 'Our Rovers',
-            preparing: 'Preparing...',
+            subtitle: 'Meet Our Rovers',
+            tabs: {
+                v1: 'Zero V1',
+                v2: 'Zero V2',
+            },
+            v1: {
+                name: 'Zero V1',
+                description: 'Our first rover, Zero V1, was a significant milestone. It successfully demonstrated autonomous navigation and basic manipulation capabilities in a controlled environment.',
+                specs: {
+                    weight: 'Weight',
+                    speed: 'Max Speed',
+                    arm: 'Manipulator Payload',
+                    battery: 'Battery Life',
+                },
+                values: {
+                    weight: '55kg',
+                    speed: '3m/s',
+                    arm: '2kg',
+                    battery: '6hrs',
+                }
+            },
+            v2: {
+                name: 'Zero V2',
+                description: 'Zero V2 represents a major leap forward. With an upgraded chassis, more powerful motors, and an advanced sensor suite, it is designed to tackle the rugged terrain of the URC.',
+                specs: {
+                    weight: 'Weight',
+                    speed: 'Max Speed',
+                    arm: 'Manipulator Payload',
+                    battery: 'Battery Life',
+                },
+                values: {
+                    weight: '50kg',
+                    speed: '5m/s',
+                    arm: '5kg',
+                    battery: '8hrs',
+                }
+            },
         },
         gallery: {
             title: 'Gallery',
@@ -186,8 +222,43 @@ export const translations = {
         },
         rover: {
             title: 'Our Rovers',
-            comingSoon: '준비 중',
-            preparing: '준비 중...',
+            subtitle: 'Meet Our Rovers',
+            tabs: {
+                v1: 'Zero V1',
+                v2: 'Zero V2',
+            },
+            v1: {
+                name: 'Zero V1',
+                description: '우리의 첫 번째 로버 Zero V1은 중요한 이정표였습니다. 통제된 환경에서 자율 주행과 기본적인 매니퓰레이터 조작 능력을 성공적으로 입증했습니다.',
+                specs: {
+                    weight: '무게',
+                    speed: '최대 속도',
+                    arm: '매니퓰레이터 가반하중',
+                    battery: '배터리 수명',
+                },
+                values: {
+                    weight: '55kg',
+                    speed: "3m/s",
+                    arm: "2kg",
+                    battery: "6시간"
+                }
+            },
+            v2: {
+                name: 'Zero V2',
+                description: 'Zero V2는 큰 도약을 의미합니다. 업그레이드된 섀시, 더 강력한 모터, 그리고 첨단 센서 제품군을 갖추어 URC의 험난한 지형을 극복하도록 설계되었습니다.',
+                specs: {
+                    weight: '무게',
+                    speed: '최대 속도',
+                    arm: '매니퓰레이터 가반하중',
+                    battery: '배터리 수명',
+                },
+                values: {
+                    weight: '50kg',
+                    speed: "5m/s",
+                    arm: "5kg",
+                    battery: "8시간"
+                }
+            },
         },
         gallery: {
             title: '갤러리',
