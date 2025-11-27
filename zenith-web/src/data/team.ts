@@ -22,7 +22,9 @@ export const getTeamMembers = () => {
             nameKo: "강윤구",
             team: "Team Principal",
             role: "CEO",
-            image: "/assets/team/yoongu_kang.webp"
+            image: "/assets/team/yoongu_kang_new.webp",
+            imagePosition: "center 30%",
+            imageScale: 1.2
         },
         {
             nameEn: "Hangil Seo",
