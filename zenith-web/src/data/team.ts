@@ -5,8 +5,18 @@
 // Alternatively, we can store keys and translate in the component.
 // For simplicity and consistency with the current request, let's export a function that takes the translation function 't'.
 
+export interface TeamMember {
+    nameEn: string;
+    nameKo: string;
+    team: string;
+    role: string;
+    image: string;
+    imagePosition?: string;
+    imageScale?: number;
+}
+
 export const getTeamMembers = () => {
-    const leads = [
+    const leads: TeamMember[] = [
         {
             nameEn: "Yoongu Kang",
             nameKo: "강윤구",
