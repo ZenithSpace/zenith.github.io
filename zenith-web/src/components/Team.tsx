@@ -177,17 +177,12 @@ const Team = () => {
                                     loading="lazy"
                                 />
                             </div>
-                        We need the content to be duplicated.
-                        If I render `leads` (original list) multiple times.
-                        
-                        Let's change the strategy slightly:
-                        Render `leads` twice.
-                        Animation moves from 0 to -50%.
-                        
-                        Let's adjust the variable `carouselItems` in the code block above?
-                        No, I can just render `leads` twice in the JSX.
-                    */}
-                </div>
+                            <h4 className="text-xl font-bold text-white mb-1 relative z-10">{member.name}</h4>
+                            <p className="text-zenith-sub font-medium text-sm relative z-10 mb-0.5">{member.team}</p>
+                            <p className="text-gray-400 text-xs relative z-10">{member.role}</p>
+                        </div>
+                    ))}
+                </motion.div>
             </div>
         </section>
     );
