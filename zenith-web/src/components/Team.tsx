@@ -65,9 +65,12 @@ const Team = () => {
                 <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-zenith-main to-transparent z-10 pointer-events-none" />
                 <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-zenith-main to-transparent z-10 pointer-events-none" />
 
-                <div className="flex w-max animate-infinite-scroll hover:[animation-play-state:paused]">
+                <div
+                    className="flex w-max animate-infinite-scroll hover:[animation-play-state:paused]"
+                    style={{ animationDuration: '60s' }}
+                >
                     {/* First set of items */}
-                    <div className="flex gap-8 px-4">
+                    <div className="flex gap-8 px-4 py-10">
                         {carouselItems.map((member, index) => (
                             <div
                                 key={index}
