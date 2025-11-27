@@ -59,23 +59,23 @@ export const translations = {
             title: 'Our Rover',
             subtitle: 'Meet Our Rovers',
             tabs: {
-                v1: 'Zero V1 (2025)',
-                v2: 'Zero V2 (Current)',
+                v1: 'Zero V1',
+                v2: 'Zero V2',
             },
             v1: {
                 name: 'Zero V1',
-                description: 'Our first prototype that proved our potential. It laid the foundation for Zenith Space by winning the Excellence Award at the Defense Robot Competition.',
+                description: 'Our first rover that proved our potential. It laid the foundation for Zenith Space by winning the Excellence Award at the Defense Robot Competition.',
                 specs: {
-                    achievement: 'Achievement',
-                    year: 'Year Built',
-                    status: 'Status',
-                    type: 'Type',
+                    weight: 'Weight',
+                    speed: 'Max Speed',
+                    arm: 'Arm Payload',
+                    battery: 'Battery Life',
                 },
                 values: {
-                    achievement: '3rd Place',
-                    year: '2025',
-                    status: 'Retired',
-                    type: 'Prototype',
+                    weight: '55kg',
+                    speed: '10m/s',
+                    arm: '2kg',
+                    battery: '6hrs',
                 }
             },
             v2: {
@@ -89,9 +89,9 @@ export const translations = {
                 },
                 values: {
                     weight: '50kg',
-                    speed: '100m/s',
+                    speed: '15m/s',
                     arm: '5kg',
-                    battery: '6hrs',
+                    battery: '8hrs',
                 }
             },
         },
@@ -230,23 +230,23 @@ export const translations = {
             title: 'Our Rover',
             subtitle: 'Meet Our Rovers',
             tabs: {
-                v1: 'Zero V1 (2025)',
-                v2: 'Zero V2 (Current)',
+                v1: 'Zero V1',
+                v2: 'Zero V2',
             },
             v1: {
                 name: 'Zero V1',
-                description: '우리의 잠재력을 증명한 첫 번째 프로토타입입니다. 국방로봇경진대회에서 우수상을 수상하며 Zenith Space의 기틀을 마련했습니다.',
+                description: '우리의 잠재력을 증명한 첫 번째 로버입니다. 국방로봇경진대회에서 우수상을 수상하며 Zenith Space의 기틀을 마련했습니다.',
                 specs: {
-                    achievement: '주요 성과',
-                    year: '제작 연도',
-                    status: '상태',
-                    type: '유형',
+                    weight: '무게',
+                    speed: '최대 속도',
+                    arm: '팔 가반하중',
+                    battery: '배터리 수명',
                 },
                 values: {
-                    achievement: '우수상 (3위)',
-                    year: '2025년',
-                    status: '은퇴 (Retired)',
-                    type: '프로토타입',
+                    weight: '55kg',
+                    speed: '10m/s',
+                    arm: '2kg',
+                    battery: '6시간',
                 }
             },
             v2: {
@@ -260,9 +260,9 @@ export const translations = {
                 },
                 values: {
                     weight: '50kg',
-                    speed: '100m/s',
+                    speed: '15m/s',
                     arm: '5kg',
-                    battery: '6시간',
+                    battery: '8시간',
                 }
             },
         },
