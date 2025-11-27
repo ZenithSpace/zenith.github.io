@@ -19,15 +19,14 @@ export const getTeamMembers = () => {
             nameKo: "서한길",
             team: "Firmware Team Lead",
             role: "CTO",
-            image: "/assets/team/hangil_seo.png"
+            image: "https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?auto=format&fit=crop&q=80&w=300&h=300"
         },
         {
             nameEn: "Junghwan Lee",
             nameKo: "이정환",
             team: "Hardware Team",
             role: "CFO",
-            image: "/assets/team/junghwan_lee.jpg",
-            imagePosition: "center"
+            image: "https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?auto=format&fit=crop&q=80&w=300&h=300"
         },
         {
             nameEn: "Jimin Song",
@@ -41,14 +40,14 @@ export const getTeamMembers = () => {
             nameKo: "배근택",
             team: "Hardware Team",
             role: "Drivetrain Design",
-            image: "/assets/team/geuntaek_bae.png"
+            image: "https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?auto=format&fit=crop&q=80&w=300&h=300"
         },
         {
             nameEn: "Hohyun Kwak",
             nameKo: "곽호현",
             team: "Hardware Team",
             role: "Manipulator Design",
-            image: "/assets/team/hohyun_kwak.png"
+            image: "https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?auto=format&fit=crop&q=80&w=300&h=300"
         },
         {
             nameEn: "Kyeonghyeon Kim",
@@ -62,7 +61,7 @@ export const getTeamMembers = () => {
             nameKo: "강민구",
             team: "Software Team",
             role: "Global Path Planning",
-            image: "/assets/team/mingu_kang.png"
+            image: "https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?auto=format&fit=crop&q=80&w=300&h=300"
         },
         {
             nameEn: "Yeongji Choi",
@@ -90,7 +89,7 @@ export const getTeamMembers = () => {
             nameKo: "강대훈",
             team: "Hardware Team",
             role: "Science Lab Design",
-            image: "/assets/team/daehoon_kang.png"
+            image: "https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?auto=format&fit=crop&q=80&w=300&h=300"
         },
         {
             nameEn: "Yongwon Seo",
