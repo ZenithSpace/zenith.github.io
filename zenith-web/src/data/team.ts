@@ -36,7 +36,7 @@ export const getTeamMembers = () => {
             nameKo: "이정환",
             team: "Hardware Team",
             role: "CFO",
-            image: "/assets/team/junghwan_lee.webp",
+            image: "/assets/team/junghwan_lee_final.webp",
             imagePosition: "center"
         },
         {
