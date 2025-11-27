@@ -29,14 +29,14 @@ export const getTeamMembers = () => {
             nameKo: "서한길",
             team: "Firmware Team Lead",
             role: "CTO",
-            image: "/assets/team/hangil_seo.png"
+            image: "/assets/team/hangil_seo.webp"
         },
         {
             nameEn: "Junghwan Lee",
             nameKo: "이정환",
             team: "Hardware Team",
             role: "CFO",
-            image: "/assets/team/junghwan_lee.jpg",
+            image: "/assets/team/junghwan_lee.webp",
             imagePosition: "center"
         },
         {
@@ -44,7 +44,7 @@ export const getTeamMembers = () => {
             nameKo: "송지민",
             team: "Hardware Team",
             role: "Drivetrain Design",
-            image: "/assets/team/jimin_song.png",
+            image: "/assets/team/jimin_song.webp",
             imagePosition: "center 20%"
         },
         {
@@ -52,28 +52,28 @@ export const getTeamMembers = () => {
             nameKo: "배근택",
             team: "Hardware Team",
             role: "Drivetrain Design",
-            image: "/assets/team/geuntaek_bae.png"
+            image: "/assets/team/geuntaek_bae.webp"
         },
         {
             nameEn: "Hohyun Kwak",
             nameKo: "곽호현",
             team: "Hardware Team",
             role: "Manipulator Design",
-            image: "/assets/team/hohyun_kwak.png"
+            image: "/assets/team/hohyun_kwak.webp"
         },
         {
             nameEn: "Kyeonghyeon Kim",
             nameKo: "김경현",
             team: "Firmware Team",
             role: "Manipulator Control",
-            image: "/assets/team/kyeonghyeon_kim.png"
+            image: "/assets/team/kyeonghyeon_kim.webp"
         },
         {
             nameEn: "Mingu Kang",
             nameKo: "강민구",
             team: "Software Team",
             role: "Global Path Planning",
-            image: "/assets/team/mingu_kang.png"
+            image: "/assets/team/mingu_kang.webp"
         },
         {
             nameEn: "Yeongji Choi",
@@ -87,14 +87,14 @@ export const getTeamMembers = () => {
             nameKo: "김수현",
             team: "Software Team",
             role: "Image Processing/Communication",
-            image: "/assets/team/suhyun_kim.jpg"
+            image: "/assets/team/suhyun_kim.webp"
         },
         {
             nameEn: "Gyeongho Choi",
             nameKo: "최경호",
             team: "Firmware Team",
             role: "Power System Design",
-            image: "/assets/team/gyeongho_choi.png",
+            image: "/assets/team/gyeongho_choi.webp",
             imagePosition: "center 65%"
         },
         {
@@ -102,7 +102,7 @@ export const getTeamMembers = () => {
             nameKo: "강대훈",
             team: "Hardware Team",
             role: "Science Lab Design",
-            image: "/assets/team/daehoon_kang.png"
+            image: "/assets/team/daehoon_kang.webp"
         },
         {
             nameEn: "Yongwon Seo",

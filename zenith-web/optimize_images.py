@@ -12,8 +12,13 @@ def optimize_images(directory):
                         # Fix orientation based on EXIF
                         img = ImageOps.exif_transpose(img)
                         
-                        # Calculate new size (max 1920px width/height)
-                        max_size = 1920
+                        # Calculate new size
+                        # If in team directory, use smaller max size
+                        if 'team' in root.lower():
+                            max_size = 800
+                        else:
+                            max_size = 1920
+                        
                         ratio = min(max_size / img.width, max_size / img.height)
                         
                         # Only resize if larger than max_size
