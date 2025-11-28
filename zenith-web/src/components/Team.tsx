@@ -9,7 +9,7 @@ const Team = () => {
     const { t, language } = useLanguage();
 
     // Placeholder data
-    const leads = getTeamMembers();
+    const leads = getTeamMembers().filter(member => !member.hidden);
 
     // Duplicate list for infinite scroll effect (triple it to be safe for wide screens)
     const carouselItems = [...leads, ...leads, ...leads];
