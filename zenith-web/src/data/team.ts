@@ -23,14 +23,14 @@ export const getTeamMembers = () => {
             nameKo: "강윤구",
             team: "Team Principal",
             role: "CEO",
-            image: "/assets/team/yoongu_kang.webp"
+            image: "/assets/team/yoongu_kang_new.webp"
         },
         {
             nameEn: "Hangil Seo",
             nameKo: "서한길",
             team: "Firmware Team Lead",
             role: "CTO",
-            image: "/assets/team/hangil_seo_new.webp"
+            image: "/assets/team/hangil_seo_final.webp"
         },
         {
             nameEn: "Junghwan Lee",
