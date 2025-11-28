@@ -124,7 +124,7 @@ export const getTeamMembers = () => {
             nameKo: "서진호",
             team: "Science Team",
             role: "Science Experiment Design",
-            image: "https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?auto=format&fit=crop&q=80&w=300&h=300"
+            image: "/assets/team/jinho_seo.png"
         },
         {
             nameEn: "Hanryung Shin",
