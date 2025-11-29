@@ -129,7 +129,7 @@ const Partners = () => {
                                 <img
                                     src={partner.logo}
                                     alt={partner.name}
-                                    className="max-h-full max-w-full w-auto h-auto object-contain"
+                                    className={`max-h-full max-w-full w-auto h-auto object-contain ${partner.className || ''}`}
                                     loading="lazy"
                                 />
                             ) : (
