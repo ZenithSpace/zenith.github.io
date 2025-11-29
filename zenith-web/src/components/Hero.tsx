@@ -40,10 +40,10 @@ const Hero = () => {
                     </p>
 
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                        <button className="px-8 py-4 bg-zenith-sub hover:bg-white hover:text-zenith-main text-white rounded-full font-bold transition-all flex items-center justify-center gap-2 group">
+                        <a href="#contact" className="px-8 py-4 bg-zenith-sub hover:bg-white hover:text-zenith-main text-white rounded-full font-bold transition-all flex items-center justify-center gap-2 group">
                             {t('hero.supportButton')}
                             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                        </button>
+                        </a>
                         <a href="/handbook.pdf" download className="px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-white rounded-full font-bold transition-all flex items-center justify-center gap-2">
                             {t('hero.downloadButton')}
                             <Download className="w-5 h-5" />
