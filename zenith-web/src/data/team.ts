@@ -21,8 +21,8 @@ export const getTeamMembers = () => {
         {
             nameEn: "Yoongu Kang",
             nameKo: "강윤구",
-            team: "Team Principal",
-            role: "Team Principal / Software Team Lead",
+            team: "Team Principal / Software Team Lead",
+            role: "CEO",
             image: "/assets/team/yoongu_kang.webp"
         },
         {
@@ -35,8 +35,8 @@ export const getTeamMembers = () => {
         {
             nameEn: "Junghwan Lee",
             nameKo: "이정환",
-            team: "Hardware Team",
-            role: "Hardware Team Lead",
+            team: "Hardware Team Lead",
+            role: "CFO",
             image: "/assets/team/junghwan_lee_final.webp",
             imagePosition: "center"
         },
