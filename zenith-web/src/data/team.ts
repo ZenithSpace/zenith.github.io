@@ -21,7 +21,7 @@ export const getTeamMembers = () => {
         {
             nameEn: "Yoongu Kang",
             nameKo: "강윤구",
-            team: "Team Principal / Software Team Lead",
+            team: "General / Software Team Lead",
             role: "CEO",
             image: "/assets/team/yoongu_kang.webp"
         },
