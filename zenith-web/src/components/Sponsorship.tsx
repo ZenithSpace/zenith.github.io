@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Check, Star } from 'lucide-react';
+import { Check, Star, Globe, Cpu, GraduationCap, Wallet, Wrench, MessageCircle, Building } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 const Sponsorship = () => {
@@ -156,8 +156,40 @@ const Sponsorship = () => {
                     <h3 className="text-4xl font-bold font-['Outfit']">{t('sponsorship.subtitle')}</h3>
                 </motion.div>
 
-                {/* Main Tiers Grid (Affiliate, Silver, Gold, Platinum) */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {/* 1. Your Impact Section */}
+                <div className="mb-24">
+                    <div className="text-center mb-12">
+                        <h4 className="text-2xl font-bold text-white mb-2">{t('sponsorship.impact.title')}</h4>
+                        <p className="text-gray-400">{t('sponsorship.impact.subtitle')}</p>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        {[
+                            { key: 'challenge', icon: Globe, color: 'text-blue-400' },
+                            { key: 'innovation', icon: Cpu, color: 'text-purple-400' },
+                            { key: 'talent', icon: GraduationCap, color: 'text-green-400' }
+                        ].map((item, index) => (
+                            <motion.div
+                                key={item.key}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: index * 0.1 }}
+                                className="bg-white/5 border border-white/10 rounded-2xl p-8 text-center hover:bg-white/10 transition-colors"
+                            >
+                                <div className={`inline-flex p-4 rounded-full bg-white/5 mb-6 ${item.color}`}>
+                                    <item.icon size={32} />
+                                </div>
+                                <h5 className="text-xl font-bold text-white mb-3">{t(`sponsorship.impact.items.${item.key}.title`)}</h5>
+                                <p className="text-gray-400 leading-relaxed">
+                                    {t(`sponsorship.impact.items.${item.key}.desc`)}
+                                </p>
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
+
+                {/* 2. Main Tiers Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
                     {mainTiers.map((tier) => (
                         <div key={tier.key}>
                             {renderTierCard(tier)}
@@ -165,8 +197,44 @@ const Sponsorship = () => {
                     ))}
                 </div>
 
-                {/* Diamond Tier (Bottom Full Width) */}
-                {renderTierCard(diamondTier, true)}
+                {/* 3. Diamond Tier */}
+                <div className="mb-24">
+                    {renderTierCard(diamondTier, true)}
+                </div>
+
+                {/* 4. Ways to Support Section */}
+                <div>
+                    <div className="text-center mb-12">
+                        <h4 className="text-2xl font-bold text-white mb-2">{t('sponsorship.ways.title')}</h4>
+                        <p className="text-gray-400">{t('sponsorship.ways.subtitle')}</p>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        {[
+                            { key: 'financial', icon: Wallet, color: 'text-yellow-400' },
+                            { key: 'equipment', icon: Wrench, color: 'text-orange-400' },
+                            { key: 'mentorship', icon: MessageCircle, color: 'text-pink-400' },
+                            { key: 'facility', icon: Building, color: 'text-cyan-400' }
+                        ].map((item, index) => (
+                            <motion.div
+                                key={item.key}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: index * 0.1 }}
+                                className="bg-white/5 border border-white/10 rounded-xl p-6 hover:border-zenith-sub/50 transition-colors group"
+                            >
+                                <div className={`flex items-center gap-4 mb-4 ${item.color}`}>
+                                    <item.icon size={24} className="group-hover:scale-110 transition-transform" />
+                                    <h5 className="text-lg font-bold text-white">{t(`sponsorship.ways.items.${item.key}.title`)}</h5>
+                                </div>
+                                <p className="text-sm text-gray-400 leading-relaxed">
+                                    {t(`sponsorship.ways.items.${item.key}.desc`)}
+                                </p>
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
+
             </div>
         </section>
     );

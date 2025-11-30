@@ -140,6 +140,46 @@ export const translations = {
                     features: ['Logo on Website, SNS, SAR Video', 'Logo on Team Apparels', 'X-Large Logo on Robot', 'Access to Team Resume', 'Private Tech Demo at Sponsor HQ', 'Custom Benefit']
                 }
             },
+            impact: {
+                title: 'Your Impact',
+                subtitle: 'Why Sponsor Us?',
+                items: {
+                    challenge: {
+                        title: 'Global Challenge',
+                        desc: 'Support us as we represent South Korea on the global stage at the University Rover Challenge.'
+                    },
+                    innovation: {
+                        title: 'Tech Innovation',
+                        desc: 'Contribute to the advancement of autonomous navigation and space robotics technology.'
+                    },
+                    talent: {
+                        title: 'Future Talent',
+                        desc: 'Help nurture the next generation of aerospace engineers and robotics experts.'
+                    }
+                }
+            },
+            ways: {
+                title: 'Ways to Support',
+                subtitle: 'How You Can Help',
+                items: {
+                    financial: {
+                        title: 'Financial Support',
+                        desc: 'Direct funding for rover manufacturing, travel expenses, and team operations.'
+                    },
+                    equipment: {
+                        title: 'Equipment & Parts',
+                        desc: 'Donation of sensors, motors, raw materials, or manufacturing tools.'
+                    },
+                    mentorship: {
+                        title: 'Technical Expertise',
+                        desc: 'Share your engineering knowledge through mentorship and design reviews.'
+                    },
+                    facility: {
+                        title: 'Facility Access',
+                        desc: 'Provide access to testing grounds, laboratories, or machining facilities.'
+                    }
+                }
+            },
         },
         contact: {
             title: 'Contact Us',
@@ -309,6 +349,46 @@ export const translations = {
                     name: 'Diamond',
                     price: '3000만원+',
                     features: ['웹사이트, SNS, SAR 영상 로고 노출', '팀 단체복 로고 부착', '로버 로고 부착 (X-Large)', '팀원 이력서 열람 권한', '후원사 본사 방문 기술 시연', '맞춤형 혜택 제공']
+                }
+            },
+            impact: {
+                title: '후원의 가치',
+                subtitle: 'Why Sponsor Us?',
+                items: {
+                    challenge: {
+                        title: '글로벌 도전',
+                        desc: '대한민국을 대표하여 세계 무대인 URC에 도전하는 여정을 함께해주세요.'
+                    },
+                    innovation: {
+                        title: '기술 혁신',
+                        desc: '자율 주행 및 우주 로봇 기술의 발전에 기여하고 혁신을 이끌어주세요.'
+                    },
+                    talent: {
+                        title: '미래 인재 양성',
+                        desc: '차세대 항공우주 엔지니어와 로봇 전문가들이 성장할 수 있도록 도와주세요.'
+                    }
+                }
+            },
+            ways: {
+                title: '후원 방법',
+                subtitle: 'How You Can Help',
+                items: {
+                    financial: {
+                        title: '재정 후원',
+                        desc: '로버 제작비, 대회 참가비, 팀 운영비를 위한 직접적인 자금 후원입니다.'
+                    },
+                    equipment: {
+                        title: '물품 후원',
+                        desc: '센서, 모터, 가공 원자재, 공구 등 로버 제작에 필요한 물품을 기증해주세요.'
+                    },
+                    mentorship: {
+                        title: '기술 자문',
+                        desc: '엔지니어링 지식 공유, 설계 검토 등 기술적인 멘토링을 제공해주세요.'
+                    },
+                    facility: {
+                        title: '시설 지원',
+                        desc: '주행 테스트 필드, 실험실, 가공 시설 등 연구 개발을 위한 공간을 지원해주세요.'
+                    }
                 }
             },
         },
