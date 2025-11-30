@@ -221,7 +221,13 @@ const Sponsorship = () => {
                     </div>
                 </div>
 
-                {/* 3. Main Tiers Grid */}
+                {/* 3. Sponsorship Tiers Section */}
+                <div className="text-center mb-12">
+                    <h4 className="text-2xl font-bold text-white mb-2">{t('sponsorship.tiers.title')}</h4>
+                    <p className="text-gray-400">{t('sponsorship.tiers.subtitle')}</p>
+                </div>
+
+                {/* Main Tiers Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
                     {mainTiers.map((tier) => (
                         <div key={tier.key}>

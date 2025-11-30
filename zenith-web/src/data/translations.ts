@@ -114,6 +114,8 @@ export const translations = {
             title: 'Sponsorship',
             subtitle: 'Partner With Us',
             tiers: {
+                title: 'Sponsorship Tiers',
+                subtitle: 'Choose Your Level of Support',
                 affiliate: {
                     name: 'Affiliate',
                     price: 'Under ₩1,000,000',
@@ -325,6 +327,8 @@ export const translations = {
             title: '후원',
             subtitle: '우리와 함께하세요',
             tiers: {
+                title: '후원 등급',
+                subtitle: '지원 규모에 따른 혜택을 확인하세요',
                 affiliate: {
                     name: 'Affiliate',
                     price: '100만원 미만',
