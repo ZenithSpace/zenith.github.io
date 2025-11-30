@@ -148,15 +148,15 @@ export const translations = {
                 items: {
                     challenge: {
                         title: 'Global Challenge',
-                        desc: 'Support us as we represent South Korea on the global stage at the University Rover Challenge.'
+                        desc: 'Support us as we represent South Korea on the global stage, and showcase your brand to a worldwide audience.'
                     },
                     innovation: {
                         title: 'Tech Innovation',
-                        desc: 'Contribute to the advancement of space exploration and robotics technology.'
+                        desc: 'Contribute to the advancement of space exploration while strengthening your image as an innovation leader.'
                     },
                     talent: {
                         title: 'Future Talent',
-                        desc: 'Help nurture the next generation of aerospace engineers and robotics experts.'
+                        desc: 'Help nurture the next generation of engineers and gain early access to top technical talent.'
                     }
                 }
             },
@@ -361,15 +361,15 @@ export const translations = {
                 items: {
                     challenge: {
                         title: '글로벌 도전',
-                        desc: '대한민국을 대표하여 세계 무대인 URC에 도전하는 여정을 함께해주세요.'
+                        desc: '대한민국을 대표하여 세계 무대인 URC에 도전하는 여정을 후원하고, 글로벌 무대에서 귀사의 브랜드를 알리세요.'
                     },
                     innovation: {
                         title: '기술 혁신',
-                        desc: '우주 탐사 및 로봇 기술의 발전에 기여하고 혁신을 이끌어주세요.'
+                        desc: '우주 탐사 및 로봇 기술의 발전에 기여하며, 혁신을 선도하는 기업으로서의 이미지를 제고하세요.'
                     },
                     talent: {
                         title: '미래 인재 양성',
-                        desc: '차세대 항공우주 엔지니어와 로봇 전문가들이 성장할 수 있도록 도와주세요.'
+                        desc: '차세대 엔지니어의 성장을 돕고, 귀사의 미래를 이끌어갈 검증된 핵심 인재들과 먼저 연결되세요.'
                     }
                 }
             },
