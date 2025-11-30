@@ -73,14 +73,14 @@ export const getTeamMembers = () => {
             nameEn: "Mingu Kang",
             nameKo: "강민구",
             team: "Firmware Team",
-            role: "Global Path Planning",
+            role: "Navigation & Communication",
             image: "/assets/team/mingu_kang.webp"
         },
         {
             nameEn: "Yeongji Choi",
             nameKo: "최영지",
             team: "Software Team",
-            role: "Local Path Planning",
+            role: "Navigation",
             image: "/assets/team/yeongji_choi.webp"
         },
         {
