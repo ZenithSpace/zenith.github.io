@@ -160,15 +160,15 @@ const Rover = () => {
                     {/* Rover Image Column */}
                     <div className="relative group max-w-md mx-auto w-full h-full flex items-center justify-center">
                         <SparkleHalo color="#FFB800" />
-                        <div className="relative rounded-2xl overflow-hidden border border-white/10 aspect-square w-full">
+                        <div className="relative rounded-2xl overflow-hidden border border-white/10 aspect-square w-full bg-zinc-900">
                             <AnimatePresence mode="wait">
                                 <motion.img
                                     key={activeTab}
                                     src={rovers[activeTab].image}
                                     alt={t(`rover.${activeTab}.name`)}
-                                    initial={{ opacity: 0, scale: 0.95 }}
+                                    initial={{ opacity: 0, scale: 1.1 }}
                                     animate={{ opacity: 1, scale: 1 }}
-                                    exit={{ opacity: 0, scale: 1.05 }}
+                                    exit={{ opacity: 0, scale: 1.1 }}
                                     transition={{ duration: 0.4 }}
                                     className="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
                                 />
