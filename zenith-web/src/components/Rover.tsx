@@ -1,10 +1,11 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence, useInView, useSpring, useTransform } from 'framer-motion';
-import { Weight, Gauge, Dumbbell, BatteryCharging } from 'lucide-react';
+import { Weight, Gauge, Dumbbell, BatteryCharging, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 import roverV1 from '../assets/Zero_v1.webp';
-import roverV2 from '../assets/Zero_v2.jpg';
+import roverV2_1 from '../assets/Zero_v2_1.png';
+import roverV2_2 from '../assets/Zero_v2_2.png';
 
 const SparkleHalo = ({ color }: { color: string }) => {
     return (
@@ -103,10 +104,16 @@ const RollingNumber = ({ value }: { value: string }) => {
 const Rover = () => {
     const { t } = useLanguage();
     const [activeTab, setActiveTab] = useState<'v1' | 'v2'>('v2');
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+    // Reset image index when tab changes
+    useEffect(() => {
+        setCurrentImageIndex(0);
+    }, [activeTab]);
 
     const rovers = {
         v1: {
-            image: roverV1,
+            images: [roverV1],
             specs: [
                 { icon: <Weight />, label: t('rover.v1.specs.weight'), value: t('rover.v1.values.weight') },
                 { icon: <Gauge />, label: t('rover.v1.specs.speed'), value: t('rover.v1.values.speed') },
@@ -115,7 +122,7 @@ const Rover = () => {
             ]
         },
         v2: {
-            image: roverV2,
+            images: [roverV2_1, roverV2_2],
             specs: [
                 { icon: <Weight />, label: t('rover.v2.specs.weight'), value: t('rover.v2.values.weight') },
                 { icon: <Gauge />, label: t('rover.v2.specs.speed'), value: t('rover.v2.values.speed') },
@@ -123,6 +130,14 @@ const Rover = () => {
                 { icon: <BatteryCharging />, label: t('rover.v2.specs.battery'), value: t('rover.v2.values.battery') },
             ]
         }
+    };
+
+    const nextImage = () => {
+        setCurrentImageIndex((prev) => (prev + 1) % rovers[activeTab].images.length);
+    };
+
+    const prevImage = () => {
+        setCurrentImageIndex((prev) => (prev - 1 + rovers[activeTab].images.length) % rovers[activeTab].images.length);
     };
 
     return (
@@ -163,8 +178,8 @@ const Rover = () => {
                         <div className="relative rounded-2xl overflow-hidden border border-white/10 aspect-square w-full bg-zinc-900">
                             <AnimatePresence mode="wait">
                                 <motion.img
-                                    key={activeTab}
-                                    src={rovers[activeTab].image}
+                                    key={`${activeTab}-${currentImageIndex}`}
+                                    src={rovers[activeTab].images[currentImageIndex]}
                                     alt={t(`rover.${activeTab}.name`)}
                                     initial={{ opacity: 0, scale: 1.1 }}
                                     animate={{ opacity: 1, scale: 1 }}
@@ -173,6 +188,35 @@ const Rover = () => {
                                     className="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
                                 />
                             </AnimatePresence>
+
+                            {/* Navigation Buttons (Only if more than 1 image) */}
+                            {rovers[activeTab].images.length > 1 && (
+                                <>
+                                    <button
+                                        onClick={(e) => { e.stopPropagation(); prevImage(); }}
+                                        className="absolute left-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/50 text-white hover:bg-zenith-sub hover:text-black transition-colors z-10"
+                                    >
+                                        <ChevronLeft size={24} />
+                                    </button>
+                                    <button
+                                        onClick={(e) => { e.stopPropagation(); nextImage(); }}
+                                        className="absolute right-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/50 text-white hover:bg-zenith-sub hover:text-black transition-colors z-10"
+                                    >
+                                        <ChevronRight size={24} />
+                                    </button>
+
+                                    {/* Dots Indicator */}
+                                    <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+                                        {rovers[activeTab].images.map((_, idx) => (
+                                            <div
+                                                key={idx}
+                                                className={`w-2 h-2 rounded-full transition-all ${idx === currentImageIndex ? 'bg-zenith-sub w-4' : 'bg-white/50'
+                                                    }`}
+                                            />
+                                        ))}
+                                    </div>
+                                </>
+                            )}
                         </div>
                     </div>
 
