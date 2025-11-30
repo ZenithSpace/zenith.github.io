@@ -104,11 +104,12 @@ const RollingNumber = ({ value }: { value: string }) => {
 const Rover = () => {
     const { t } = useLanguage();
     const [activeTab, setActiveTab] = useState<'v1' | 'v2'>('v2');
-    const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    const [direction, setDirection] = useState(0);
 
     // Reset image index when tab changes
     useEffect(() => {
         setCurrentImageIndex(0);
+        setDirection(0);
     }, [activeTab]);
 
     const rovers = {
@@ -133,11 +134,30 @@ const Rover = () => {
     };
 
     const nextImage = () => {
+        setDirection(1);
         setCurrentImageIndex((prev) => (prev + 1) % rovers[activeTab].images.length);
     };
 
     const prevImage = () => {
+        setDirection(-1);
         setCurrentImageIndex((prev) => (prev - 1 + rovers[activeTab].images.length) % rovers[activeTab].images.length);
+    };
+
+    const variants = {
+        enter: (direction: number) => ({
+            x: direction > 0 ? 1000 : -1000,
+            opacity: 0
+        }),
+        center: {
+            zIndex: 1,
+            x: 0,
+            opacity: 1
+        },
+        exit: (direction: number) => ({
+            zIndex: 0,
+            x: direction < 0 ? 1000 : -1000,
+            opacity: 0
+        })
     };
 
     return (
@@ -176,16 +196,21 @@ const Rover = () => {
                     <div className="relative group max-w-md mx-auto w-full h-full flex items-center justify-center">
                         <SparkleHalo color="#FFB800" />
                         <div className="relative rounded-2xl overflow-hidden border border-white/10 aspect-square w-full bg-zinc-900">
-                            <AnimatePresence mode="wait">
+                            <AnimatePresence initial={false} custom={direction} mode="popLayout">
                                 <motion.img
                                     key={`${activeTab}-${currentImageIndex}`}
                                     src={rovers[activeTab].images[currentImageIndex]}
+                                    custom={direction}
+                                    variants={variants}
+                                    initial="enter"
+                                    animate="center"
+                                    exit="exit"
+                                    transition={{
+                                        x: { type: "spring", stiffness: 300, damping: 30 },
+                                        opacity: { duration: 0.2 }
+                                    }}
                                     alt={t(`rover.${activeTab}.name`)}
-                                    initial={{ opacity: 0, scale: 1.1 }}
-                                    animate={{ opacity: 1, scale: 1 }}
-                                    exit={{ opacity: 0, scale: 1.1 }}
-                                    transition={{ duration: 0.4 }}
-                                    className="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                                    className="absolute inset-0 w-full h-full object-contain p-8 transform transition-transform duration-700"
                                 />
                             </AnimatePresence>
 
