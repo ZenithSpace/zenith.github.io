@@ -144,20 +144,33 @@ const Rover = () => {
         setCurrentImageIndex((prev) => (prev - 1 + rovers[activeTab].images.length) % rovers[activeTab].images.length);
     };
 
+    // Preload images
+    useEffect(() => {
+        Object.values(rovers).forEach(rover => {
+            rover.images.forEach(src => {
+                const img = new Image();
+                img.src = src;
+            });
+        });
+    }, []);
+
     const variants = {
         enter: (direction: number) => ({
-            x: direction > 0 ? 1000 : -1000,
-            opacity: 0
+            x: direction > 0 ? '100%' : '-100%',
+            opacity: 0,
+            scale: 0.95
         }),
         center: {
             zIndex: 1,
             x: 0,
-            opacity: 1
+            opacity: 1,
+            scale: 1
         },
         exit: (direction: number) => ({
             zIndex: 0,
-            x: direction < 0 ? 1000 : -1000,
-            opacity: 0
+            x: direction < 0 ? '100%' : '-100%',
+            opacity: 0,
+            scale: 0.95
         })
     };
 
@@ -208,10 +221,11 @@ const Rover = () => {
                                     exit="exit"
                                     transition={{
                                         x: { type: "spring", stiffness: 300, damping: 30 },
-                                        opacity: { duration: 0.2 }
+                                        opacity: { duration: 0.3 },
+                                        scale: { duration: 0.3 }
                                     }}
                                     alt={t(`rover.${activeTab}.name`)}
-                                    className="absolute inset-0 w-full h-full object-cover transform transition-transform duration-700"
+                                    className="absolute inset-0 w-full h-full object-cover"
                                 />
                             </AnimatePresence>
 
