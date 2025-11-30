@@ -188,22 +188,8 @@ const Sponsorship = () => {
                     </div>
                 </div>
 
-                {/* 2. Main Tiers Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-                    {mainTiers.map((tier) => (
-                        <div key={tier.key}>
-                            {renderTierCard(tier)}
-                        </div>
-                    ))}
-                </div>
-
-                {/* 3. Diamond Tier */}
+                {/* 2. Ways to Support Section */}
                 <div className="mb-24">
-                    {renderTierCard(diamondTier, true)}
-                </div>
-
-                {/* 4. Ways to Support Section */}
-                <div>
                     <div className="text-center mb-12">
                         <h4 className="text-2xl font-bold text-white mb-2">{t('sponsorship.ways.title')}</h4>
                         <p className="text-gray-400">{t('sponsorship.ways.subtitle')}</p>
@@ -233,6 +219,20 @@ const Sponsorship = () => {
                             </motion.div>
                         ))}
                     </div>
+                </div>
+
+                {/* 3. Main Tiers Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                    {mainTiers.map((tier) => (
+                        <div key={tier.key}>
+                            {renderTierCard(tier)}
+                        </div>
+                    ))}
+                </div>
+
+                {/* 4. Diamond Tier */}
+                <div className="mb-24">
+                    {renderTierCard(diamondTier, true)}
                 </div>
 
             </div>
