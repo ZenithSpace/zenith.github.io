@@ -218,16 +218,19 @@ const Team = () => {
                 </div>
 
                 {/* Join Us */}
-                <div className="flex justify-center pt-4">
-                    {groups.join.map((member, index) => (
-                        <div
-                            key={`join-${index}`}
-                            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                            className="cursor-pointer transition-transform hover:scale-105"
-                        >
-                            <MemberCard member={member} />
-                        </div>
-                    ))}
+                <div className="space-y-4">
+                    <h4 className="text-2xl font-bold text-white text-center">Join Us</h4>
+                    <div className="flex justify-center pt-4">
+                        {groups.join.map((member, index) => (
+                            <div
+                                key={`join-${index}`}
+                                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                                className="cursor-pointer transition-transform hover:scale-105"
+                            >
+                                <MemberCard member={member} />
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
 
