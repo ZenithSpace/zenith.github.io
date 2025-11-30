@@ -211,7 +211,7 @@ const Rover = () => {
                                         opacity: { duration: 0.2 }
                                     }}
                                     alt={t(`rover.${activeTab}.name`)}
-                                    className="absolute inset-0 w-full h-full object-contain p-8 transform transition-transform duration-700"
+                                    className="absolute inset-0 w-full h-full object-contain transform transition-transform duration-700"
                                 />
                             </AnimatePresence>
 
