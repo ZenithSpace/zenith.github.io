@@ -166,7 +166,7 @@ const Team = () => {
             </div>
 
             {/* Desktop Grid View (Hidden on Mobile) */}
-            <div className="hidden lg:block max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+            <div className="hidden lg:block max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
                 {/* Leadership */}
                 <div className="space-y-8">
                     <h4 className="text-2xl font-bold text-white text-center">Leadership</h4>
@@ -220,7 +220,13 @@ const Team = () => {
                 {/* Join Us */}
                 <div className="flex justify-center pt-8">
                     {groups.join.map((member, index) => (
-                        <MemberCard key={`join-${index}`} member={member} />
+                        <div
+                            key={`join-${index}`}
+                            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                            className="cursor-pointer transition-transform hover:scale-105"
+                        >
+                            <MemberCard member={member} />
+                        </div>
                     ))}
                 </div>
             </div>
