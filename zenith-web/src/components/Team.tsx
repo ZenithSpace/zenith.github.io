@@ -125,7 +125,7 @@ const Team = () => {
     };
 
     const MemberCard = ({ member }: { member: any }) => (
-        <div className="group relative flex flex-col items-center justify-center p-6 bg-white/10 rounded-xl border border-white/10 hover:border-zenith-sub/50 transition-all duration-300 w-64 flex-shrink-0 z-10 backdrop-blur-sm mx-auto">
+        <div className="group relative flex flex-col items-center justify-center p-6 bg-white/10 rounded-xl border border-white/10 hover:border-zenith-sub/50 transition-all duration-300 w-64 flex-shrink-0 z-10 backdrop-blur-sm">
             <SparkleHalo />
 
             {/* Inner Tint */}
