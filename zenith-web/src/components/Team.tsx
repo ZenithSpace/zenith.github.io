@@ -168,7 +168,7 @@ const Team = () => {
             {/* Desktop Grid View (Hidden on Mobile) */}
             <div className="hidden lg:block max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
                 {/* Leadership */}
-                <div className="space-y-8">
+                <div className="space-y-4">
                     <h4 className="text-2xl font-bold text-white text-center">Leadership</h4>
                     <div className="flex flex-wrap justify-center gap-8">
                         {groups.leadership.map((member, index) => (
@@ -178,7 +178,7 @@ const Team = () => {
                 </div>
 
                 {/* Hardware */}
-                <div className="space-y-8">
+                <div className="space-y-4">
                     <h4 className="text-2xl font-bold text-white text-center">Hardware Team</h4>
                     <div className="flex flex-wrap justify-center gap-8">
                         {groups.hardware.map((member, index) => (
@@ -188,7 +188,7 @@ const Team = () => {
                 </div>
 
                 {/* Firmware */}
-                <div className="space-y-8">
+                <div className="space-y-4">
                     <h4 className="text-2xl font-bold text-white text-center">Firmware Team</h4>
                     <div className="flex flex-wrap justify-center gap-8">
                         {groups.firmware.map((member, index) => (
@@ -198,7 +198,7 @@ const Team = () => {
                 </div>
 
                 {/* Software */}
-                <div className="space-y-8">
+                <div className="space-y-4">
                     <h4 className="text-2xl font-bold text-white text-center">Software Team</h4>
                     <div className="flex flex-wrap justify-center gap-8">
                         {groups.software.map((member, index) => (
@@ -208,7 +208,7 @@ const Team = () => {
                 </div>
 
                 {/* Science */}
-                <div className="space-y-8">
+                <div className="space-y-4">
                     <h4 className="text-2xl font-bold text-white text-center">Science Team</h4>
                     <div className="flex flex-wrap justify-center gap-8">
                         {groups.science.map((member, index) => (
@@ -218,7 +218,7 @@ const Team = () => {
                 </div>
 
                 {/* Join Us */}
-                <div className="flex justify-center pt-8">
+                <div className="flex justify-center pt-4">
                     {groups.join.map((member, index) => (
                         <div
                             key={`join-${index}`}
