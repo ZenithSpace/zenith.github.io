@@ -169,8 +169,8 @@ const Team = () => {
             <div className="hidden lg:block max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
                 {/* Leadership */}
                 <div className="space-y-8">
-                    <h4 className="text-2xl font-bold text-white border-l-4 border-zenith-sub pl-4">Leadership</h4>
-                    <div className="grid grid-cols-4 gap-8 justify-items-center">
+                    <h4 className="text-2xl font-bold text-white text-center">Leadership</h4>
+                    <div className="flex flex-wrap justify-center gap-8">
                         {groups.leadership.map((member, index) => (
                             <MemberCard key={`lead-${index}`} member={member} />
                         ))}
@@ -179,8 +179,8 @@ const Team = () => {
 
                 {/* Hardware */}
                 <div className="space-y-8">
-                    <h4 className="text-2xl font-bold text-white border-l-4 border-zenith-sub pl-4">Hardware Team</h4>
-                    <div className="grid grid-cols-4 gap-8 justify-items-center">
+                    <h4 className="text-2xl font-bold text-white text-center">Hardware Team</h4>
+                    <div className="flex flex-wrap justify-center gap-8">
                         {groups.hardware.map((member, index) => (
                             <MemberCard key={`hw-${index}`} member={member} />
                         ))}
@@ -189,8 +189,8 @@ const Team = () => {
 
                 {/* Firmware */}
                 <div className="space-y-8">
-                    <h4 className="text-2xl font-bold text-white border-l-4 border-zenith-sub pl-4">Firmware Team</h4>
-                    <div className="grid grid-cols-4 gap-8 justify-items-center">
+                    <h4 className="text-2xl font-bold text-white text-center">Firmware Team</h4>
+                    <div className="flex flex-wrap justify-center gap-8">
                         {groups.firmware.map((member, index) => (
                             <MemberCard key={`fw-${index}`} member={member} />
                         ))}
@@ -199,8 +199,8 @@ const Team = () => {
 
                 {/* Software */}
                 <div className="space-y-8">
-                    <h4 className="text-2xl font-bold text-white border-l-4 border-zenith-sub pl-4">Software Team</h4>
-                    <div className="grid grid-cols-4 gap-8 justify-items-center">
+                    <h4 className="text-2xl font-bold text-white text-center">Software Team</h4>
+                    <div className="flex flex-wrap justify-center gap-8">
                         {groups.software.map((member, index) => (
                             <MemberCard key={`sw-${index}`} member={member} />
                         ))}
@@ -209,8 +209,8 @@ const Team = () => {
 
                 {/* Science */}
                 <div className="space-y-8">
-                    <h4 className="text-2xl font-bold text-white border-l-4 border-zenith-sub pl-4">Science Team</h4>
-                    <div className="flex justify-center gap-8">
+                    <h4 className="text-2xl font-bold text-white text-center">Science Team</h4>
+                    <div className="flex flex-wrap justify-center gap-8">
                         {groups.science.map((member, index) => (
                             <MemberCard key={`sci-${index}`} member={member} />
                         ))}
