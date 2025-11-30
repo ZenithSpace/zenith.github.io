@@ -11,6 +11,8 @@ import Sponsorship from './components/Sponsorship';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
+import ScrollToTop from './components/ScrollToTop';
+
 import { LanguageProvider } from './context/LanguageContext';
 
 function App() {
@@ -28,6 +30,7 @@ function App() {
         <Sponsorship />
         <Contact />
         <Footer />
+        <ScrollToTop />
       </div>
     </LanguageProvider>
   );

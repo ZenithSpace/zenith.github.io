@@ -228,7 +228,7 @@ export const translations = {
         },
         rover: {
             title: 'Our Rovers',
-            subtitle: 'Meet Our Rovers',
+            subtitle: '우리의 로버를 만나보세요!',
             tabs: {
                 v1: 'Zero V1',
                 v2: 'Zero V2',
@@ -268,22 +268,22 @@ export const translations = {
         },
         team: {
             title: '팀원 소개',
-            subtitle: 'Zenith의 크루들',
+            subtitle: '우리의 크루들',
             comingSoon: '준비 중',
             preparing: '준비 중...',
         },
         gallery: {
             title: '갤러리',
-            subtitle: '제니스의 순간들',
+            subtitle: '우리의 순간들',
         },
         partners: {
             title: '파트너',
-            subtitle: '든든한 파트너',
+            subtitle: '우리의 파트너',
             placeholder: '다음 파트너가 되어주세요!',
         },
         sponsorship: {
             title: '후원',
-            subtitle: 'Zenith와 함께하세요',
+            subtitle: '우리와 함께하세요',
             tiers: {
                 affiliate: {
                     name: 'Affiliate',
