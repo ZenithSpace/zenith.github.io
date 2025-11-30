@@ -210,7 +210,7 @@ const Rover = () => {
                     <div className="relative group max-w-md mx-auto w-full h-full flex items-center justify-center">
                         <SparkleHalo color="#FFB800" />
                         <div className="relative rounded-2xl overflow-hidden border border-white/10 aspect-square w-full bg-zinc-900">
-                            <AnimatePresence initial={false} custom={direction} mode="popLayout">
+                            <AnimatePresence initial={false} custom={direction}>
                                 <motion.img
                                     key={`${activeTab}-${currentImageIndex}`}
                                     src={rovers[activeTab].images[currentImageIndex]}
@@ -220,7 +220,7 @@ const Rover = () => {
                                     animate="center"
                                     exit="exit"
                                     transition={{
-                                        x: { type: "spring", stiffness: 300, damping: 30 },
+                                        x: { type: "tween", duration: 0.4, ease: "easeInOut" },
                                         opacity: { duration: 0.3 },
                                         scale: { duration: 0.3 }
                                     }}
