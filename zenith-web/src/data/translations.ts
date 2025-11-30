@@ -152,7 +152,7 @@ export const translations = {
                     },
                     innovation: {
                         title: 'Tech Innovation',
-                        desc: 'Contribute to the advancement of autonomous navigation and space robotics technology.'
+                        desc: 'Contribute to the advancement of space exploration and robotics technology.'
                     },
                     talent: {
                         title: 'Future Talent',
@@ -365,7 +365,7 @@ export const translations = {
                     },
                     innovation: {
                         title: '기술 혁신',
-                        desc: '자율 주행 및 우주 로봇 기술의 발전에 기여하고 혁신을 이끌어주세요.'
+                        desc: '우주 탐사 및 로봇 기술의 발전에 기여하고 혁신을 이끌어주세요.'
                     },
                     talent: {
                         title: '미래 인재 양성',
