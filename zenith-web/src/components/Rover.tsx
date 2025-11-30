@@ -104,6 +104,7 @@ const RollingNumber = ({ value }: { value: string }) => {
 const Rover = () => {
     const { t } = useLanguage();
     const [activeTab, setActiveTab] = useState<'v1' | 'v2'>('v2');
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const [direction, setDirection] = useState(0);
 
     // Reset image index when tab changes

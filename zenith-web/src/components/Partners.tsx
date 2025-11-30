@@ -87,22 +87,6 @@ const Partners = () => {
                 >
                     <h2 className="text-zenith-sub font-bold tracking-widest uppercase mb-2">{t('partners.title')}</h2>
                     <h3 className="text-4xl font-bold font-['Outfit']">{t('partners.subtitle')}</h3>
-
-                    {/* Navigation Buttons */}
-                    <div className="absolute top-1/2 -translate-y-1/2 right-0 hidden md:flex gap-2">
-                        <button
-                            onClick={() => handleManualScroll('left')}
-                            className="p-2 rounded-full bg-white/5 hover:bg-zenith-sub hover:text-white transition-colors border border-white/10 z-20"
-                        >
-                            <ChevronLeft size={24} />
-                        </button>
-                        <button
-                            onClick={() => handleManualScroll('right')}
-                            className="p-2 rounded-full bg-white/5 hover:bg-zenith-sub hover:text-white transition-colors border border-white/10 z-20"
-                        >
-                            <ChevronRight size={24} />
-                        </button>
-                    </div>
                 </motion.div>
             </div>
 
@@ -140,6 +124,24 @@ const Partners = () => {
                         </a>
                     ))}
                 </motion.div>
+            </div>
+
+            {/* Navigation Buttons (Bottom) */}
+            <div className="flex justify-center gap-4 mt-8">
+                <button
+                    onClick={() => handleManualScroll('left')}
+                    className="p-3 rounded-full bg-white/5 hover:bg-zenith-sub hover:text-white transition-colors border border-white/10 z-20"
+                    aria-label="Previous partners"
+                >
+                    <ChevronLeft size={24} />
+                </button>
+                <button
+                    onClick={() => handleManualScroll('right')}
+                    className="p-3 rounded-full bg-white/5 hover:bg-zenith-sub hover:text-white transition-colors border border-white/10 z-20"
+                    aria-label="Next partners"
+                >
+                    <ChevronRight size={24} />
+                </button>
             </div>
         </section>
     );
