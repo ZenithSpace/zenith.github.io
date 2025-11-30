@@ -87,7 +87,7 @@ export const getTeamMembers = () => {
             nameEn: "Suhyun Kim",
             nameKo: "김수현",
             team: "Software Team",
-            role: "Image Processing/Communication",
+            role: "Image Processing & Communication",
             image: "/assets/team/suhyun_kim.webp"
         },
         {
