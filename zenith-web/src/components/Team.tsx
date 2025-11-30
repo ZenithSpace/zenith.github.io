@@ -8,11 +8,21 @@ import { getTeamMembers } from '../data/team';
 const Team = () => {
     const { t, language } = useLanguage();
 
-    // Placeholder data
-    const leads = getTeamMembers().filter(member => !member.hidden);
+    // Get team members
+    const allMembers = getTeamMembers().filter(member => !member.hidden);
 
-    // Duplicate list for infinite scroll effect (triple it to be safe for wide screens)
-    const carouselItems = [...leads, ...leads, ...leads];
+    // Grouping Logic
+    const groups = {
+        leadership: allMembers.filter(m => m.team.includes('Lead') || ['CEO', 'CTO', 'CFO'].includes(m.role)),
+        hardware: allMembers.filter(m => m.team === 'Hardware Team' && !m.team.includes('Lead')),
+        firmware: allMembers.filter(m => m.team === 'Firmware Team' && !m.team.includes('Lead')),
+        software: allMembers.filter(m => m.team === 'Software Team' && !m.team.includes('Lead')),
+        science: allMembers.filter(m => m.team === 'Science Team'),
+        join: allMembers.filter(m => m.team === 'Join Zenith Space!')
+    };
+
+    // Duplicate list for infinite scroll effect (mobile only)
+    const carouselItems = [...allMembers, ...allMembers, ...allMembers];
 
     const [ref] = useMeasure();
     const xTranslation = useMotionValue(0);
@@ -20,10 +30,8 @@ const Team = () => {
     const [isManuallyScrolling, setIsManuallyScrolling] = useState(false);
 
     // Calculate the width of one set of items
-    // We assume all items are same width (w-64 = 16rem = 256px) + gap (gap-8 = 2rem = 32px)
-    // Total item width = 288px
     const CARD_WIDTH = 288;
-    const TOTAL_WIDTH = leads.length * CARD_WIDTH;
+    const TOTAL_WIDTH = allMembers.length * CARD_WIDTH;
 
     useEffect(() => {
         let controls: any;
@@ -116,6 +124,33 @@ const Team = () => {
         );
     };
 
+    const MemberCard = ({ member }: { member: any }) => (
+        <div className="group relative flex flex-col items-center justify-center p-6 bg-white/10 rounded-xl border border-white/10 hover:border-zenith-sub/50 transition-all duration-300 w-64 flex-shrink-0 z-10 backdrop-blur-sm mx-auto">
+            <SparkleHalo />
+
+            {/* Inner Tint */}
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-300 pointer-events-none bg-zenith-sub rounded-xl" />
+
+            <div className="w-32 h-32 rounded-full overflow-hidden mb-4 border-2 border-white/20 group-hover:border-zenith-sub transition-colors duration-300 relative z-10">
+                <img
+                    src={member.image}
+                    alt={member.nameEn}
+                    className="w-full h-full object-cover"
+                    style={{
+                        objectPosition: member.imagePosition || 'top',
+                        transform: `scale(${member.imageScale || 1})`
+                    }}
+                    loading="lazy"
+                />
+            </div>
+            <h4 className="text-xl font-bold text-white mb-1 relative z-10 text-center">
+                {language === 'ko' ? member.nameKo : member.nameEn}
+            </h4>
+            <p className="text-zenith-sub font-medium text-sm relative z-10 mb-0.5 text-center">{member.team}</p>
+            <p className="text-gray-400 text-xs relative z-10 text-center">{member.role}</p>
+        </div>
+    );
+
     return (
         <section id="team" className="py-20 bg-zenith-main border-b border-white/5 relative overflow-hidden">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
@@ -130,8 +165,68 @@ const Team = () => {
                 </motion.div>
             </div>
 
-            {/* Carousel Container */}
-            <div className="relative w-full overflow-hidden">
+            {/* Desktop Grid View (Hidden on Mobile) */}
+            <div className="hidden lg:block max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+                {/* Leadership */}
+                <div className="space-y-8">
+                    <h4 className="text-2xl font-bold text-white border-l-4 border-zenith-sub pl-4">Leadership</h4>
+                    <div className="grid grid-cols-4 gap-8 justify-items-center">
+                        {groups.leadership.map((member, index) => (
+                            <MemberCard key={`lead-${index}`} member={member} />
+                        ))}
+                    </div>
+                </div>
+
+                {/* Hardware */}
+                <div className="space-y-8">
+                    <h4 className="text-2xl font-bold text-white border-l-4 border-zenith-sub pl-4">Hardware Team</h4>
+                    <div className="grid grid-cols-4 gap-8 justify-items-center">
+                        {groups.hardware.map((member, index) => (
+                            <MemberCard key={`hw-${index}`} member={member} />
+                        ))}
+                    </div>
+                </div>
+
+                {/* Firmware */}
+                <div className="space-y-8">
+                    <h4 className="text-2xl font-bold text-white border-l-4 border-zenith-sub pl-4">Firmware Team</h4>
+                    <div className="grid grid-cols-4 gap-8 justify-items-center">
+                        {groups.firmware.map((member, index) => (
+                            <MemberCard key={`fw-${index}`} member={member} />
+                        ))}
+                    </div>
+                </div>
+
+                {/* Software */}
+                <div className="space-y-8">
+                    <h4 className="text-2xl font-bold text-white border-l-4 border-zenith-sub pl-4">Software Team</h4>
+                    <div className="grid grid-cols-4 gap-8 justify-items-center">
+                        {groups.software.map((member, index) => (
+                            <MemberCard key={`sw-${index}`} member={member} />
+                        ))}
+                    </div>
+                </div>
+
+                {/* Science */}
+                <div className="space-y-8">
+                    <h4 className="text-2xl font-bold text-white border-l-4 border-zenith-sub pl-4">Science Team</h4>
+                    <div className="flex justify-center gap-8">
+                        {groups.science.map((member, index) => (
+                            <MemberCard key={`sci-${index}`} member={member} />
+                        ))}
+                    </div>
+                </div>
+
+                {/* Join Us */}
+                <div className="flex justify-center pt-8">
+                    {groups.join.map((member, index) => (
+                        <MemberCard key={`join-${index}`} member={member} />
+                    ))}
+                </div>
+            </div>
+
+            {/* Mobile Carousel View (Hidden on Desktop) */}
+            <div className="lg:hidden relative w-full overflow-hidden">
                 <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-zenith-main to-transparent z-10 pointer-events-none" />
                 <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-zenith-main to-transparent z-10 pointer-events-none" />
 
@@ -143,53 +238,27 @@ const Team = () => {
                     onHoverEnd={() => setIsHovered(false)}
                 >
                     {carouselItems.map((member, index) => (
-                        <div
-                            key={index}
-                            className="group relative flex flex-col items-center justify-center p-6 bg-white/10 rounded-xl border border-white/10 hover:border-zenith-sub/50 transition-all duration-300 w-64 flex-shrink-0 z-10 backdrop-blur-sm"
-                        >
-                            <SparkleHalo />
-
-                            {/* Inner Tint */}
-                            <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-300 pointer-events-none bg-zenith-sub rounded-xl" />
-
-                            <div className="w-32 h-32 rounded-full overflow-hidden mb-4 border-2 border-white/20 group-hover:border-zenith-sub transition-colors duration-300 relative z-10">
-                                <img
-                                    src={member.image}
-                                    alt={member.nameEn}
-                                    className="w-full h-full object-cover"
-                                    style={{
-                                        objectPosition: member.imagePosition || 'top',
-                                        transform: `scale(${member.imageScale || 1})`
-                                    }}
-                                    loading="lazy"
-                                />
-                            </div>
-                            <h4 className="text-xl font-bold text-white mb-1 relative z-10">
-                                {language === 'ko' ? member.nameKo : member.nameEn}
-                            </h4>
-                            <p className="text-zenith-sub font-medium text-sm relative z-10 mb-0.5">{member.team}</p>
-                            <p className="text-gray-400 text-xs relative z-10">{member.role}</p>
-                        </div>
+                        <MemberCard key={`carousel-${index}`} member={member} />
                     ))}
                 </motion.div>
-            </div>
 
-            {/* Navigation Buttons (Bottom) */}
-            <div className="flex justify-center gap-4 mt-8">
-                <button
-                    onClick={() => handleManualScroll('left')}
-                    className="p-3 rounded-full bg-white/5 hover:bg-zenith-sub hover:text-white transition-colors border border-white/10 z-20"
-                    aria-label="Previous team members"
-                >
-                    <ChevronLeft size={24} />
-                </button>
-                <button
-                    onClick={() => handleManualScroll('right')}
-                    className="p-3 rounded-full bg-white/5 hover:bg-zenith-sub hover:text-white transition-colors border border-white/10 z-20"
-                    aria-label="Next team members"
-                >
-                    <ChevronRight size={24} />
-                </button>
+                {/* Navigation Buttons (Bottom) */}
+                <div className="flex justify-center gap-4 mt-8">
+                    <button
+                        onClick={() => handleManualScroll('left')}
+                        className="p-3 rounded-full bg-white/5 hover:bg-zenith-sub hover:text-white transition-colors border border-white/10 z-20"
+                        aria-label="Previous team members"
+                    >
+                        <ChevronLeft size={24} />
+                    </button>
+                    <button
+                        onClick={() => handleManualScroll('right')}
+                        className="p-3 rounded-full bg-white/5 hover:bg-zenith-sub hover:text-white transition-colors border border-white/10 z-20"
+                        aria-label="Next team members"
+                    >
+                        <ChevronRight size={24} />
+                    </button>
+                </div>
             </div>
         </section>
     );
