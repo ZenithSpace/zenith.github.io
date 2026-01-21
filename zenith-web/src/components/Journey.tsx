@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { Flag, Trophy, Rocket, Heart, Award } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
+
 const Journey = () => {
     const { t } = useLanguage();
 
@@ -40,7 +41,8 @@ const Journey = () => {
             description: t('journey.milestones.minister_award.desc'),
             icon: <Award size={20} />,
             image: "/assets/journey/2025_minister_award.webp",
-            useBlurBackground: true
+            useBlurBackground: true,
+            imageContainerHeight: 'h-96'
         },
         {
             year: t('journey.milestones.urc.year'),
@@ -89,7 +91,10 @@ const Journey = () => {
                                 </div>
                                 <div className="w-full md:w-5/12">
                                     <div className="glass-panel p-6 rounded-xl hover:border-zenith-sub/50 transition-colors">
-                                        <div className="w-full h-48 mb-4 rounded-lg overflow-hidden relative group-hover:shadow-lg transition-all duration-500">
+                                        <div className={`w-full mb-4 rounded-lg overflow-hidden relative group-hover:shadow-lg transition-all duration-500 ${
+                                            // @ts-ignore
+                                            milestone.imageContainerHeight || 'h-48'
+                                            }`}>
                                             {/* Optional Blur Background for portrait/text-heavy images */}
                                             {
                                                 /* @ts-ignore */
