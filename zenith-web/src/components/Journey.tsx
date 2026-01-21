@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Flag, Trophy, Rocket } from 'lucide-react';
+import { Flag, Trophy, Rocket, Heart, Award } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 const Journey = () => {
@@ -21,11 +21,26 @@ const Journey = () => {
             image: "/assets/journey/2024_mvp.webp"
         },
         {
+            year: t('journey.milestones.education.year'),
+            title: t('journey.milestones.education.title'),
+            description: t('journey.milestones.education.desc'),
+            icon: <Heart size={20} />,
+            image: "/assets/journey/2025_education.webp"
+        },
+        {
             year: t('journey.milestones.award.year'),
             title: t('journey.milestones.award.title'),
             description: t('journey.milestones.award.desc'),
             icon: <Trophy size={20} />,
             image: "/assets/journey/2025_award.webp"
+        },
+        {
+            year: t('journey.milestones.minister_award.year'),
+            title: t('journey.milestones.minister_award.title'),
+            description: t('journey.milestones.minister_award.desc'),
+            icon: <Award size={20} />,
+            image: "/assets/journey/2025_minister_award.webp",
+            useBlurBackground: true
         },
         {
             year: t('journey.milestones.urc.year'),
@@ -74,11 +89,27 @@ const Journey = () => {
                                 </div>
                                 <div className="w-full md:w-5/12">
                                     <div className="glass-panel p-6 rounded-xl hover:border-zenith-sub/50 transition-colors">
-                                        <div className="w-full h-48 mb-4 rounded-lg overflow-hidden">
+                                        <div className="w-full h-48 mb-4 rounded-lg overflow-hidden relative group-hover:shadow-lg transition-all duration-500">
+                                            {/* Optional Blur Background for portrait/text-heavy images */}
+                                            {
+                                                /* @ts-ignore */
+                                                milestone.useBlurBackground && (
+                                                    <div className="absolute inset-0 z-0">
+                                                        <img
+                                                            src={milestone.image}
+                                                            alt=""
+                                                            className="w-full h-full object-cover blur-md scale-110 opacity-50 brightness-50"
+                                                        />
+                                                    </div>
+                                                )
+                                            }
                                             <img
                                                 src={milestone.image}
                                                 alt={milestone.title}
-                                                className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                                                className={`w-full h-full relative z-10 transition-transform duration-500 transform group-hover:scale-105 ${
+                                                    // @ts-ignore
+                                                    milestone.useBlurBackground ? 'object-contain' : 'object-cover'
+                                                    }`}
                                                 loading="lazy"
                                             />
                                         </div>

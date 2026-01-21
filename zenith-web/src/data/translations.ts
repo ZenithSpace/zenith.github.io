@@ -48,6 +48,16 @@ export const translations = {
                     title: 'Defense Robot Competition',
                     desc: 'Won the Excellence Award (3rd Place) at the Defense Robot Competition with our first rover \'Zero_v1\'.',
                 },
+                education: {
+                    year: '2025.08',
+                    title: 'Summer STEM Outreach',
+                    desc: 'Conducted Summer STEM Outreach & Robotics Mentoring Program.',
+                },
+                minister_award: {
+                    year: '2025.12',
+                    title: 'Minister of Education Award',
+                    desc: 'Awarded the Minister of Education Award (Best Volunteering Team), selected as one of the top 3 teams out of 296 nationwide.',
+                },
                 urc: {
                     year: '2026.05',
                     title: 'University Rover Challenge 2026',
@@ -260,6 +270,16 @@ export const translations = {
                     year: '2025.09',
                     title: '국방로봇경진대회',
                     desc: '우리의 첫 번째 로버 \'Zero_v1\'과 함께 국방로봇경진대회 우수상(3위)을 수상했습니다.',
+                },
+                education: {
+                    year: '2025.08',
+                    title: '하계 대학생 교육기부 쏙쏙캠프 운영',
+                    desc: '초등학생들을 대상으로 로봇 공학 멘토링 및 교육 봉사 프로그램을 운영했습니다.',
+                },
+                minister_award: {
+                    year: '2025.12',
+                    title: '교육부장관상 수상',
+                    desc: '전국 296개 팀 중 최우수 3개 팀에 선정되어 교육부장관상(교육기부 우수팀)을 수상했습니다.',
                 },
                 urc: {
                     year: '2026.05',
