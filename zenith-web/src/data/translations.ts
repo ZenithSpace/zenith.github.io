@@ -117,7 +117,7 @@ export const translations = {
         },
         partners: {
             title: 'Partners',
-            subtitle: 'Our Sponsors',
+            subtitle: 'Supported By',
             placeholder: 'Be our next partner!',
         },
         sponsorship: {
@@ -340,7 +340,7 @@ export const translations = {
         },
         partners: {
             title: '파트너',
-            subtitle: '우리의 파트너',
+            subtitle: '함께하는 파트너들',
             placeholder: '다음 파트너가 되어주세요!',
         },
         sponsorship: {
