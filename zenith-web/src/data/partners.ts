@@ -19,3 +19,11 @@ export const partnersData: Partner[] = [
     { name: 'Soksok Camp', logo: '/assets/partners/soksok.png', link: 'https://www.teachforkorea.go.kr/', className: 'scale-125' },
     { name: 'Next Partner', logo: null, link: '#contact' }, // Placeholder
 ];
+
+export const affiliatesData: string[] = [
+    '홍길동',
+    '김철수',
+    'Jane Doe',
+    '이영희',
+    'Michael Smith'
+];

@@ -3,7 +3,7 @@ import { motion, useMotionValue, animate } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import useMeasure from 'react-use-measure';
-import { partnersData } from '../data/partners';
+import { partnersData, affiliatesData } from '../data/partners';
 
 const Partners = () => {
     const { t } = useLanguage();
@@ -127,7 +127,7 @@ const Partners = () => {
             </div>
 
             {/* Navigation Buttons (Bottom) */}
-            <div className="flex justify-center gap-4 mt-8">
+            <div className="flex justify-center gap-4 mt-8 pb-16">
                 <button
                     onClick={() => handleManualScroll('left')}
                     className="p-3 rounded-full bg-white/5 hover:bg-zenith-sub hover:text-white transition-colors border border-white/10 z-20"
@@ -142,6 +142,34 @@ const Partners = () => {
                 >
                     <ChevronRight size={24} />
                 </button>
+            </div>
+
+            {/* Affiliates Section */}
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20 border-t border-white/5 pt-16">
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="text-center relative mb-12"
+                >
+                    <h2 className="text-zenith-sub font-bold tracking-widest uppercase mb-2">{t('partners.affiliates.subtitle')}</h2>
+                    <h3 className="text-3xl font-bold font-['Outfit']">{t('partners.affiliates.title')}</h3>
+                </motion.div>
+
+                <div className="flex flex-wrap justify-center gap-4">
+                    {affiliatesData.map((name, index) => (
+                        <motion.div
+                            key={index}
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: index * 0.05, duration: 0.3 }}
+                            className="px-6 py-3 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 hover:border-zenith-sub/50 hover:bg-white/10 transition-all cursor-default group"
+                        >
+                            <span className="text-gray-300 font-medium group-hover:text-white transition-colors">{name}</span>
+                        </motion.div>
+                    ))}
+                </div>
             </div>
         </section>
     );

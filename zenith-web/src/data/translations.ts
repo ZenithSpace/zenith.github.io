@@ -119,6 +119,10 @@ export const translations = {
             title: 'Partners',
             subtitle: 'Supported By',
             placeholder: 'Be our next partner!',
+            affiliates: {
+                title: 'Individual Supporters',
+                subtitle: 'Special Thanks To',
+            }
         },
         sponsorship: {
             title: 'Sponsorship',
@@ -342,6 +346,10 @@ export const translations = {
             title: '파트너',
             subtitle: '함께하는 파트너들',
             placeholder: '다음 파트너가 되어주세요!',
+            affiliates: {
+                title: '개인 후원자',
+                subtitle: '특별한 감사의 마음을 전합니다',
+            }
         },
         sponsorship: {
             title: '후원',
