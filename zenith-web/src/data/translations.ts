@@ -85,7 +85,7 @@ export const translations = {
                     weight: '55kg',
                     speed: '3m/s',
                     arm: '2kg',
-                    battery: '6hrs',
+                    battery: '3hrs',
                 }
             },
             v2: {
@@ -101,7 +101,7 @@ export const translations = {
                     weight: '50kg',
                     speed: '5m/s',
                     arm: '5kg',
-                    battery: '8hrs',
+                    battery: '4hrs',
                 }
             },
         },
@@ -312,7 +312,7 @@ export const translations = {
                     weight: '55kg',
                     speed: "3m/s",
                     arm: "2kg",
-                    battery: "6시간"
+                    battery: "3시간"
                 }
             },
             v2: {
@@ -328,7 +328,7 @@ export const translations = {
                     weight: '50kg',
                     speed: "5m/s",
                     arm: "5kg",
-                    battery: "8시간"
+                    battery: "4시간"
                 }
             },
         },
