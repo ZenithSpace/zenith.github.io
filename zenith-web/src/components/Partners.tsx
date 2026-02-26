@@ -83,9 +83,9 @@ const Partners = () => {
         });
     };
 
-    const handleAffiliateClick = (nameKo: string) => {
-        // Obfuscated check for "손수아" (btoa(encodeURIComponent('손수아')))
-        if (btoa(encodeURIComponent(nameKo)) === 'JUVGJTg1JTkwJUVDJTg4JTk4JUVDJTk1JTg0') {
+    const handleAffiliateClick = (nameEn: string) => {
+        // Obfuscated check for target (btoa('Suah Son'))
+        if (btoa(nameEn) === 'U3VhaCBTb24=') {
             const newCount = clickCount + 1;
             setClickCount(newCount);
             if (newCount >= 7) {
@@ -196,12 +196,12 @@ const Partners = () => {
                     {affiliatesData.map((affiliate, index) => (
                         <motion.div
                             key={index}
-                            onClick={() => handleAffiliateClick(affiliate.nameKo)}
+                            onClick={() => handleAffiliateClick(affiliate.nameEn)}
                             initial={{ opacity: 0, scale: 0.9 }}
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.05, duration: 0.3 }}
-                            className={`w-48 py-4 px-2 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 flex flex-col items-center justify-center hover:border-zenith-sub/50 hover:bg-white/10 transition-all ${btoa(encodeURIComponent(affiliate.nameKo)) === 'JUVGJTg1JTkwJUVDJTg4JTk4JUVDJTk1JTg0' ? 'cursor-pointer' : 'cursor-default'} group`}
+                            className={`w-48 py-4 px-2 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 flex flex-col items-center justify-center hover:border-zenith-sub/50 hover:bg-white/10 transition-all ${btoa(affiliate.nameEn) === 'U3VhaCBTb24=' ? 'cursor-pointer' : 'cursor-default'} group`}
                         >
                             <span className="text-gray-200 font-bold mb-1 group-hover:text-white transition-colors">{affiliate.nameKo}</span>
                             <span className="text-gray-400 text-xs font-semibold tracking-wider uppercase group-hover:text-gray-300 transition-colors text-center">{affiliate.nameEn}</span>
