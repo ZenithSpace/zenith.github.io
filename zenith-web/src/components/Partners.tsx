@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, useMotionValue, animate } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
@@ -15,6 +15,13 @@ const Partners = () => {
     const xTranslation = useMotionValue(0);
     const [isHovered, setIsHovered] = useState(false);
     const [isManuallyScrolling, setIsManuallyScrolling] = useState(false);
+
+    // Easter Egg State
+    const [clickCount, setClickCount] = useState(0);
+    const [showPasswordPrompt, setShowPasswordPrompt] = useState(false);
+    const [passwordInput, setPasswordInput] = useState('');
+    const [showHearts, setShowHearts] = useState(false);
+    const [passwordError, setPasswordError] = useState(false);
 
     // Card width (w-64 = 256px) + gap (gap-8 = 32px) = 288px
     const CARD_WIDTH = 288;
@@ -74,6 +81,33 @@ const Partners = () => {
                 setIsManuallyScrolling(false);
             }
         });
+    };
+
+    const handleAffiliateClick = (nameKo: string) => {
+        if (nameKo === '손수아') {
+            const newCount = clickCount + 1;
+            setClickCount(newCount);
+            if (newCount >= 7) {
+                setShowPasswordPrompt(true);
+                setClickCount(0); // reset
+            }
+        } else {
+            setClickCount(0); // reset if clicked someone else
+        }
+    };
+
+    const handlePasswordSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        if (passwordInput === '0826') {
+            setShowPasswordPrompt(false);
+            setShowHearts(true);
+            setPasswordInput('');
+            setPasswordError(false);
+            // Hide hearts after 5 seconds
+            setTimeout(() => setShowHearts(false), 5000);
+        } else {
+            setPasswordError(true);
+        }
     };
 
     return (
@@ -160,11 +194,12 @@ const Partners = () => {
                     {affiliatesData.map((affiliate, index) => (
                         <motion.div
                             key={index}
+                            onClick={() => handleAffiliateClick(affiliate.nameKo)}
                             initial={{ opacity: 0, scale: 0.9 }}
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.05, duration: 0.3 }}
-                            className="w-48 py-4 px-2 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 flex flex-col items-center justify-center hover:border-zenith-sub/50 hover:bg-white/10 transition-all cursor-default group"
+                            className={`w-48 py-4 px-2 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 flex flex-col items-center justify-center hover:border-zenith-sub/50 hover:bg-white/10 transition-all ${affiliate.nameKo === '손수아' ? 'cursor-pointer' : 'cursor-default'} group`}
                         >
                             <span className="text-gray-200 font-bold mb-1 group-hover:text-white transition-colors">{affiliate.nameKo}</span>
                             <span className="text-gray-400 text-xs font-semibold tracking-wider uppercase group-hover:text-gray-300 transition-colors text-center">{affiliate.nameEn}</span>
@@ -172,6 +207,84 @@ const Partners = () => {
                     ))}
                 </div>
             </div>
+
+            {/* Password Prompt Modal */}
+            {showPasswordPrompt && (
+                <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        className="bg-[#0A0B10] border border-white/10 p-8 rounded-2xl max-w-sm w-full"
+                    >
+                        <h3 className="text-xl font-bold text-white mb-4 text-center">비밀번호를 입력하세요</h3>
+                        <form onSubmit={handlePasswordSubmit}>
+                            <input
+                                type="password"
+                                value={passwordInput}
+                                onChange={(e) => {
+                                    setPasswordInput(e.target.value);
+                                    setPasswordError(false);
+                                }}
+                                className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-zenith-sub mb-4 text-center text-lg tracking-widest"
+                                placeholder={"****"}
+                                maxLength={4}
+                                autoFocus
+                            />
+                            {passwordError && <p className="text-red-400 text-sm mb-4 text-center">비밀번호가 틀렸습니다.</p>}
+                            <div className="flex gap-3">
+                                <button
+                                    type="button"
+                                    onClick={() => {
+                                        setShowPasswordPrompt(false);
+                                        setPasswordInput('');
+                                        setPasswordError(false);
+                                    }}
+                                    className="flex-1 px-4 py-2 rounded-lg bg-white/5 text-gray-300 hover:bg-white/10 transition-colors"
+                                >
+                                    취소
+                                </button>
+                                <button
+                                    type="submit"
+                                    className="flex-1 px-4 py-2 rounded-lg bg-zenith-sub text-white hover:bg-opacity-90 transition-colors font-bold"
+                                >
+                                    확인
+                                </button>
+                            </div>
+                        </form>
+                    </motion.div>
+                </div>
+            )}
+
+            {/* Heart Explosion Overlay */}
+            {showHearts && (
+                <div className="fixed inset-0 pointer-events-none z-50 overflow-hidden">
+                    {[...Array(60)].map((_, i) => (
+                        <motion.div
+                            key={i}
+                            initial={{
+                                opacity: 1,
+                                scale: 0,
+                                x: '50vw',
+                                y: '50vh'
+                            }}
+                            animate={{
+                                opacity: [1, 1, 1, 0],
+                                scale: [0, Math.random() * 2 + 1, Math.random() * 2 + 1.5, Math.random() * 2 + 1.5],
+                                x: `calc(50vw + ${(Math.random() - 0.5) * 120}vw)`,
+                                y: `calc(50vh + ${(Math.random() - 0.5) * 120}vh)`,
+                                rotate: Math.random() * 360
+                            }}
+                            transition={{
+                                duration: Math.random() * 2.5 + 2.5,
+                                ease: "easeOut"
+                            }}
+                            className="absolute text-4xl"
+                        >
+                            {['❤️', '💖', '💞', '💕', '💘'][Math.floor(Math.random() * 5)]}
+                        </motion.div>
+                    ))}
+                </div>
+            )}
         </section>
     );
 };
