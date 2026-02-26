@@ -105,8 +105,6 @@ const Partners = () => {
             setShowHearts(true);
             setPasswordInput('');
             setPasswordError(false);
-            // Hide hearts after 5 seconds
-            setTimeout(() => setShowHearts(false), 5000);
         } else {
             setPasswordError(true);
         }
@@ -193,20 +191,54 @@ const Partners = () => {
                 </motion.div>
 
                 <div className="flex flex-wrap justify-center gap-4">
-                    {affiliatesData.map((affiliate, index) => (
-                        <motion.div
-                            key={index}
-                            onClick={() => handleAffiliateClick(affiliate.nameEn)}
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: index * 0.05, duration: 0.3 }}
-                            className={`w-48 py-4 px-2 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 flex flex-col items-center justify-center hover:border-zenith-sub/50 hover:bg-white/10 transition-all ${btoa(affiliate.nameEn) === 'U3VhaCBTb24=' ? 'cursor-pointer' : 'cursor-default'} group`}
-                        >
-                            <span className="text-gray-200 font-bold mb-1 group-hover:text-white transition-colors">{affiliate.nameKo}</span>
-                            <span className="text-gray-400 text-xs font-semibold tracking-wider uppercase group-hover:text-gray-300 transition-colors text-center">{affiliate.nameEn}</span>
-                        </motion.div>
-                    ))}
+                    {affiliatesData.map((affiliate, index) => {
+                        const isTarget = btoa(affiliate.nameEn) === 'U3VhaCBTb24=';
+                        const showEffect = isTarget && showHearts;
+
+                        return (
+                            <motion.div
+                                key={index}
+                                onClick={() => handleAffiliateClick(affiliate.nameEn)}
+                                initial={{ opacity: 0, scale: 0.9 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: index * 0.05, duration: 0.3 }}
+                                className={`relative w-48 py-4 px-2 backdrop-blur-sm rounded-xl border flex flex-col items-center justify-center transition-all duration-500 overflow-hidden ${isTarget ? 'cursor-pointer' : 'cursor-default'} group ${showEffect
+                                    ? 'border-pink-400 shadow-[0_0_20px_rgba(244,114,182,0.4)] bg-pink-500/10'
+                                    : 'border-white/10 bg-white/5 hover:border-zenith-sub/50 hover:bg-white/10'
+                                    }`}
+                            >
+                                {/* Twinkling Particles */}
+                                {showEffect && (
+                                    <div className="absolute inset-0 pointer-events-none">
+                                        {[...Array(6)].map((_, i) => (
+                                            <motion.div
+                                                key={`particle-${i}`}
+                                                initial={{ opacity: 0, y: 10, x: 0 }}
+                                                animate={{
+                                                    opacity: [0, 0.8, 0],
+                                                    y: [10, -50],
+                                                    x: [0, (Math.random() - 0.5) * 40]
+                                                }}
+                                                transition={{
+                                                    duration: 1.5 + Math.random() * 2,
+                                                    repeat: Infinity,
+                                                    delay: Math.random() * 2,
+                                                    ease: "easeOut"
+                                                }}
+                                                className="absolute bottom-2 left-1/2 -ml-1 text-[12px]"
+                                            >
+                                                {['✨', '🌸', '💫', '🤍'][Math.floor(Math.random() * 4)]}
+                                            </motion.div>
+                                        ))}
+                                    </div>
+                                )}
+
+                                <span className={`font-bold mb-1 transition-colors relative z-10 ${showEffect ? 'text-pink-200' : 'text-gray-200 group-hover:text-white'}`}>{affiliate.nameKo}</span>
+                                <span className={`text-xs font-semibold tracking-wider uppercase transition-colors text-center relative z-10 ${showEffect ? 'text-pink-300' : 'text-gray-400 group-hover:text-gray-300'}`}>{affiliate.nameEn}</span>
+                            </motion.div>
+                        )
+                    })}
                 </div>
             </div>
 
@@ -228,7 +260,6 @@ const Partners = () => {
                                     setPasswordError(false);
                                 }}
                                 className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-zenith-sub mb-4 text-center text-lg tracking-widest"
-                                placeholder={"****"}
                                 maxLength={4}
                                 autoFocus
                             />
@@ -254,37 +285,6 @@ const Partners = () => {
                             </div>
                         </form>
                     </motion.div>
-                </div>
-            )}
-
-            {/* Heart Explosion Overlay */}
-            {showHearts && (
-                <div className="fixed inset-0 pointer-events-none z-50 overflow-hidden">
-                    {[...Array(60)].map((_, i) => (
-                        <motion.div
-                            key={i}
-                            initial={{
-                                opacity: 1,
-                                scale: 0,
-                                x: '50vw',
-                                y: '50vh'
-                            }}
-                            animate={{
-                                opacity: [1, 1, 1, 0],
-                                scale: [0, Math.random() * 2 + 1, Math.random() * 2 + 1.5, Math.random() * 2 + 1.5],
-                                x: `calc(50vw + ${(Math.random() - 0.5) * 120}vw)`,
-                                y: `calc(50vh + ${(Math.random() - 0.5) * 120}vh)`,
-                                rotate: Math.random() * 360
-                            }}
-                            transition={{
-                                duration: Math.random() * 2.5 + 2.5,
-                                ease: "easeOut"
-                            }}
-                            className="absolute text-4xl"
-                        >
-                            {['❤️', '💖', '💞', '💕', '💘'][Math.floor(Math.random() * 5)]}
-                        </motion.div>
-                    ))}
                 </div>
             )}
         </section>
