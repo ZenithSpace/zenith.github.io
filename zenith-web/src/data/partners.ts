@@ -34,5 +34,6 @@ export const affiliatesData: Affiliate[] = [
     { nameKo: '송상은', nameEn: 'Sangeun Song' },
     { nameKo: '이치범', nameEn: 'Chibum Lee' },
     { nameKo: '전성우', nameEn: 'IMJUST' },
+    { nameKo: '김진효', nameEn: 'Jinhyo Kim' },
     { nameKo: '노성용 & 유승희', nameEn: 'Sungyong Ro & Seunghui Yu' }
 ];
