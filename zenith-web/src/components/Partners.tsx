@@ -105,6 +105,8 @@ const Partners = () => {
             setShowHearts(true);
             setPasswordInput('');
             setPasswordError(false);
+            // Auto revert after 8 seconds
+            setTimeout(() => setShowHearts(false), 8000);
         } else {
             setPasswordError(true);
         }
@@ -210,15 +212,15 @@ const Partners = () => {
                             >
                                 {/* Twinkling Particles */}
                                 {showEffect && (
-                                    <div className="absolute inset-0 pointer-events-none">
-                                        {[...Array(6)].map((_, i) => (
+                                    <div className="absolute inset-0 pointer-events-none rounded-xl overflow-hidden">
+                                        {[...Array(12)].map((_, i) => (
                                             <motion.div
                                                 key={`particle-${i}`}
                                                 initial={{ opacity: 0, y: 10, x: 0 }}
                                                 animate={{
-                                                    opacity: [0, 0.8, 0],
-                                                    y: [10, -50],
-                                                    x: [0, (Math.random() - 0.5) * 40]
+                                                    opacity: [0, 1, 0],
+                                                    y: [10, -50 - Math.random() * 30],
+                                                    x: [0, (Math.random() - 0.5) * 30]
                                                 }}
                                                 transition={{
                                                     duration: 1.5 + Math.random() * 2,
@@ -226,9 +228,13 @@ const Partners = () => {
                                                     delay: Math.random() * 2,
                                                     ease: "easeOut"
                                                 }}
-                                                className="absolute bottom-2 left-1/2 -ml-1 text-[12px]"
+                                                className="absolute text-[14px]"
+                                                style={{
+                                                    left: `${Math.random() * 100}%`,
+                                                    bottom: `-15px`
+                                                }}
                                             >
-                                                {['✨', '🌸', '💫', '🤍'][Math.floor(Math.random() * 4)]}
+                                                {['💖', '💕', '💗'][Math.floor(Math.random() * 3)]}
                                             </motion.div>
                                         ))}
                                     </div>
