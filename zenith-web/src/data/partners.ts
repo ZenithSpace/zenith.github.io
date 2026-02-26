@@ -20,10 +20,19 @@ export const partnersData: Partner[] = [
     { name: 'Next Partner', logo: null, link: '#contact' }, // Placeholder
 ];
 
-export const affiliatesData: string[] = [
-    '홍길동',
-    '김철수',
-    'Jane Doe',
-    '이영희',
-    'Michael Smith'
+export interface Affiliate {
+    nameKo: string;
+    nameEn: string;
+}
+
+export const affiliatesData: Affiliate[] = [
+    { nameKo: '손수아', nameEn: 'Suah Son' },
+    { nameKo: '이효민', nameEn: 'Hyomin Lee' },
+    { nameKo: '고기열', nameEn: 'Kiyul Ko' },
+    { nameKo: '김선', nameEn: 'Seon Kim' },
+    { nameKo: '최윤정', nameEn: 'Yunjeong Choi' },
+    { nameKo: '송상은', nameEn: 'Sangeun Song' },
+    { nameKo: '이치범', nameEn: 'Chibum Lee' },
+    { nameKo: '전성우', nameEn: 'IMJUST' },
+    { nameKo: '노성용 & 유승희', nameEn: 'Sungyong Ro & Seunghui Yu' }
 ];
