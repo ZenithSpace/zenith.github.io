@@ -22,6 +22,11 @@ export const translations = {
         },
         about: {
             title: 'About Us',
+            urcAnnouncement: {
+                badge: 'URC 2026 TOP 38 FINALIST',
+                title: 'We made it to the finals!',
+                description: 'We are thrilled to announce that Zenith Space has been selected as one of the Top 38 teams for the University Rover Challenge 2026 out of 100+ teams worldwide. Check out our System Acceptance Review (SAR) video!'
+            },
             missionTitle: 'Our Mission',
             missionDesc: 'To design and build a next-generation Mars rover capable of assisting astronauts in deep space exploration missions.',
             visionTitle: 'Our Vision',
@@ -249,6 +254,11 @@ export const translations = {
         },
         about: {
             title: '팀 소개',
+            urcAnnouncement: {
+                badge: 'URC 2026 TOP 38 FINALIST',
+                title: '최종 38팀 본선 진출 확정!',
+                description: 'Zenith Space가 전 세계 100여 개 팀 중 University Rover Challenge 2026의 최종 38팀에 선정되는 쾌거를 이루었습니다. 우리의 SAR(System Acceptance Review) 영상을 확인해보세요!'
+            },
             missionTitle: '우리의 미션',
             missionDesc: '심우주 탐사에서 우주비행사를 돕는 차세대 화성 로버를 설계하고 제작합니다.',
             visionTitle: '우리의 비전',
