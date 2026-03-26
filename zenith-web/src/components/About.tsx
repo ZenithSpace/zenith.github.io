@@ -41,9 +41,9 @@ const About = () => {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12 mb-20 bg-white/5 p-6 sm:p-8 rounded-3xl border border-white/10"
+                    className="flex flex-col items-center gap-8 mb-20 bg-white/5 p-6 sm:p-10 lg:p-12 rounded-3xl border border-white/10"
                 >
-                    <div className="w-full lg:w-1/2 aspect-video rounded-2xl overflow-hidden shadow-2xl shadow-zenith-sub/20">
+                    <div className="w-full max-w-5xl aspect-video rounded-2xl overflow-hidden shadow-2xl shadow-zenith-sub/20 ring-1 ring-white/10">
                         <iframe
                             className="w-full h-full"
                             src="https://www.youtube.com/embed/yWl8IhGZf-s"
@@ -52,14 +52,14 @@ const About = () => {
                             allowFullScreen
                         ></iframe>
                     </div>
-                    <div className="w-full lg:w-1/2 text-left space-y-4">
-                        <div className="inline-block px-4 py-1.5 rounded-full bg-zenith-sub/20 text-zenith-sub font-bold text-sm tracking-wider border border-zenith-sub/30">
+                    <div className="w-full max-w-3xl text-center space-y-5 mt-2">
+                        <div className="inline-block px-5 py-2 rounded-full bg-zenith-sub/20 text-zenith-sub font-bold text-sm tracking-wider border border-zenith-sub/30">
                             {t('about.urcAnnouncement.badge')}
                         </div>
-                        <h4 className="text-3xl sm:text-4xl font-bold leading-tight">
+                        <h4 className="text-3xl sm:text-4xl lg:text-4xl font-bold leading-tight">
                             {t('about.urcAnnouncement.title')}
                         </h4>
-                        <p className="text-gray-300 leading-relaxed text-lg">
+                        <p className="text-gray-300 leading-relaxed text-lg mt-4">
                             {t('about.urcAnnouncement.description')}
                         </p>
                     </div>
