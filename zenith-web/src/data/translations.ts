@@ -63,6 +63,11 @@ export const translations = {
                     title: 'Minister of Education Award',
                     desc: 'Awarded the Minister of Education Award (Best Volunteering Team), selected as one of the top 3 teams out of 296 nationwide.',
                 },
+                sar_finalist: {
+                    year: '2026.03',
+                    title: 'System Acceptance Review & Finalist',
+                    desc: 'Successfully passed the System Acceptance Review and selected as one of the Top 38 finalists for URC 2026.',
+                },
                 urc: {
                     year: '2026.05',
                     title: 'University Rover Challenge 2026',
@@ -294,6 +299,11 @@ export const translations = {
                     year: '2025.12',
                     title: '교육부장관상 수상',
                     desc: '전국 296개 팀 중 최우수 3개 팀에 선정되어 교육부장관상(교육기부 우수팀)을 수상했습니다.',
+                },
+                sar_finalist: {
+                    year: '2026.03',
+                    title: 'SAR 통과 및 최종 진출 확정',
+                    desc: 'System Acceptance Review(SAR)를 우수한 성적으로 통과하여 전 세계 100여 개 팀 중 URC 2026 본선 진출 38팀에 최종 선정되었습니다.',
                 },
                 urc: {
                     year: '2026.05',

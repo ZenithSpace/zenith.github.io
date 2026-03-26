@@ -45,6 +45,13 @@ const Journey = () => {
             imageContainerHeight: 'h-96'
         },
         {
+            year: t('journey.milestones.sar_finalist.year'),
+            title: t('journey.milestones.sar_finalist.title'),
+            description: t('journey.milestones.sar_finalist.desc'),
+            icon: <Trophy size={20} />,
+            image: "/assets/journey/2026_sar.webp"
+        },
+        {
             year: t('journey.milestones.urc.year'),
             title: t('journey.milestones.urc.title'),
             description: t('journey.milestones.urc.desc'),
