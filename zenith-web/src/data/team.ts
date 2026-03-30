@@ -13,6 +13,7 @@ export interface TeamMember {
     image: string;
     imagePosition?: string;
     imageScale?: number;
+    imageBgColor?: string;
     hidden?: boolean;
 }
 
@@ -134,7 +135,8 @@ export const getTeamMembers = () => {
             role: "Software Architecture Advisor",
             image: "/assets/team/hanryung_shin.webp",
             imageScale: 0.85,
-            imagePosition: "center 10%"
+            imagePosition: "center 10%",
+            imageBgColor: "bg-white"
         },
         {
             nameEn: "Be Our Crew!",

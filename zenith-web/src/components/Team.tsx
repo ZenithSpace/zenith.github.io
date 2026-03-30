@@ -132,7 +132,7 @@ const Team = () => {
             {/* Inner Tint */}
             <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-300 pointer-events-none bg-zenith-sub rounded-xl" />
 
-            <div className="w-32 h-32 rounded-full overflow-hidden mb-4 border-2 border-white/20 group-hover:border-zenith-sub transition-colors duration-300 relative z-10">
+            <div className={`w-32 h-32 rounded-full overflow-hidden mb-4 border-2 border-white/20 group-hover:border-zenith-sub transition-colors duration-300 relative z-10 ${member.imageBgColor || ''}`}>
                 <img
                     src={member.image}
                     alt={member.nameEn}
