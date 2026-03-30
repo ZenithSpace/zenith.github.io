@@ -18,6 +18,7 @@ const Team = () => {
         firmware: allMembers.filter(m => m.team === 'Firmware Team' && !m.team.includes('Lead')),
         software: allMembers.filter(m => m.team === 'Software Team' && !m.team.includes('Lead')),
         science: allMembers.filter(m => m.team === 'Science Team'),
+        advisor: allMembers.filter(m => m.team === 'Advisor'),
         join: allMembers.filter(m => m.team === 'Join Zenith Space!')
     };
 
@@ -216,6 +217,18 @@ const Team = () => {
                         ))}
                     </div>
                 </div>
+
+                {/* Advisor */}
+                {groups.advisor.length > 0 && (
+                    <div className="space-y-4">
+                        <h4 className="text-2xl font-bold text-white text-center">Advisor</h4>
+                        <div className="flex flex-wrap justify-center gap-8">
+                            {groups.advisor.map((member, index) => (
+                                <MemberCard key={`adv-${index}`} member={member} />
+                            ))}
+                        </div>
+                    </div>
+                )}
 
                 {/* Join Us */}
                 <div className="space-y-4">
