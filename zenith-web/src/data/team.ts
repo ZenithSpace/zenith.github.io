@@ -133,10 +133,7 @@ export const getTeamMembers = () => {
             nameKo: "신한륭",
             team: "Advisor",
             role: "Software Architecture Advisor",
-            image: "/assets/team/hanryung_shin.webp",
-            imageScale: 0.85,
-            imagePosition: "center 40%",
-            imageBgColor: "bg-white"
+            image: "/assets/team/hanryung_shin.webp"
         },
         {
             nameEn: "Be Our Crew!",
