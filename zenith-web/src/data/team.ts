@@ -131,8 +131,10 @@ export const getTeamMembers = () => {
             nameEn: "Hanryung Shin",
             nameKo: "신한륭",
             team: "Advisor",
-            role: "Drone Master",
-            image: "/assets/team/hanryung_shin.webp"
+            role: "Software Architecture Advisor",
+            image: "/assets/team/hanryung_shin.webp",
+            imageScale: 0.85,
+            imagePosition: "center 10%"
         },
         {
             nameEn: "Be Our Crew!",
