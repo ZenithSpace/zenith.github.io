@@ -49,5 +49,6 @@ export const affiliatesData: Affiliate[] = [
     { nameKo: '김다애', nameEn: 'Daae Kim' },
     { nameKo: 'Tina', nameEn: 'Tina' },
     { nameKo: '김선영', nameEn: 'Sunyoung Kim' },
-    { nameKo: '익명 후원자', nameEn: 'Anonymous Supporter' }
+    { nameKo: '익명 후원자', nameEn: 'Anonymous Supporter' },
+    { nameKo: '함께할 당신!', nameEn: 'Be Next!' }
 ];
