@@ -205,7 +205,7 @@ const Partners = () => {
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: index * 0.05, duration: 0.3 }}
-                                className={`relative w-48 py-4 px-2 backdrop-blur-sm rounded-xl border flex flex-col items-center justify-center transition-all duration-500 overflow-hidden ${isTarget ? 'cursor-pointer' : 'cursor-default'} group ${showEffect
+                                className={`relative w-48 h-24 px-2 backdrop-blur-sm rounded-xl border flex flex-col items-center justify-center transition-all duration-500 overflow-hidden ${isTarget ? 'cursor-pointer' : 'cursor-default'} group ${showEffect
                                     ? 'border-pink-400 shadow-[0_0_20px_rgba(244,114,182,0.4)] bg-pink-500/10'
                                     : 'border-white/10 bg-white/5 hover:border-zenith-sub/50 hover:bg-white/10'
                                     }`}
