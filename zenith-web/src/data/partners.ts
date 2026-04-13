@@ -35,5 +35,18 @@ export const affiliatesData: Affiliate[] = [
     { nameKo: '이치범', nameEn: 'Chibum Lee' },
     { nameKo: '전성우', nameEn: 'IMJUST' },
     { nameKo: '김진효', nameEn: 'Jinhyo Kim' },
-    { nameKo: '노성용 & 유승희', nameEn: 'Sungyong Ro & Seunghee Yoo' }
+    { nameKo: '노성용 & 유승희', nameEn: 'Sungyong Ro & Seunghee Yoo' },
+    { nameKo: '강석도', nameEn: 'Seokdo Kang' },
+    { nameKo: '정현우', nameEn: 'Hyeonwoo Jeong' },
+    { nameKo: '한병희', nameEn: 'James Han' },
+    { nameKo: '조준범', nameEn: 'Junbeom Cho' },
+    { nameKo: '장지우', nameEn: 'Jiwoo Jang' },
+    { nameKo: '이현진', nameEn: 'Hyunjin Lee' },
+    { nameKo: '박지인', nameEn: 'Jiin Park' },
+    { nameKo: '도원석', nameEn: 'Wonseok Do' },
+    { nameKo: '김유운', nameEn: 'Uwoon Kim' },
+    { nameKo: '오정용', nameEn: 'Jungyong Oh' },
+    { nameKo: '김다애', nameEn: 'Daae Kim' },
+    { nameKo: 'Tina', nameEn: 'Tina' },
+    { nameKo: '익명 후원자', nameEn: 'Anonymous Supporter' }
 ];
